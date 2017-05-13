@@ -65,6 +65,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\remixmonsta_logo.svg" />
+    <Content Include="Images\searchIcon.svg" />
+    <Content Include="Images\twitter.svg" />
+    <Content Include="Images\volumen_control.svg" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
