@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Next_song</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_Remixmonsta" transform="translate(-1193.000000, -932.000000)" fill="#FFFFFF">
+            <g id="Music_Player" transform="translate(-1.000000, 901.000000)">
+                <path d="M1214,53.9993054 C1214,54.5519738 1214.44335,55 1215.00937,55 L1216.99063,55 C1217.54809,55 1218,54.5525308 1218,53.9993054 L1218,32.0006946 C1218,31.4480262 1217.55665,31 1216.99063,31 L1215.00937,31 C1214.45191,31 1214,31.4474692 1214,32.0006946 L1214,53.9993054 Z M1194.81995,31.5787849 C1194.3671,31.2591308 1194,31.4474692 1194,32.0006946 L1194,53.9993054 C1194,54.5519738 1194.37088,54.738203 1194.81995,54.4212151 L1210.18005,43.5787849 C1210.6329,43.2591308 1210.62912,42.738203 1210.18005,42.4212151 L1194.81995,31.5787849 Z" id="Next_song"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="32px" viewBox="0 0 28 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Pause</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Remixmonsta_Tablet-Portrait" transform="translate(-607.000000, -968.000000)" fill="#FFFFFF">
+            <g id="Music_Player" transform="translate(0.000000, 942.000000)">
+                <path d="M625.285714,55.9982567 C625.285714,57.103789 626.179017,58 627.292153,58 L632.422133,58 C633.530258,58 634.428571,57.1107383 634.428571,55.9982567 L634.428571,28.0017433 C634.428571,26.896211 633.535269,26 632.422133,26 L627.292153,26 C626.184028,26 625.285714,26.8892617 625.285714,28.0017433 L625.285714,55.9982567 Z M607,55.9982567 C607,57.103789 607.893303,58 609.006439,58 L614.136418,58 C615.244544,58 616.142857,57.1107383 616.142857,55.9982567 L616.142857,28.0017433 C616.142857,26.896211 615.249555,26 614.136418,26 L609.006439,26 C607.898313,26 607,26.8892617 607,28.0017433 L607,55.9982567 Z" id="Pause"></path>
+            </g>
+        </g>
+    </g>
+</svg>

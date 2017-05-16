@@ -29,6 +29,6 @@ C:\Users\furba\Documents\Visual Studio 2017\Projects\RemixMonsta\RemixMonsta\Rem
 C:\Users\furba\Documents\Visual Studio 2017\Projects\RemixMonsta\RemixMonsta\RemixMonsta\bin\RemixMonsta.pdb
 C:\Users\furba\Documents\Visual Studio 2017\Projects\RemixMonsta\RemixMonsta\RemixMonsta\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\furba\Documents\Visual Studio 2017\Projects\RemixMonsta\RemixMonsta\RemixMonsta\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\furba\Documents\Visual Studio 2017\Projects\RemixMonsta\RemixMonsta\RemixMonsta\obj\Debug\RemixMonsta.csprojResolveAssemblyReference.cache
 C:\Users\furba\Documents\Visual Studio 2017\Projects\RemixMonsta\RemixMonsta\RemixMonsta\obj\Debug\RemixMonsta.dll
 C:\Users\furba\Documents\Visual Studio 2017\Projects\RemixMonsta\RemixMonsta\RemixMonsta\obj\Debug\RemixMonsta.pdb
+C:\Users\furba\Documents\Visual Studio 2017\Projects\RemixMonsta\RemixMonsta\RemixMonsta\obj\Debug\RemixMonsta.csprojResolveAssemblyReference.cache

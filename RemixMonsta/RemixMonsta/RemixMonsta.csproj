@@ -65,10 +65,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\last-song.svg" />
+    <Content Include="Images\next-song.svg" />
+    <Content Include="Images\now-playing.svg" />
+    <Content Include="Images\pause.svg" />
+    <Content Include="Images\play.svg" />
+    <Content Include="Images\playlist.svg" />
+    <Content Include="Images\random_play.svg" />
     <Content Include="Images\remixmonsta_logo.svg" />
+    <Content Include="Images\remove.svg" />
     <Content Include="Images\searchIcon.svg" />
+    <Content Include="Images\tick.svg" />
     <Content Include="Images\twitter.svg" />
-    <Content Include="Images\volumen_control.svg" />
+    <Content Include="Images\volum-control.svg" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -84,6 +93,7 @@
     <Content Include="Scripts\PlayerScript.js" />
     <Content Include="Style\bootstrap-theme.css" />
     <Content Include="Style\bootstrap.css" />
+    <Content Include="Style\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

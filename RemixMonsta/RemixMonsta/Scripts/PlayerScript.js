@@ -9,7 +9,7 @@ SC.initialize({
 var storedNames = JSON.parse(localStorage.getItem("playlist"));
 
 
-getTrack("hip hop", DEFAULT_PAGE_SIZE);
+getTrack("House", DEFAULT_PAGE_SIZE);
 //getTrack("rock", DEFAULT_PAGE_SIZE);
 //getTrack("electronic", DEFAULT_PAGE_SIZE);
 
@@ -22,7 +22,7 @@ var difference_ms = new Date() - current;
 var difference = Math.round(difference_ms / one_day);
 //localStorage.setItem("playlist", JSON.stringify(trackList));
 
-playSong("321208965");
+//playSong("321208965");
 
 
 //remove song from playList
@@ -50,11 +50,10 @@ function playSong(trackId) {
         }
         sound.play();
         sound.on("time", function () {
-            $(".seekLoad").css('width', ((sound.currentTime() / sound.options.duration) * 100) + '%');
+            $(".timeline").css('width', ((sound.currentTime() / sound.options.duration) * 100) + '%');
         });
 
-        alert(sound.currentTime());
-        $(".seekBase").click(function (e) {
+        $(".song-timeline").click(function (e) {
             var x = e.pageX - $(this).offset().left;
             var width = $(this).width();
             var duration = sound.options.duration;
@@ -72,13 +71,29 @@ function getTrack(genre, pageSize) {
             to: moment().format('YYYY-MM-DD  00:00:01')
         }, limit: pageSize
     }).then(function (tracks) {
-        console.log(tracks);
+        console.log(trackList);
         for (var i = 0; i < tracks.length; i++) {
             trackList.push(tracks[i]);
+            var title = tracks[i].title;
+            if (tracks[i].title.length > 45) {
+                title= tracks[i].title.substring(0, 45)+'...';
+
+            }
+
+            var songRow = ' <div class="row song"> <div class="col-lg-1 song-number">' + trackList.length  + '</div>'+
+                '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url+'" width="48" height="48" class="album-cover">'+
+                '<span class="song-title">' + title +'</span> </div>'+
+                '<div class="col-lg-3 add-playlist"> <button class="genre selected-genre">Add to playlist<img class="genre-image" src="Images/tick.svg" width="17" height="13"> </button></div>' +
+                '<div class="col-lg-2 play-count">' + tracks[i].likes_count + ' /' + tracks[i].playback_count+' </div></div>'
+
+            $('.songlist').append(songRow);
         }
     });
 
 }
+
+
+
 
 
 

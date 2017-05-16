@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Remixmonsta</title>
     <link href="Style/bootstrap.css" rel="stylesheet">
+    <link href="Style/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,7 +20,7 @@
     <script src="Scripts/moment.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-    <!--<script src="Scripts/PlayerScript.js"></script>-->
+    <script src="Scripts/PlayerScript.js"></script>
 
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -36,7 +37,7 @@
 
                 <form class="navbar-form navbar-left ">
                     <div class="input-group ">
-                        <span class="input-group-addon search-icon" style="width: 20px" ;>  <img alt="Remixmonsta" src="Images/searchIcon.svg" width="17" height="17"></span>
+                        <span class="input-group-addon search-icon" style="width: 20px">  <img alt="Remixmonsta" src="Images/searchIcon.svg" width="17" height="17"></span>
                         <input type="text" class="form-control searchBox" placeholder="Search" aria-describedby="sizing-addon2">
 
                     </div>
@@ -52,125 +53,140 @@
             </div><!--/.nav-collapse -->
         </div>
     </nav>
-    <h1>Hello, world!</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-7 main-body">
+                <div class="headline-area">
+                    <h1 class="headline">Choose your favorite genres, and start hunting for best remixes</h1>
+                </div>
+                <div class="genreList">
+                    <span class="genre ">Top 25</span>
+                    <span class="genre ">Ambient</span>
+                    <span class="genre ">Dance &amp; EDM </span>
+                    <span class="genre ">Deep House </span>
+                    <span class="genre ">Drum and Bass</span>
+                </div>
+                <div class="genreList">
+                    <span class="genre">Debstep</span>
+                    <span class="genre ">Electronic </span>
+                    <span class="genre ">House </span>
+                    <span class="genre ">Pop </span>
+                    <span class="genre ">Reggae </span>
+                    <span class="genre ">Reggaeton</span>
+                    <span class="genre ">Techno</span>
+                    <span class="genre ">Trap </span>
+                </div>
+
+                <div>
+                    <div class="row information">
+                        <div class="col-lg-1 col-md-7 song-numbe">
+                            #
+                        </div>
+                        <div class="col-lg-6 col-md-7">
+                            Track<span class="trackList-status">List refreshed 2 hours ago</span>
+                        </div>
+                        <div class="col-lg-5 col-md-7 play-count">
+                            Plays this week / all time
+                        </div>
+
+                    </div>
+                    <div class="songlist">
+
+                        <div class="row song">
+                            <div class="col-lg-1 song-number"> #</div>
+                            <div class="col-lg-7 song-info">
+                                <img src="Images/" width="48" height="48" class="album-cover" />
+                                <span class="song-title">Gta super bad remix songs </span>
+                            </div>
+                            <div class="col-lg-3 add-playlist">
+                                <button class="genre selected-genre">Add to playlist<img class="genre-image" src="Images/tick.svg" width="17" height="13" /> </button>
+                            </div>
+                            <div class="col-lg-2 play-count">  607k / 1.9M </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 side-bar">
+                <div class="playlist">
+                    <h1 class="playlist-title">Your playlist</h1>
+                    <div class="playlist-info">
+                        <span class="playlist-count">8</span> tracks added | <span class="playlist-time">34</span> mins in total
+                    </div>
+                    <button class="shuffle-big">
+                        SHUFFLE PLAY
+                    </button>
+
+                    <div class="playlist-songs">
+                        <div class="song-info">
+                            <img src="Images/" width="70" height="70" class="album-covers" align="left" />
+                            <div class="info">
+                                <span class="song-title">Gta super bad remix songs test </span>
+                                <span class="song-duration">3:21 </span>
+                            </div>
+                            <div class="stats">
+                                <span class="play-button"> s</span>
+                                <span class="count"> 1.9M</span>
+                                <span class="genre">Remove</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subscribe">
+                        <div class="title">
+                            Don't miss out newest feature  and announcement from us!
+                        </div>
+                        <input class="email" type="email" placeholder="Enter you email address " />
+                        <button class="submit">SIGN UP , YAAAY!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="seekBase">
         <div class="seekLoad"></div>
     </div>
-    <style>
-        .input-group-addon {
-            background-color: #fff;
-            border: 0px;
-            width: 20px;
+
+
+    <div class="navbar navbar-default navbar-fixed-bottom footer">
+        <div class="container">
+            <div class="navbar-text pull-left">
+                <img src="Images/" width="48" height="48" class="album-cover" />
+                <span class="song-title">Gta super bad remix songs  abc 123 456 sadas da as ad sda </span>
+                <span class="song-timeline"><span class="timeline"></span></span>
+                <span class="song-timer text">2:29 / <span class="total-time">4:29</span></span>
+                <span class="controlls">
+                    <img alt="Volume" src="Images/volum-control.svg">
+                    <img alt="previous" src="Images/last-song.svg">
+                    <img alt="play" src="Images/play.svg">
+                    <img alt="next" src="Images/next-song.svg">
+                    <img alt="random" src="Images/random_play.svg">
+                </span>
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+        $(".genreList .genre").click(function (e) {
+            $(this).toggleClass("selected-genre");
+            updateTrackList();
+
+        });
+
+        function updateTrackList() {
+            trackList = [];
+            $(".genreList .selected-genre").each(function () {
+                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
+             
+            });
         }
-
-        .searchBox {
-            height: 36px;
-            border-radius: 100px;
-            border: solid 1px #50009f;
-            border-left: 0px;
-            padding-left: 0px;
-        }
-
-
-
-        .logos {
-            width: 181px;
-            height: 40px;
-        }
-
-        .navbar-brand {
-            padding: 0px;
-            padding-left: 16px;
-            margin-top: 9px;
-        }
-
-        .navbar {
-            margin-bottom: 0px;
-            font-family: OpenSans;
-            height: 56px;
-            background-color: #ffffff;
-        }
-
-        .navbar-form {
-            padding: 0px;
-        }
-
-        .navbar-default .navbar-nav > li > a {
-            line-height: 1.5;
-            font-size: 17px;
-            color: #a4a4a4;
-        }
-
-
-
-
-        .logo {
-            width: 181px;
-            height: 40px;
-            margin-right: 240px;
-        }
-
-        .search-icon {
-            height: 36px;
-            padding: 0px 5px 0px 16px;
-            border-radius: 100px;
-            border: solid 1px #50009f;
-            text-align: inherit;
-            line-height: normal;
-        }
-
-
-        .input-group {
-            width: 318px;
-        }
-
-        .form-control:focus {
-            border-color: inherit;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-        }
-
-        .twitter {
-            width: 32px;
-            height: 24.4px;
-        }
-
-        .nav-seprator {
-            border: solid 1px #e0e0e0;
-            border-top: 0px;
-            border-bottom: 0px;
-            border-left: 0px;
-        }
-
-        .navbar-nav li {
-            position: relative
-        }
-
-            .navbar-nav li:not(:last-child):after {
-                content: '';
-                position: absolute;
-                right: -2px;
-                width: 1px;
-                height: 60%;
-                top: 20%;
-                background: #e7e7e7
-            }
-
-
-
-        .seekBase {
-            width: 300px;
-            height: 20px;
-            -webkit-mask-box-image: url(https://w1.sndcdn.com/cWHNerOLlkUq_m.png);
-            background: black;
-        }
-
-        .seekLoad {
-            width: 0;
-            height: 20px;
-            background: red;
-        }
-    </style>
-
+    </script>
 </body>
 </html>

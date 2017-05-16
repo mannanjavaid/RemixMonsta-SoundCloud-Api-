@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Last_song</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_Remixmonsta" transform="translate(-1093.000000, -932.000000)" fill="#FFFFFF">
+            <g id="Music_Player" transform="translate(-1.000000, 901.000000)">
+                <path d="M1114,53.9993054 C1114,54.5519738 1114.44335,55 1115.00937,55 L1116.99063,55 C1117.54809,55 1118,54.5525308 1118,53.9993054 L1118,32.0006946 C1118,31.4480262 1117.55665,31 1116.99063,31 L1115.00937,31 C1114.45191,31 1114,31.4474692 1114,32.0006946 L1114,53.9993054 Z M1094.81995,31.5787849 C1094.3671,31.2591308 1094,31.4474692 1094,32.0006946 L1094,53.9993054 C1094,54.5519738 1094.37088,54.738203 1094.81995,54.4212151 L1110.18005,43.5787849 C1110.6329,43.2591308 1110.62912,42.738203 1110.18005,42.4212151 L1094.81995,31.5787849 Z" id="Last_song" transform="translate(1106.000000, 43.000000) scale(-1, 1) translate(-1106.000000, -43.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
