@@ -3,6 +3,15 @@
     border-right: solid 1px #e0e0e0;
 }
 
+.main-body {
+    margin-top: 76px;
+}
+
+.side-bar {
+    margin-top: 56px;
+}
+
+
 .input-group-addon {
     background-color: #fff;
     border: 0px;
@@ -211,6 +220,33 @@
     padding-right: 30px;
 }
 
+
+.playlist_button {
+    height: 32px;
+    border-radius: 100px;
+    border: solid 1px #50009f;
+    font-family: OpenSans;
+    font-size: 16px;
+    padding: 5px 13px;
+    margin-right: 5px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.added_playlist {
+    font-weight: bold;
+    color: #ffffff;
+    background-image: url(../Images/tick.svg), linear-gradient(110deg, #5300a4, #d025e2);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position: 92%;
+    padding-right: 30px;
+}
+
 .genreList {
     margin: 14px 0px;
 }
@@ -263,13 +299,22 @@
 
 
 
-
 .add-playlist {
     text-align: right;
     padding: 0px;
     max-width: 152px;
     margin-top: 9px;
 }
+
+    .add-playlist .genre {
+        width: 128px;
+    }
+
+    .add-playlist .selected-genre {
+        width: 150px;
+    }
+
+
 
 .controlls img {
     margin-left: 15px;
@@ -297,6 +342,8 @@
 
 .playlist-songs {
     padding-top: 16px;
+    height: 200px;
+    overflow-y: scroll;
 }
 
 
@@ -379,6 +426,14 @@
 
 .genre-image {
     display: none;
+}
+
+.trackList {
+    margin-bottom: 90px;
+}
+
+.affix {
+    width: 23%;
 }
 
 .seekBase {

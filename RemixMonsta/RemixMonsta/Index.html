@@ -22,7 +22,7 @@
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
     <script src="Scripts/PlayerScript.js"></script>
 
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -70,7 +70,7 @@
                 <div class="genreList">
                     <span class="genre">Debstep</span>
                     <span class="genre ">Electronic </span>
-                    <span class="genre ">House </span>
+                    <span class="genre selected-genre">House </span>
                     <span class="genre ">Pop </span>
                     <span class="genre ">Reggae </span>
                     <span class="genre ">Reggaeton</span>
@@ -84,26 +84,14 @@
                             #
                         </div>
                         <div class="col-lg-6 col-md-7">
-                            Track<span class="trackList-status">List refreshed 2 hours ago</span>
+                            Track<span class="trackList-status">List refreshed 0 hours ago</span>
                         </div>
                         <div class="col-lg-5 col-md-7 play-count">
                             Plays this week / all time
                         </div>
 
                     </div>
-                    <div class="songlist">
-
-                        <div class="row song">
-                            <div class="col-lg-1 song-number"> #</div>
-                            <div class="col-lg-7 song-info">
-                                <img src="Images/" width="48" height="48" class="album-cover" />
-                                <span class="song-title">Gta super bad remix songs </span>
-                            </div>
-                            <div class="col-lg-3 add-playlist">
-                                <button class="genre selected-genre">Add to playlist<img class="genre-image" src="Images/tick.svg" width="17" height="13" /> </button>
-                            </div>
-                            <div class="col-lg-2 play-count">  607k / 1.9M </div>
-                        </div>
+                    <div class="trackList">
 
 
                     </div>
@@ -112,36 +100,26 @@
             </div>
 
             <div class="col-lg-3 col-md-3 side-bar">
-                <div class="playlist">
-                    <h1 class="playlist-title">Your playlist</h1>
-                    <div class="playlist-info">
-                        <span class="playlist-count">8</span> tracks added | <span class="playlist-time">34</span> mins in total
-                    </div>
-                    <button class="shuffle-big">
-                        SHUFFLE PLAY
-                    </button>
-
-                    <div class="playlist-songs">
-                        <div class="song-info">
-                            <img src="Images/" width="70" height="70" class="album-covers" align="left" />
-                            <div class="info">
-                                <span class="song-title">Gta super bad remix songs test </span>
-                                <span class="song-duration">3:21 </span>
-                            </div>
-                            <div class="stats">
-                                <span class="play-button"> s</span>
-                                <span class="count"> 1.9M</span>
-                                <span class="genre">Remove</span>
-                            </div>
+                <div class="affix">
+                    <div class="playlist">
+                        <h1 class="playlist-title">Your playlist</h1>
+                        <div class="playlist-info">
+                            <span class="playlist-count">8</span> tracks added | <span class="playlist-time">34</span> mins in total
                         </div>
-                    </div>
+                        <button class="shuffle-big">
+                            SHUFFLE PLAY
+                        </button>
 
-                    <div class="subscribe">
-                        <div class="title">
-                            Don't miss out newest feature  and announcement from us!
+                        <div class="playlist-songs">
                         </div>
-                        <input class="email" type="email" placeholder="Enter you email address " />
-                        <button class="submit">SIGN UP , YAAAY!</button>
+
+                        <div class="subscribe">
+                            <div class="title">
+                                Don't miss out newest feature  and announcement from us!
+                            </div>
+                            <input class="email" type="email" placeholder="Enter you email address " />
+                            <button class="submit">SIGN UP , YAAAY!</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -149,18 +127,13 @@
     </div>
 
 
-    <div class="seekBase">
-        <div class="seekLoad"></div>
-    </div>
-
-
     <div class="navbar navbar-default navbar-fixed-bottom footer">
         <div class="container">
             <div class="navbar-text pull-left">
-                <img src="Images/" width="48" height="48" class="album-cover" />
-                <span class="song-title">Gta super bad remix songs  abc 123 456 sadas da as ad sda </span>
+                <img src="" width="48" height="48" class="album-cover" />
+                <span class="song-title">-------------------------------------------------- </span>
                 <span class="song-timeline"><span class="timeline"></span></span>
-                <span class="song-timer text">2:29 / <span class="total-time">4:29</span></span>
+                <span class="song-timer text"><span class="current-time">0:00 </span> / <span class="total-time">0:00</span></span>
                 <span class="controlls">
                     <img alt="Volume" src="Images/volum-control.svg">
                     <img alt="previous" src="Images/last-song.svg">
@@ -176,6 +149,7 @@
 
         $(".genreList .genre").click(function (e) {
             $(this).toggleClass("selected-genre");
+            $('.trackList').text("");
             updateTrackList();
 
         });
@@ -184,9 +158,26 @@
             trackList = [];
             $(".genreList .selected-genre").each(function () {
                 getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
-             
+
             });
         }
+
+        $(document).on('click', '.add-playlist', function () {
+            var index = $(this).parent().find('.song-number').text();
+            $(this).find('.genre').toggleClass("selected-genre");
+            var track = trackList[index - 1];
+            addToPlayList(track);
+
+        });
+
+        $(document).on('click', '.album-cover', function () {
+            var index = $(this).parent().parent().find('.song-number').text();
+            $(this).find('.genre').toggleClass("selected-genre");
+            var track = trackList[index - 1];
+            playSong(track);
+
+        });
+
     </script>
 </body>
 </html>
