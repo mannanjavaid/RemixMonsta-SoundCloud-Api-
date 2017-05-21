@@ -57,46 +57,52 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-7 main-body">
-                <div class="headline-area">
-                    <h1 class="headline">Choose your favorite genres, and start hunting for best remixes</h1>
-                </div>
-                <div class="genreList">
-                    <span class="genre ">Top 25</span>
-                    <span class="genre ">Ambient</span>
-                    <span class="genre ">Dance &amp; EDM </span>
-                    <span class="genre ">Deep House </span>
-                    <span class="genre ">Drum and Bass</span>
-                </div>
-                <div class="genreList">
-                    <span class="genre">Debstep</span>
-                    <span class="genre ">Electronic </span>
-                    <span class="genre selected-genre">House </span>
-                    <span class="genre ">Pop </span>
-                    <span class="genre ">Reggae </span>
-                    <span class="genre ">Reggaeton</span>
-                    <span class="genre ">Techno</span>
-                    <span class="genre ">Trap </span>
-                </div>
+                <div class="main_container">
+                    <div class="headline-area">
+                        <h1 class="headline">Choose your favorite genres, and start hunting for best remixes</h1>
+                    </div>
+                    <div class="genreList">
+                        <span class="genre ">Top 25</span>
+                        <span class="genre ">Ambient</span>
+                        <span class="genre ">Dance &amp; EDM </span>
+                        <span class="genre ">Deep House </span>
+                        <span class="genre ">Drum and Bass</span>
+                    </div>
+                    <div class="genreList">
+                        <span class="genre">Debstep</span>
+                        <span class="genre ">Electronic </span>
+                        <span class="genre selected-genre">House </span>
+                        <span class="genre ">Pop </span>
+                        <span class="genre ">Reggae </span>
+                        <span class="genre ">Reggaeton</span>
+                        <span class="genre ">Techno</span>
+                        <span class="genre ">Trap </span>
+                    </div>
 
-                <div>
                     <div class="row information">
                         <div class="col-lg-1 col-md-7 song-numbe">
                             #
                         </div>
                         <div class="col-lg-6 col-md-7">
-                            Track<span class="trackList-status">List refreshed 0 hours ago</span>
+                            Track<span class="trackList-status">List refreshed <span id="refresh_time">0</span> hours ago</span>
                         </div>
                         <div class="col-lg-5 col-md-7 play-count">
                             Plays this week / all time
                         </div>
 
                     </div>
-                    <div class="trackList">
+                </div>
+                <div class="trackList">
 
-
-                    </div>
 
                 </div>
+
+                <div class="search_result">
+                </div>
+                <div class="back_to_main">
+                    Back to main Page
+                </div>
+
             </div>
 
             <div class="col-lg-3 col-md-3 side-bar">
@@ -106,9 +112,9 @@
                         <div class="playlist-info">
                             <span class="playlist-count">8</span> tracks added | <span class="playlist-time">34</span> mins in total
                         </div>
-                        <button class="shuffle-big">
+                        <div class="shuffle-big">
                             SHUFFLE PLAY
-                        </button>
+                        </div>
 
                         <div class="playlist-songs">
                         </div>
@@ -127,34 +133,73 @@
     </div>
 
 
+
+
     <div class="navbar navbar-default navbar-fixed-bottom footer">
+        <span class="song-timeline_big"><span class="timeline_big"></span></span>
         <div class="container">
             <div class="navbar-text pull-left">
                 <img src="" width="48" height="48" class="album-cover" />
-                <span class="song-title">-------------------------------------------------- </span>
+                <span class="song-title"></span>
                 <span class="song-timeline"><span class="timeline"></span></span>
                 <span class="song-timer text"><span class="current-time">0:00 </span> / <span class="total-time">0:00</span></span>
                 <span class="controlls">
-                    <img alt="Volume" src="Images/volum-control.svg">
-                    <img alt="previous" src="Images/last-song.svg">
-                    <img alt="play" src="Images/play.svg">
-                    <img alt="next" src="Images/next-song.svg">
-                    <img alt="random" src="Images/random_play.svg">
+                    <span class="volume_area">
+                        <img class="volume" alt="Volume" src="Images/volum-control.svg"><span class="volume-line"><span class="track_volume"></span></span>
+                    </span>
+                    <img class="prev_song" alt="previous" src="Images/last-song.svg">
+                    <img class="play_song" alt="play" src="Images/play.svg">
+                    <img class="next_song" alt="next" src="Images/next-song.svg">
+                    <img class="random_song" alt="random" src="Images/random_play.svg">
                 </span>
             </div>
         </div>
     </div>
     <script>
 
+        $(".controlls .volume").click(function (e) {
+
+            $('.volume-line').toggle("volume_visible");
+
+        });
+
+
+
+
+        $(".controlls .prev_song").click(function (e) {
+            playPrevSong();
+
+        });
+        $(".controlls .play_song").click(function (e) {
+
+            if (player != null) {
+
+                if (player.isPlaying()) {
+
+                    player.pause();
+                } else {
+                    player.play();
+                }
+            }
+
+        });
+        $(".controlls .next_song").click(function (e) {
+            playNextSong();
+
+        });
+        $(".controlls .random_song").click(function (e) {
+            toggleRandomTracks();
+        });
+
 
         $(".genreList .genre").click(function (e) {
             $(this).toggleClass("selected-genre");
-            $('.trackList').text("");
             updateTrackList();
 
         });
 
         function updateTrackList() {
+            $('.trackList').text("");
             trackList = [];
             $(".genreList .selected-genre").each(function () {
                 getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
@@ -162,20 +207,91 @@
             });
         }
 
+
+        setInterval(function () {
+            updateTrackList();
+            $('#refresh_time').text("0");
+
+        }, 1000 * 60 * 60 * 3);
+
+        setInterval(function () {
+            var then = moment.utc(listRefreshTime);
+            var now = moment.utc(new Date().getTime());
+            $('#refresh_time').text(Math.floor(moment.duration(now.diff(then)).asHours()));
+        }, 1000);
+
+
         $(document).on('click', '.add-playlist', function () {
             var index = $(this).parent().find('.song-number').text();
-            $(this).find('.genre').toggleClass("selected-genre");
-            var track = trackList[index - 1];
-            addToPlayList(track);
+            var track;
+            if (isSearch) {
+                track = searchList[index - 1];
+            } else {
+                track = trackList[index - 1];
+            }
+            var result = checkIfTrackAlreadyInPlayList(track);
+            if (result) {
+                removeFromPlayList(track);
+            } else {
+                addToPlayList(track);
+            }
 
         });
 
-        $(document).on('click', '.album-cover', function () {
+        $(document).on('click', '.playlist-songs .genre', function () {
+            var classString = $(this).parent().parent().attr('class');
+            var id = classString.substring(16);
+            var track = getTrackFromPlayListByid(id);
+            if (track != null) {
+                removeFromPlayList(track);
+            }
+        });
+
+
+
+        $(document).on('click', '.trackList .album-cover', function () {
             var index = $(this).parent().parent().find('.song-number').text();
             $(this).find('.genre').toggleClass("selected-genre");
             var track = trackList[index - 1];
             playSong(track);
 
+        });
+
+
+        $(document).on('click', '.shuffle-big', function () {
+
+            if (isRandomPlayList) {
+                isRandomPlayList = false;
+            } else {
+                isRandomPlayList = true;
+            }
+
+        });
+        $(document).on('keyup', '.searchBox', function () {
+            isSearch = true;
+            var val = $(this).val();
+            getTrackForSearchResult(val);
+            $(".main_container").css("display", "none");
+            $(".trackList").css("display", "none");
+            $(".search_result").css("display", "block");
+            $(".back_to_main").css("display", "block");
+
+
+        });
+
+        $(document).on('click', '.back_to_main', function () {
+            isSearch = false;
+            $(".search_result").css("display", "none");
+            $(".back_to_main").css("display", "none");
+            $(".main_container").css("display", "block");
+            $(".trackList").css("display", "block");
+            $('.searchBox').val("");
+
+        });
+
+
+        $(document).ready(function () {
+            loadPlayList();
         });
 
     </script>
