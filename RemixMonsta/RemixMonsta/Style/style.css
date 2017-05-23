@@ -62,7 +62,7 @@
 .logo {
     width: 181px;
     height: 40px;
-    margin-right: 240px;
+    margin-right: 160px;
 }
 
 .search-icon {
@@ -374,8 +374,7 @@
     text-align: right;
     padding: 0px;
     margin-top: 15px;
-    max-width: 75px;
-    margin-left: 75px;
+    max-width: 145px;
 }
 
 .shuffle-big {
@@ -497,10 +496,14 @@
 .search_result {
     display: none;
 }
-
+.navbar-header .back_to_main {
+    margin-top: 9px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
 .back_to_main {
     display: none;
-    width: 170px;
+    width: 155px;
     height: 36px;
     border-radius: 100px;
     border: solid 1px #50009f;

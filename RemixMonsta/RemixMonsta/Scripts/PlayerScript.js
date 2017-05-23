@@ -1,15 +1,17 @@
 ﻿var DEFAULT_PAGE_SIZE = 100;
 var one_day = 1000 * 60 * 60 * 24;
 var playList = [];
+var randomPlayList = [];
 var trackList = [];
 var randomTrackList = [];
 var searchList = [];
-var isRandomPlay;
-var isRandomPlayList = false;
 var currentTrack;
 var player;
 var listRefreshTime;
 var isSearch = false;
+var isRandomPlay = false;
+var isPlaylist = false;
+var isRandomPlayList = false;
 
 SC.initialize({
     client_id: '4af6a761ec1726ad9b2e0e2397fe898a'
@@ -56,7 +58,7 @@ function getTrackFromPlayListByid(id) {
 }
 
 
-// this function return  index from track list
+// this function return  index from given list
 function getIndexFromListByid(trackList, id) {
     var index = -1;
     for (var i = 0; i < trackList.length; i++) {
@@ -151,39 +153,91 @@ function loadPlayList() {
 
 // this function play previous song
 function playPrevSong() {
-    if (player != null) {
-        var list = trackList;
-        if (isRandomPlay) {
-            list = randomTrackList;
+    if (player == null) { return }
+
+    // for playlist
+    if (isPlaylist) {
+
+        var list = playList;
+        if (isRandomPlayList) {
+            list = randomPlayList;
         }
         var currentIndex = getIndexFromListByid(list, currentTrack.id);
-        player.dispose();
+        // player.dispose();
         if (list.length > currentIndex - 1) {
             playSong(list[currentIndex - 1]);
         } else {
             playSong(list[0]);
         }
 
-    }
-}
 
-// this function plays next song
-function playNextSong() {
-    if (player != null) {
+    }
+    // for tracklist
+    else {
         var list = trackList;
         if (isRandomPlay) {
             list = randomTrackList;
         }
         var currentIndex = getIndexFromListByid(list, currentTrack.id);
+        //  player.dispose();
+        if (list.length > currentIndex - 1) {
+            playSong(list[currentIndex - 1]);
+        } else {
+            playSong(list[0]);
+        }
+    }
+}
+
+// this function plays next song
+function playNextSong() {
+    if (player == null) { return }
+
+    // for playlist
+    if (isPlaylist) {
+
+        var list = playList;
+        if (isRandomPlayList) {
+            list = randomPlayList;
+        }
+        var currentIndex = getIndexFromListByid(list, currentTrack.id);
+        //   player.dispose();
         if (list.length > currentIndex + 1) {
-            player.dispose();
             playSong(list[currentIndex + 1]);
         } else {
             playSong(list[0]);
         }
 
+
+    }
+    // for tracklist
+    else {
+        var list = trackList;
+        if (isRandomPlay) {
+            list = randomTrackList;
+        }
+        var currentIndex = getIndexFromListByid(list, currentTrack.id);
+        // player.dispose();
+        if (list.length > currentIndex + 1) {
+            playSong(list[currentIndex + 1]);
+        } else {
+            playSong(list[0]);
+        }
+    }
+
+}
+
+// play random playlist songs
+function toggleRandomPlayList() {
+    if (isRandomPlayList) {
+        isRandomPlayList = false;
+
+    } else {
+        isRandomPlayList = true;
+        randomPlayList = playList.slice();
+        randomPlayList.sort(function (a, b) { return 0.5 - Math.random() });
     }
 }
+
 
 
 // play random songs
@@ -200,7 +254,10 @@ function toggleRandomTracks() {
 
 
 //play specefic song
-function playSong(track) {
+function playSong(track, repeat = true) {
+    if (player != null) {
+        player.dispose();
+    }
     var trackId = track.id;
 
     SC.stream("/tracks/" + trackId).then(function (sound) {
@@ -213,14 +270,14 @@ function playSong(track) {
         sound.on("time", function () {
             $(".timeline").css('width', ((sound.currentTime() / sound.options.duration) * 100) + '%');
             $(".timeline_big").css('width', ((sound.currentTime() / sound.options.duration) * 100) + '%');
-          
+
             $(".footer .current-time").text(moment.utc(sound.currentTime()).format('mm:ss'));
         });
 
         sound.on("finish", function () {
-            player.dispose();
-            playNextSong();
-
+            if (repeat) {
+                playNextSong();
+            }
         });
 
 
@@ -253,9 +310,10 @@ function playSong(track) {
 
             var x = e.pageX - $(this).offset().left;
             var width = $(this).width();
-            var maxVolume =1;
+            var maxVolume = 1;
             sound.setVolume((x / width) * maxVolume);
             $(".track_volume").css('width', ((sound.getVolume() / 1) * 100) + '%');
+            
 
         });
 
@@ -274,9 +332,12 @@ function playSong(track) {
 // get tracks for specefix gener
 function getTrack(genre, pageSize) {
     var array = [];
+    if (genre == 'Top 25') {
+        genre = '';
+    }
     SC.get('/tracks', {
         q: 'remix', genres: genre, created_at: {
-            from: moment().subtract(3, 'days').format('YYYY-MM-DD  00:00:01'),
+            from: moment().subtract(7, 'days').format('YYYY-MM-DD  00:00:01'),
             to: moment().format('YYYY-MM-DD  00:00:01')
         }, limit: pageSize
     }).then(function (tracks) {
@@ -288,16 +349,16 @@ function getTrack(genre, pageSize) {
         });
         listRefreshTime = new Date().getTime();
         var length = tracks.length;
-        if (length > 10) {
-            length = 10;
+        if (length > 25) {
+            length = 25;
         }
 
 
         for (var i = 0; i < length; i++) {
             trackList.push(tracks[i]);
             var title = tracks[i].title;
-            if (tracks[i].title.length > 45) {
-                title = tracks[i].title.substring(0, 45) + '...';
+            if (tracks[i].title.length > 40) {
+                title = tracks[i].title.substring(0, 40) + '...';
             }
             var selectedClass = 'selected-genre';
             var result = getTrackFromPlayListByid(tracks[i].id);
@@ -330,8 +391,8 @@ function getTrackForSearchResult(query) {
             searchList.push(tracks[i]);
             var index = i;
             var title = tracks[i].title;
-            if (tracks[i].title.length > 45) {
-                title = tracks[i].title.substring(0, 45) + '...';
+            if (tracks[i].title.length > 40) {
+                title = tracks[i].title.substring(0, 40) + '...';
             }
             var selectedClass = 'selected-genre';
             var result = getTrackFromPlayListByid(tracks[i].id);
