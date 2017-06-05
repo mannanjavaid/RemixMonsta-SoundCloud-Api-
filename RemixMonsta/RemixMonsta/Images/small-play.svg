@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="32px" viewBox="0 0 25 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Pause/Play icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_Remixmonsta" transform="translate(-1143.000000, -927.000000)" fill="#b8b8b8">
+            <g id="Music_Player" transform="translate(-1.000000, 901.000000)">
+                <path d="M1145.69325,26.2537348 C1144.7581,25.6586336 1144,26.0717674 1144,27.1813678 L1144,56.0160443 C1144,57.123463 1144.75837,57.5386029 1145.69325,56.9436773 L1168.11353,42.6762319 C1169.04869,42.0811308 1169.04841,41.1161058 1168.11353,40.5211801 L1145.69325,26.2537348 Z" id="Pause/Play-icon"></path>
+            </g>
+        </g>
+    </g>
+</svg>

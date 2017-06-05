@@ -95,6 +95,7 @@ function removeFromPlayList(track) {
         localStorage.setItem("playlist", JSON.stringify(playList));
         $('.playlist-songs .track-' + track.id).remove();
         $('#' + track.id + ' .genre').toggleClass("selected-genre");
+		$('#' + track.id + ' .genre .text').text("Add to playlist");
         updatePlayListCountAndTime();
     }
 }
@@ -109,6 +110,7 @@ function addToPlayList(track) {
     if (playList == null) { playList = []; }
     playList.push(track);
     localStorage.setItem("playlist", JSON.stringify(playList));
+	$('#' + track.id + ' .genre .text').text("Added");
     $('#' + track.id + ' .genre').toggleClass("selected-genre");
     $('.playlist-songs').append(getplayListTrackHtml(track));
     updatePlayListCountAndTime();
@@ -124,8 +126,8 @@ function getplayListTrackHtml(track) {
 
     }
     var info = '<div class="song-info track-' + track.id + '"><img src="' + track.artwork_url + '" width="70" height="70" class="album-covers" align="left" />' +
-        '<div class="info"><span class="song-title">' + title + '</span><span class="song-duration"> </span></div>' +
-        '<div class="stats"><span class="play-button"> s</span><span class="count"> </span><span class="genre">Remove</span></div></div >';
+        '<div class="info"><span class="song-title">' + title + '</span><span class="song-duration">'+moment.utc(track.duration).format('mm:ss')+ '</span></div>' +
+        '<div class="stats"><span class="play-button"><img style="margin-right: 5px;" width="8px" src="Images/small-play.svg"></span><span class="count">'+track.playback_count+'</span><span class="genre">Remove</span></div></div >';
 
     return info;
 
@@ -230,8 +232,10 @@ function playNextSong() {
 function toggleRandomPlayList() {
     if (isRandomPlayList) {
         isRandomPlayList = false;
+		$('.shuffle-big img').attr('src','Images/random_play.svg');
 
     } else {
+		$('.shuffle-big img').attr('src','Images/random_play_selected.svg');
         isRandomPlayList = true;
         randomPlayList = playList.slice();
         randomPlayList.sort(function (a, b) { return 0.5 - Math.random() });
@@ -244,9 +248,11 @@ function toggleRandomPlayList() {
 function toggleRandomTracks() {
     if (isRandomPlay) {
         isRandomPlay = false;
+		$('.controlls .random_song').attr('src','Images/random_play.svg');
 
     } else {
         isRandomPlay = true;
+		$('.controlls .random_song').attr('src','Images/random_play_selected.svg');
         randomTrackList = trackList.slice();
         randomTrackList.sort(function (a, b) { return 0.5 - Math.random() });
     }
@@ -294,8 +300,17 @@ function playSong(track, repeat = true) {
 
 
         sound.on("play-start", function () {
-            $(".controlls .play_song").attr("src", "Images/pause.svg");
+            $(".controlls .play_song").attr("src", "Images/pause.svg");	
+			if(currentTrack !=null){
+				$("#"+currentTrack.id).toggleClass("selected-song");
+				$(".track-"+currentTrack.id).toggleClass("selected-song");
+				
+			}
             currentTrack = track;
+			if(currentTrack !=null){
+				$("#"+currentTrack.id).toggleClass("selected-song");
+				$(".track-"+currentTrack.id).toggleClass("selected-song");
+			}
             var title = track.title;
             if (track.title.length > 50) {
                 title = track.title.substring(0, 50) + '...';
@@ -361,15 +376,17 @@ function getTrack(genre, pageSize) {
                 title = tracks[i].title.substring(0, 40) + '...';
             }
             var selectedClass = 'selected-genre';
+			var text = 'Added';
             var result = getTrackFromPlayListByid(tracks[i].id);
             if (result == null) {
                 selectedClass = '';
+				var text = 'Add to playlist';
             }
             var songRow = ' <div id="' + tracks[i].id + '" class="row song"> <div class="col-lg-1 song-number">' + trackList.length + '</div>' +
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<span class="song-title">' + title + '</span> </div>' +
-                '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '">Add to playlist<img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
-                '<div class="col-lg-2 play-count">' + tracks[i].likes_count + ' /' + tracks[i].playback_count + ' </div></div>'
+                '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '"><span class="text">' + text + '</span><img class="genre-image" src="Images/tick.svg" width="17" height="13"> </div></div>' +
+                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
 
             $('.trackList').append(songRow);
         }
@@ -402,8 +419,8 @@ function getTrackForSearchResult(query) {
             var songRow = ' <div id="' + tracks[i].id + '" class="row song"> <div class="col-lg-1 song-number">' + ++index + '</div>' +
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<span class="song-title">' + title + '</span> </div>' +
-                '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '">Add to playlist<img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
-                '<div class="col-lg-2 play-count">' + tracks[i].likes_count + ' /' + tracks[i].playback_count + ' </div></div>'
+                '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '"><span class="text">Add to playlist</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
+                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
 
             $('.search_result').append(songRow);
         }

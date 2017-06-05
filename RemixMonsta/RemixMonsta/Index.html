@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -20,6 +20,7 @@
     <script src="Scripts/moment.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+	<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
     <script src="Scripts/PlayerScript.js"></script>
 
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -42,16 +43,16 @@
 
                     </div>
                 </form>
-                  <div class="back_to_main">
+                <div class="back_to_main">
                     Back to main Page
                 </div>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../navbar/"><img class="twitter" alt="tweeter" src="Images/twitter.svg"></a></li>
+                    <li><a href="https://twitter.com/login"><img class="twitter" alt="tweeter" src="Images/twitter.svg"></a></li>
 
-                    <li><a href="../navbar-static-top/">ABOUT</a></li>
-                    <li><a href="./"> PRIVACY POLICY</a></li>
+                    <li><a class="about-button" onclick="toggleAboutDisplay()">ABOUT</a></li>
+                    <li><a class="privacy-button" onclick="togglePrivacyDisplay()"> PRIVACY POLICY</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -116,18 +117,73 @@
                             <span class="playlist-count">8</span> tracks added | <span class="playlist-time">34</span> mins in total
                         </div>
                         <div class="shuffle-big">
-                            SHUFFLE PLAY
+                            <span>SHUFFLE PLAY</span> <img width="16px" style="margin-left: 4px;" class="random_song" alt="random" src="Images/random_play.svg">
                         </div>
 
                         <div class="playlist-songs">
                         </div>
-
-                        <div class="subscribe">
+						<div class="subscribe">
+                        <form>
                             <div class="title">
                                 Don't miss out newest feature  and announcement from us!
                             </div>
-                            <input class="email" type="email" placeholder="Enter you email address " />
-                            <button class="submit">SIGN UP , YAAAY!</button>
+                            <input class="email form-control" type="email" placeholder="Enter you email address " />
+                            <input type="submit" value="SIGN UP , YAAAY!"  class="submit"></input>
+                        </form>
+                    </div>
+                    </div>
+                    <div class="about" style="display: none">
+					
+                        <div class="about_header">
+                            <img alt="Remixmonsta" style="cursor: pointer" src="Images/remove.svg" width="24" height="24" onclick="toggleAboutDisplay()">
+                            <span class="about_title">About</span>
+                            <img alt="Remixmonsta" src="Images/remixmonsta_logo.svg" width="181" height="40" >
+                        </div>
+                        <div class="about_image">
+                            <img style="border-radius: 100px; margin-left: 15px;margin-top: 15px;" src="Images/image.jpg" width="150" height="150" />
+                        </div>
+                        <div class="about_text">
+                            <p>Hi I’m Peter Javorkai the founder of remixmonsta.
+                            I’ve spent my university years relentlessly organizing underground electronic music parties, but after a time it was quite hard to find new and fresh talents 
+                            with the limited resources online.</p>
+                            <p>Sometimes I’ve spent days of searching on Soundcloud to get the latest hot remixes, so that’s how I came to the idea to have a dedictated site 
+                            for these great beats. I hope you like it!</p>
+                        </div>
+                        <div class="about_footer">
+                            <div class="left">
+                                <p>GOT AN IDEA? &nbsp;
+                                    hello@peterjavorkai.com
+                                </p>
+
+                            </div>
+                            <div class="right">
+                                <p class="clipboard-button" data-clipboard-text="hello@peterjavorkai.com">Copy Clipboard</</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="privacy" style="display: none">
+					
+                        <div class="privacy_header">
+                            <img alt="Remixmonsta" style="cursor: pointer" src="Images/remove.svg" width="24" height="24" onclick="togglePrivacyDisplay()">
+                            <span class="privacy_title">Privacy Policy</span>                          
+                        </div>
+						<img class="privacy_image" alt="Remixmonsta" src="Images/remixmonsta_logo.svg" width="181" height="40" >
+                        <div class="privacy_text">
+						<p><b>The use of the collected data</b></p>
+                            <p>The data concerning the user is collected to allow the owner to provide its services, as well as for the following purposes: advertising, analytics, 
+							interaction with external social networks and platforms, displaying content from external platforms, managing contacts and sending messages and contacting the User.</p>
+                            <p>The Personal Data used for each purpose is outlined in the specific sections of the full document</p>
+                        </div>
+                        <div class="privacy_footer">
+						<div>
+						<a  href="https://www.iubenda.com/privacy-policy/8141157/full-legal" class="privacy-link-button">Full privacy policy document</a>
+						</div>
+                            <div class="left">
+                                <p>GOT AN IDEA? &nbsp;
+                                    hello@peterjavorkai.com
+                                </p>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,6 +210,7 @@
                     <img class="play_song" alt="play" src="Images/play.svg">
                     <img class="next_song" alt="next" src="Images/next-song.svg">
                     <img class="random_song" alt="random" src="Images/random_play.svg">
+					<img class="soundcloud-logo" alt="logo" src="Images/Soundcloud_logo.svg">
                 </span>
             </div>
         </div>
@@ -162,12 +219,11 @@
         var id;
         $(".controlls .volume").click(function (e) {
             clearTimeout(id);
-           $('.volume-line').toggle("volume_visible");
-           id = setTimeout("$('.volume-line').hide();", 5000);
-          
+            $('.volume-line').toggle("volume_visible");
+			$('.soundcloud-logo').toggle();
+            id = setTimeout("$('.volume-line').hide();$('.soundcloud-logo').show();", 5000);
+
         });
-
-
 
 
         $(".controlls .prev_song").click(function (e) {
@@ -194,6 +250,7 @@
         $(".controlls .random_song").click(function (e) {
             if (isPlaylist) {
                 toggleRandomPlayList();
+				toggleRandomTracks();
             } else {
                 toggleRandomTracks();
             }
@@ -254,7 +311,7 @@
             var classString = $(this).parent().parent().attr('class');
             var id = classString.substring(16);
             var track = getTrackFromPlayListByid(id);
-            if (track != null) {
+            if (track != null) {getTrack
                 removeFromPlayList(track);
             }
         });
@@ -268,6 +325,7 @@
             isPlaylist = false;
             isSearch = false;
             playSong(track);
+			
 
         });
 
@@ -292,11 +350,11 @@
 
 
         $(document).on('click', '.shuffle-big', function () {
-            if (isRandomPlayList) {
-                isRandomPlayList = false;
-            } else {
-                isRandomPlayList = true;
-            }
+            <!-- if (isRandomPlayList) { -->
+               <!-- isRandomPlayList = false; -->
+            <!-- } else { -->
+               <!-- isRandomPlayList = true; -->
+            <!-- } -->
 
         });
         $(document).on('keyup', '.searchBox', function () {
@@ -325,6 +383,44 @@
         $(document).ready(function () {
             loadPlayList();
         });
+		
+		var isAbout=false;
+		function toggleAboutDisplay(){
+		if(isAbout){
+			isAbout=false;
+			$(".playlist").show();
+			$(".privacy").hide();
+			$(".about-button").removeClass("about-button-selected");
+			$(".privacy-button").removeClass("privacy-button-selected");
+		}else{
+			isAbout=true;
+			isPrivacy=false;
+			$(".playlist").hide();
+			$(".about").show();
+			$(".privacy").hide();
+			$(".about-button").addClass("about-button-selected");
+			$(".privacy-button").removeClass("privacy-button-selected");
+			}
+		}
+		
+		var isPrivacy=false;
+		function togglePrivacyDisplay(){
+		if(isPrivacy){
+			isPrivacy=false;
+			$(".playlist").show();
+			$(".privacy").hide();
+			$(".about-button").removeClass("about-button-selected");
+			$(".privacy-button").removeClass("privacy-button-selected");
+		}else{
+			isPrivacy=true;
+			isAbout=false;
+			$(".playlist").hide();
+			$(".about").hide();
+			$(".privacy").show();
+			$(".about-button").removeClass("about-button-selected");
+			$(".privacy-button").addClass("privacy-button-selected");
+			}
+		}
 
     </script>
 </body>
