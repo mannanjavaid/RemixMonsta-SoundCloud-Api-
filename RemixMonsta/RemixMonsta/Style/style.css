@@ -1,3 +1,7 @@
+body{
+	font-family:Open Sans;
+}
+
 .main-body {
     margin-top: 20px;
     border-right: solid 1px #e0e0e0;
@@ -41,7 +45,7 @@
 
 .navbar {
     margin-bottom: 0px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     height: 56px;
     background-color: #ffffff;
 }
@@ -128,7 +132,7 @@
 .song-title {
     width: 310px;
     height: 22px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     font-weight: bold;
     margin-left: 6px;
@@ -206,7 +210,7 @@
 .song-timer {
     width: 77px;
     height: 20px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 15px;
     color: rgba(255, 255, 255, 0.6);
 }
@@ -216,7 +220,7 @@
     }
 
 .song-info .song-title {
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     color: #212121;
     font-weight: normal;
@@ -230,7 +234,7 @@
 .headline {
     width: 837px;
     height: 36px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 24px;
     line-height: 1.5;
     color: #616161;
@@ -243,7 +247,7 @@
 
 .playlist-title {
     height: 36px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 24px;
     line-height: 1.5;
     color: #616161;
@@ -253,7 +257,7 @@
     height: 32px;
     border-radius: 100px;
     border: solid 1px #50009f;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     padding: 5px 13px;
     margin-right: 5px;
@@ -280,7 +284,7 @@
     height: 32px;
     border-radius: 100px;
     border: solid 1px #50009f;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     padding: 5px 13px;
     margin-right: 5px;
@@ -303,7 +307,7 @@
 }
 
 .genreList {
-    margin: 14px 0px;
+    margin: 21px 0px;
 }
 
 .genre-image {
@@ -312,7 +316,7 @@
 }
 
 .information {
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     font-weight: bold;
     color: #9e9e9e;
@@ -325,7 +329,7 @@
 .trackList-status {
     width: 203px;
     height: 22px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     color: #e0e0e0;
     font-weight: normal;
@@ -366,7 +370,7 @@
 }
 
     .add-playlist .genre {
-        width: 128px;
+        width: 135px;
     }
 
     .add-playlist .selected-genre {
@@ -393,7 +397,7 @@
     height: 32px;
     border-radius: 100px;
     background-image: linear-gradient(99deg, #5300a4, #d025e2);
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     font-weight: bold;
     color: #ffffff;
@@ -462,7 +466,7 @@
         padding-left: 15px;
         width: 262px;
         height: 48px;
-        font-family: OpenSans;
+        font-family: Open Sans;
         font-size: 16px;
         line-height: 1.5;
         color: #ffffff;
@@ -473,7 +477,7 @@
     height: 36px;
     border-radius: 100px;
     background-image: linear-gradient(99deg, #5300a4, #d025e2);
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     font-weight: bold;
     margin-left: 30px;
@@ -523,7 +527,7 @@
     border-radius: 100px;
     border: solid 1px #50009f;
     margin-bottom: 90px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 16px;
     color: #50009f;
     text-align: center;
@@ -565,7 +569,7 @@
 .about_title{
   width: 70px;
   height: 36px;
-  font-family: OpenSans;
+  font-family: Open Sans;
   font-size: 24px;
   line-height: 1.5;
   color: #616161;
@@ -580,7 +584,7 @@
 }
 .about_footer .left{
   height: 48px;
-  font-family: OpenSans;
+  font-family: Open Sans;
   font-size: 16px;
   font-weight: bold;
   line-height: 1.5;
@@ -615,7 +619,7 @@
     padding-right: 30px;
 	width: 80px;
     height: 23px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 17px;
 	text-align: center;
 	
@@ -660,7 +664,7 @@ border: solid 1px #50009f;
     background-image: linear-gradient(99deg, #5300a4, #d025e2);
     padding-right: 30px;
     height: 23px;
-    font-family: OpenSans;
+    font-family: Open Sans;
 	width:170px;
     font-size: 17px;
 	text-align: center;
@@ -697,7 +701,7 @@ border: solid 1px #50009f;
 	
 	    width: 70px;
     height: 36px;
-    font-family: OpenSans;
+    font-family: Open Sans;
     font-size: 24px;
     line-height: 1.5;
     color: #616161;
@@ -747,7 +751,7 @@ a.privacy-link-button{
 
 .privacy_footer .left{
   height: 48px;
-  font-family: OpenSans;
+  font-family: Open Sans;
   font-size: 16px;
   font-weight: bold;
   line-height: 1.5;
