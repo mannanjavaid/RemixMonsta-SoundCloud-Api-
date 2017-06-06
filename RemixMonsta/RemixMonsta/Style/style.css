@@ -432,7 +432,7 @@
  }
 
 .info {
-    width: 250px;
+        width: 247px;
 }
 
 .song-duration {
@@ -641,6 +641,7 @@ border: solid 1px #50009f;
 .privacy-button{
 	cursor: pointer;
 	text-align: center;
+	width:170px;
 	    -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -660,6 +661,7 @@ border: solid 1px #50009f;
     padding-right: 30px;
     height: 23px;
     font-family: OpenSans;
+	width:170px;
     font-size: 17px;
 	text-align: center;
 	
