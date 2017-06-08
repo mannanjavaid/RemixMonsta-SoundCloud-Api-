@@ -127,7 +127,7 @@ function getplayListTrackHtml(track) {
     }
     var info = '<div class="song-info track-' + track.id + '"><img src="' + track.artwork_url + '" width="70" height="70" class="album-covers" align="left" />' +
         '<div class="info"><span class="song-title">' + title + '</span><span class="song-duration">'+moment.utc(track.duration).format('mm:ss')+ '</span></div>' +
-        '<div class="stats"><span class="play-button"><img style="margin-right: 5px;" width="8px" src="Images/small-play.svg"></span><span class="count">'+track.playback_count+'</span><span class="genre">Remove</span></div></div >';
+        '<div class="stats"><span class="play-button"><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span class="count">'+track.playback_count+'</span><span class="genre">Remove</span></div></div >';
 
     return info;
 
@@ -139,8 +139,8 @@ function updatePlayListCountAndTime() {
     for (var i = 0; i < playList.length; i++) {
         duration += playList[i].duration;
     }
-    $('.playlist-count').text(playList.length);
-    $('.playlist-time').text(moment.utc(duration).format('m'));
+    $('.playlist-count').text(playList.length +' tracks');
+    $('.playlist-time').text(moment.utc(duration).format('m')+ ' mins');
 
 }
 
@@ -347,7 +347,7 @@ function playSong(track, repeat = true) {
 // get tracks for specefix gener
 function getTrack(genre, pageSize) {
     var array = [];
-    if (genre == 'Top 25') {
+    if (genre == 'Latest 25') {
         genre = '';
     }
     SC.get('/tracks', {
@@ -372,8 +372,8 @@ function getTrack(genre, pageSize) {
         for (var i = 0; i < length; i++) {
             trackList.push(tracks[i]);
             var title = tracks[i].title;
-            if (tracks[i].title.length > 40) {
-                title = tracks[i].title.substring(0, 40) + '...';
+            if (tracks[i].title.length > 44) {
+                title = tracks[i].title.substring(0, 44) + '...';
             }
             var selectedClass = 'selected-genre';
 			var text = 'Added';
@@ -386,7 +386,7 @@ function getTrack(genre, pageSize) {
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<span class="song-title">' + title + '</span> </div>' +
                 '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '"><span class="text">' + text + '</span><img class="genre-image" src="Images/tick.svg" width="17" height="13"> </div></div>' +
-                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
+                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' / ' + tracks[i].playback_count + '</span> </div></div>'
 
             $('.trackList').append(songRow);
         }
@@ -408,8 +408,8 @@ function getTrackForSearchResult(query) {
             searchList.push(tracks[i]);
             var index = i;
             var title = tracks[i].title;
-            if (tracks[i].title.length > 40) {
-                title = tracks[i].title.substring(0, 40) + '...';
+            if (tracks[i].title.length > 44) {
+                title = tracks[i].title.substring(0, 44) + '...';
             }
             var selectedClass = 'selected-genre';
             var result = getTrackFromPlayListByid(tracks[i].id);
@@ -420,7 +420,7 @@ function getTrackForSearchResult(query) {
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<span class="song-title">' + title + '</span> </div>' +
                 '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '"><span class="text">Add to playlist</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
-                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
+                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
 
             $('.search_result').append(songRow);
         }
