@@ -121,14 +121,14 @@ function addToPlayList(track) {
 function getplayListTrackHtml(track) {
 
     var title = track.title;
-    if (track.title.length > 25) {
-        title = track.title.substring(0, 25) + '...';
+    if (track.title.length > 26) {
+        title = track.title.substring(0, 26) + '...';
 
     }
     var info = '<div class="song-info track-' + track.id + '"><img src="' + track.artwork_url + '" width="70" height="70" class="album-covers" align="left" />' +
 		'<div class="album-cover-overlay hide-overlay"><img width=22 alt="play" src="Images/play.svg" ></div>'+
         '<div class="info"><span class="song-title">' + title + '</span><span class="song-duration">'+moment.utc(track.duration).format('mm:ss')+ '</span></div>' +
-        '<div class="stats"><span class="play-button"><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span class="count">'+track.playback_count+'</span><span class="genre">Remove</span></div></div >';
+        '<div class="stats"><span class="now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></span><span class="genre">Remove</span></div></div >';
 
     return info;
 
@@ -240,6 +240,11 @@ function toggleRandomPlayList() {
         isRandomPlayList = true;
         randomPlayList = playList.slice();
         randomPlayList.sort(function (a, b) { return 0.5 - Math.random() });
+		if(randomPlayList.length>0){
+			isPlaylist = false;
+            isSearch = false;
+			playSong(randomPlayList[0]);
+		}
     }
 }
 
@@ -256,6 +261,8 @@ function toggleRandomTracks() {
 		$('.controlls .random_song').attr('src','Images/random_play_selected.svg');
         randomTrackList = trackList.slice();
         randomTrackList.sort(function (a, b) { return 0.5 - Math.random() });
+
+		
     }
 }
 
@@ -307,6 +314,8 @@ function playSong(track, repeat = true) {
 				$("#"+currentTrack.id+" .add-playlist").toggle();
 				$("#"+currentTrack.id+" .now-playing").toggle();
 				$(".track-"+currentTrack.id).toggleClass("selected-song");
+				$(".track-"+currentTrack.id+" .genre").toggle();
+				$(".track-"+currentTrack.id+" .now-playing").toggle();
 				
 				
 			}
@@ -316,11 +325,14 @@ function playSong(track, repeat = true) {
 				$("#"+currentTrack.id+" .add-playlist").toggle();
 				$("#"+currentTrack.id+" .now-playing").toggle();
 				$(".track-"+currentTrack.id).toggleClass("selected-song");
+				$(".track-"+currentTrack.id+" .genre").toggle();
+				$(".track-"+currentTrack.id+" .now-playing").toggle();
 			}
             var title = track.title;
             if (track.title.length > 50) {
                 title = track.title.substring(0, 50) + '...';
             }
+			$('.footer .album-cover').removeClass("default-album-cover");
             $('.footer .album-cover').attr("src", track.artwork_url);
             $('.footer .song-title').text(title);
             $('.footer .total-time').text(moment.utc(sound.options.duration).format('mm:ss'));

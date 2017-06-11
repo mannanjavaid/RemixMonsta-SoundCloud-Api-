@@ -38,7 +38,7 @@
                 <a class="navbar-brand logo" onclick="backToMain()" href="#">
                     <img alt="Remixmonsta" src="Images/remixmonsta_logo.svg">
                 </a>
-
+				<div class="navbar-left alpha">Alpha</div>
                 <form class="navbar-form navbar-left ">
                     <div class="input-group ">
                         <span class="input-group-addon search-icon" style="width: 20px">  <img alt="Remixmonsta" src="Images/searchIcon.svg" width="17" height="17"></span>
@@ -52,7 +52,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a target="_blank" href="https://twitter.com/Remixmonsta_App"><img class="twitter" alt="tweeter" src="Images/twitter.svg"></a></li>
+                    <li><a target="_blank" href="https://twitter.com/Remixmonsta_App"><img class="twitter" src="Images/twitter.svg" alt="tweeter" onmouseover="this.src='Images/twitter-hover.svg';" onmouseout="this.src='Images/twitter.svg';"></a></li>
 
                     <li><a class="about-button" onclick="toggleAboutDisplay()">ABOUT</a></li>
                     <li><a class="privacy-button" onclick="togglePrivacyDisplay()"> PRIVACY POLICY</a></li>
@@ -90,7 +90,7 @@
                         <div class="col-lg-1 col-md-7 song-numbe">
                             #
                         </div>
-                        <div class="col-lg-6 col-md-7">
+                        <div class="col-lg-6 col-md-7 refresh-info">
                             Track<span class="trackList-status">List refreshed <span id="refresh_time">0</span> hours ago</span>
                         </div>
                         <div class="col-lg-5 col-md-7 play-count">
@@ -120,7 +120,7 @@
                             <span class="playlist-count">8 tracks</span> added | <span class="playlist-time">34 mins</span> in total
                         </div>
                         <div class="shuffle-big">
-                            <span>SHUFFLE PLAY</span> <img width="16px" style="margin-left: 4px;" class="random_song" alt="random" src="Images/random_play.svg">
+                            <span>SHUFFLE PLAY</span> <img width="16px" style="margin-left: 4px;margin-top: -4px;" class="random_song" alt="random" src="Images/random_play.svg">
                         </div>
 
                         <div class="playlist-songs">
@@ -131,7 +131,7 @@
                                 Don't miss out newest feature  and announcement from us!
                             </div>
                             <input class="email form-control" type="email" placeholder="Enter you email address " />
-                            <input type="submit" value="SIGN UP , YAAAY!"  class="submit"></input>
+                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"></input>
                         </form>
                     </div>
                     </div>
@@ -176,10 +176,10 @@
                         </div>
                         <div class="privacy_footer">
 						<div>
-						<a  href="https://www.iubenda.com/privacy-policy/8141157/full-legal" target="_black" class="privacy-link-button">Privacy Policy</a>
+						<a  href="https://www.iubenda.com/privacy-policy/8141157/full-legal" target="_black" class="privacy-link-button">Read Privacy Policy</a>
 						</div>
                             <div class="left">
-                                <p>GOT AN IDEA? &nbsp;
+                                <p>GOT AN QUESTION? &nbsp;
                                     hello@peterjavorkai.com
                                 </p>
 
@@ -198,7 +198,9 @@
         <span class="song-timeline_big"><span class="timeline_big"></span></span>
         <div class="container">
             <div class="navbar-text pull-left">
-                <img src="" width="48" height="48" class="album-cover" />
+				<span class="album-cover-wrapper">
+					<img src="Images/favicon.png" class="album-cover default-album-cover" />
+				</span>
                 <span class="song-title">Select a a track from playlist 🤘</span>
                 <span class="song-timeline"><span class="timeline"></span></span>
                 <span class="song-timer text"><span class="current-time">0:00 </span> / <span class="total-time">0:00</span></span>
@@ -356,9 +358,19 @@
             $(".trackList").css("display", "none");
             $(".search_result").css("display", "block");
             $(".back_to_main").removeClass("hide",1000,"linear");
-
-
         });
+		 
+		 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+		$(document).on('keyup', '.email', function () {
+			var value=$('.email').val() ;	
+			if(value.match(mailformat))
+			{
+				$(".submit").css("color", " rgba(255, 255, 255, 1);");
+			}else{
+				$(".submit").css("color", " rgba(255, 255, 255, 0.6);");
+			}
+        });
+		 
 		$(document).on('mouseover', '.album-cover', function () {
 			var parent=$(this).parent();
 			parent.find(".album-cover-overlay").removeClass("hide-overlay");		
