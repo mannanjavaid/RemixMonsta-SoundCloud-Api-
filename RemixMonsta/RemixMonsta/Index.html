@@ -18,6 +18,7 @@
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="Scripts/moment.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
@@ -45,7 +46,7 @@
 
                     </div>
                 </form>
-                <div class="back_to_main">
+                <div class="back_to_main hide">
                     Back to main Page
                 </div>
             </div>
@@ -68,21 +69,21 @@
                         <h1 class="headline">Choose your favorite genres, and start hunting for best remixes</h1>
                     </div>
                     <div class="genreList">
-                        <span class="genre ">Latest 25 </span>
+                        <span class="genre ">Latest 25</span>
                         <span class="genre ">Ambient</span>
-                        <span class="genre ">Dance &amp; EDM </span>
-                        <span class="genre ">Deep House </span>
+                        <span class="genre ">Dance &amp; EDM</span>
+                        <span class="genre ">Deep House</span>
                         <span class="genre ">Drum & Bass</span>
                     </div>
                     <div class="genreList">
                         <span class="genre">Dubstep</span>
-                        <span class="genre ">Electronic </span>
-                        <span class="genre selected-genre">House </span>
-                        <span class="genre ">Pop </span>
-                        <span class="genre ">Reggae </span>
+                        <span class="genre ">Electronic</span>
+                        <span class="genre selected-genre">House</span>
+                        <span class="genre ">Pop</span>
+                        <span class="genre ">Reggae</span>
                         <span class="genre ">Reggaeton</span>
                         <span class="genre ">Techno</span>
-                        <span class="genre ">Trap </span>
+                        <span class="genre ">Trap</span>
                     </div>
 
                     <div class="row information">
@@ -105,7 +106,7 @@
 
                 <div class="search_result">
                 </div>
-                <div class="back_to_main">
+                <div class="back_to_main hide">
                     Back to main Page
                 </div>
 
@@ -317,7 +318,7 @@
 
 
 
-        $(document).on('click', '.trackList .album-cover', function () {
+        $(document).on('click', '.trackList .album-cover-overlay', function () {
             var index = $(this).parent().parent().find('.song-number').text();
             $(this).find('.genre').toggleClass("selected-genre");
             var track = trackList[index - 1];
@@ -328,7 +329,7 @@
 
         });
 
-        $(document).on('click', '.search_result .album-cover', function () {
+        $(document).on('click', '.search_result .album-cover-overlay', function () {
             var index = $(this).parent().parent().find('.song-number').text();
             var track = searchList[index - 1];
             isPlaylist = false;
@@ -337,7 +338,7 @@
 
         });
 
-        $(document).on('click', '.playlist-songs .album-covers', function () {
+        $(document).on('click', '.playlist-songs .album-cover-overlay', function () {
             var classString = $(this).parent().attr('class');
             var id = classString.substring(16);
             var track = getTrackFromPlayListByid(id);
@@ -347,15 +348,6 @@
 
         });
 
-
-        $(document).on('click', '.shuffle-big', function () {
-            <!-- if (isRandomPlayList) { -->
-               <!-- isRandomPlayList = false; -->
-            <!-- } else { -->
-               <!-- isRandomPlayList = true; -->
-            <!-- } -->
-
-        });
         $(document).on('keyup', '.searchBox', function () {
             isSearch = true;
             var val = $(this).val();
@@ -363,11 +355,44 @@
             $(".main_container").css("display", "none");
             $(".trackList").css("display", "none");
             $(".search_result").css("display", "block");
-            $(".back_to_main").css("display", "inline-block");
+            $(".back_to_main").removeClass("hide",1000,"linear");
 
 
         });
-
+		$(document).on('mouseover', '.album-cover', function () {
+			var parent=$(this).parent();
+			parent.find(".album-cover-overlay").removeClass("hide-overlay");		
+		});
+		$(document).on('mouseover', '.album-cover-overlay', function () {
+			$(this).removeClass("hide-overlay");		
+		});
+		
+		$(document).on('mouseleave', '.album-cover-overlay', function () {
+			$(this).addClass("hide-overlay");		
+		});
+		$(document).on('mouseleave', '.album-cover', function () {
+			var parent=$(this).parent();
+			parent.find(".album-cover-overlay").addClass("hide-overlay");		
+		});
+		
+		
+		
+		$(document).on('mouseover', '.playlist-songs .album-covers', function () {
+			var parent=$(this).parent();
+			parent.find(".album-cover-overlay").removeClass("hide-overlay");		
+		});
+		$(document).on('mouseover', '.playlist-songs .album-cover-overlay', function () {
+			$(this).removeClass("hide-overlay");		
+		});
+		
+		$(document).on('mouseleave', '.playlist-songs .album-cover-overlay', function () {
+			$(this).addClass("hide-overlay");		
+		});
+		$(document).on('mouseleave', '.playlist-songs .album-covers', function () {
+			var parent=$(this).parent();
+			parent.find(".album-cover-overlay").addClass("hide-overlay");		
+		});
+		
         $(document).on('click', '.back_to_main', function () {
     
 				backToMain();
@@ -375,7 +400,7 @@
 		function backToMain(){
 			isSearch = false;
             $(".search_result").css("display", "none");
-            $(".back_to_main").css("display", "none");
+            $(".back_to_main").addClass("hide");
             $(".main_container").css("display", "block");
             $(".trackList").css("display", "block");
             $('.searchBox').val("");
@@ -389,17 +414,17 @@
 		function toggleAboutDisplay(){
 		if(isAbout){
 			isAbout=false;
-			$(".playlist").show("slow");
-			$(".privacy").hide("slow");
-			$(".about").hide("slow");
+			$(".playlist").show("slide",{ direction: "right" } , 400);
+			$(".privacy").hide();
+			$(".about").hide();
 			$(".about-button").removeClass("about-button-selected");
 			$(".privacy-button").removeClass("privacy-button-selected");
 		}else{
 			isAbout=true;
 			isPrivacy=false;
-			$(".playlist").hide("slow");
-			$(".about").show("slow");
-			$(".privacy").hide("slow");
+			$(".playlist").hide();
+			$(".about").show("slide",{ direction: "right" } , 400);
+			$(".privacy").hide();
 			$(".about-button").addClass("about-button-selected");
 			$(".privacy-button").removeClass("privacy-button-selected");
 			}
@@ -409,21 +434,26 @@
 		function togglePrivacyDisplay(){
 		if(isPrivacy){
 			isPrivacy=false;
-			$(".playlist").show("slow");
-			$(".privacy").hide("slow");
+			$(".playlist").show("slide",{ direction: "right" } , 400);
+			$(".privacy").hide();
 			$(".about-button").removeClass("about-button-selected");
 			$(".privacy-button").removeClass("privacy-button-selected");
 		}else{
 			isPrivacy=true;
 			isAbout=false;
-			$(".playlist").hide("slow");
-			$(".about").hide("slow");
-			$(".privacy").show("slow");
+			$(".playlist").hide();
+			$(".about").hide();
+			$(".privacy").show("slide",{ direction: "right" } , 400);
 			$(".about-button").removeClass("about-button-selected");
 			$(".privacy-button").addClass("privacy-button-selected");
 			}
 		}
-
+		
+		$( document ).ready(function() {
+			var availableHeight=$( window ).height() -170 -300;
+			$('.playlist-songs').height( availableHeight);
+		});
+		
     </script>
 </body>
 </html>

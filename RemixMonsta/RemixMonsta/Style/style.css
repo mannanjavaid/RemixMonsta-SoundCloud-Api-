@@ -125,7 +125,36 @@ body{
 	cursor:pointer;
 
 }
-
+.album-cover-overlay{
+	background: #d025e2;
+    margin-left: -48px;
+    margin-right: 0px;
+    opacity: 0.8;
+    padding-left: 18px;
+    padding-right: 14px;
+    padding-top: 13px;
+    padding-bottom: 14px;
+	cursor:pointer;	
+	display: inline-block;
+}
+.playlist-songs .album-cover-overlay{
+	
+	background: #d025e2;
+    margin-left: -80px;
+    margin-right: 0px;
+    opacity: 0.8;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+    padding-bottom: 18px;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+	
+}
+.playlist-songs .hide-overlay{
+	display:none;
+}
 .song-title {
     width: 310px;
     height: 22px;
@@ -274,6 +303,7 @@ body{
     background-position: right;
     background-position: 92%;
     padding-right: 30px;
+	border:0px;
 }
 
 
@@ -519,7 +549,7 @@ body{
     margin-left: 15px;
 }
 .back_to_main {
-    display: none;
+    display: inline-block;
     width: 155px;
     height: 36px;
     border-radius: 100px;
@@ -782,9 +812,6 @@ a.privacy-link-button{
 .playlist-time{
 	font-weight:bold;
 }
-.random_song,.next_song,.play_song,.prev_song,.volume{
-	box-shadow: 0px 2px 20px rgba(0,0,0,0.5);
-}
 .navbar.navbar-default.navbar-fixed-bottom.footer {
     border: 0px;
 }
@@ -799,6 +826,49 @@ a.privacy-link-button{
 	
 	box-shadow:none;
 }
+
+.now-playing {
+  font-size: 16px;
+  text-align: left;
+  color: #d325e5;
+  max-width: 152px;
+  margin-top: 11px;
+  display:none;
+}
+.rectangle-1 {
+    border-radius: 2px;
+    background-color: #d325e5;
+    font-size: 0px;
+    padding-top: 6px;
+    padding-left: 3px;
+	margin-right: 1px;
+	margin-left: 8px;
+}
+.rectangle-2 {
+    border-radius: 2px;
+    background-color: #d325e5;
+    font-size: 0px;
+    padding-top: 12px;
+    padding-left: 3px;
+	margin-right: 1px;
+}
+.rectangle-3 {
+    border-radius: 2px;
+    background-color: #d325e5;
+    font-size: 0px;
+    padding-top: 9px;
+    padding-left: 3px;
+}
+.selected-genre:hover {
+    color: white;
+	border:0px;
+}
+.hide-overlay{
+	display:none;
+}
+.hide{display:none;}
+
+
 
 *::-webkit-input-placeholder {
     color:  #9E9E9E ;
