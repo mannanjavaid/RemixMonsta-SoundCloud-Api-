@@ -548,7 +548,6 @@ body{
 .submit {
     margin-left: 15px;
     height: 36px;
-    opacity: 0.6;
     border-radius: 100px;
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5);
     border: solid 2px #ffffff;
