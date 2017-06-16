@@ -7,7 +7,9 @@
     <title>Remixmonsta</title>
 	<link rel="shortcut icon" href="Images/favicon.png" type="image/vnd.microsoft.icon">
     <link href="Style/bootstrap.css" rel="stylesheet">
+	<link href="Style/desktop.css" rel="stylesheet">
     <link href="Style/style.css" rel="stylesheet">
+	
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,13 +77,26 @@
                         <span class="genre ">Deep House</span>
                         <span class="genre ">Drum & Bass</span>
                     </div>
-                    <div class="genreList">
+                    <div class="genreList desktop">
                         <span class="genre">Dubstep</span>
                         <span class="genre ">Electronic</span>
                         <span class="genre selected-genre">House</span>
                         <span class="genre ">Pop</span>
                         <span class="genre ">Reggae</span>
                         <span class="genre ">Reggaeton</span>
+                        <span class="genre ">Techno</span>
+                        <span class="genre ">Trap</span>
+                    </div>
+					
+					<div class="genreList tab">
+                        <span class="genre">Dubstep</span>
+                        <span class="genre ">Electronic</span>
+                        <span class="genre selected-genre">House</span>
+                        <span class="genre ">Pop</span>
+                        <span class="genre ">Reggae</span>
+                        <span class="genre ">Reggaeton</span>
+                    </div>
+					<div class="genreList tab">
                         <span class="genre ">Techno</span>
                         <span class="genre ">Trap</span>
                     </div>
@@ -192,9 +207,17 @@
     </div>
 
 
+<div >
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a target="_blank" href="https://twitter.com/Remixmonsta_App"><img class="twitter" src="Images/twitter.svg" alt="tweeter" onmouseover="this.src='Images/twitter-hover.svg';" onmouseout="this.src='Images/twitter.svg';"></a></li>
 
+                    <li><a class="about-button" onclick="toggleAboutDisplay()">ABOUT</a></li>
+                    <li><a class="privacy-button" onclick="togglePrivacyDisplay()"> PRIVACY POLICY</a></li>
+                </ul>
+            </div>
 
     <div class="navbar navbar-default navbar-fixed-bottom footer">
+	
         <span class="song-timeline_big"><span class="timeline_big"></span></span>
         <div class="container">
             <div class="navbar-text pull-left">
@@ -202,7 +225,7 @@
 					<img src="Images/favicon.png" class="album-cover default-album-cover" />
 				</span>
                 <span class="song-title">Select a a track from playlist 🤘</span>
-                <span class="song-timeline"><span class="timeline"></span></span>
+                <span class="song-timeline"><span class="timeline">  <span class="outer-circle"><span class="circle"></span></span></span></span>
                 <span class="song-timer text"><span class="current-time">0:00 </span> / <span class="total-time">0:00</span></span>
                 <span class="controlls">
                     <span class="volume_area">
