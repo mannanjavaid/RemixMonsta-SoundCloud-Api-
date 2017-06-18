@@ -1,6 +1,9 @@
-@media (min-width: 320px) and (max-width: 767px){
+@media (max-width: 767px){
 body{
 	font-family:Open Sans;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+	border:0px;
 }
 .row{
 	
@@ -231,18 +234,7 @@ img.album-cover {
 
 }
 .alpha{
-	    margin-top: 16px;
-    margin-bottom: 0px;
-    margin-left: 15px;
-    border-radius: 100px;
-    padding-top: 0px;
-    cursor: pointer;
-    background-image: linear-gradient(99deg, #5300a4, #d025e2);
-    width: 55px;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-	margin-right: 50px;
+display:none;
 }
 
 .song-timeline {

@@ -2,6 +2,12 @@
 body{
 	font-family:Open Sans;
 }
+
+.mobile-nav{
+	float: right;
+    margin-top: 13px;
+}
+
 .row{
 	
 	margin-left:0px;
@@ -505,6 +511,7 @@ display:none;
         border-top: solid 1px #e0e0e0;
         height: 110px;
         padding-top: 16px;
+		width:100%;
     }
 
         .playlist-songs .song-info .song-title {
@@ -593,6 +600,9 @@ display:none;
 
 .search_result {
     display: none;
+}
+.navbar-header{
+	width:100%;
 }
 .navbar-header .back_to_main {
     margin-top: 9px;
@@ -887,7 +897,6 @@ a.privacy-link-button{
 	box-shadow: none;
 }
 .random_song{
-	display:none;
 	
 }
 .searchBox{
@@ -991,6 +1000,15 @@ font-size: 16px;
 	padding-top: 5px;
     padding-bottom: 5px;
 	
+}
+.playlist{
+	top: 40px;
+    right: 0px;
+    position: fixed;
+    background: white;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.23);
+    padding-left: 16px;
 }
 .submit:focus {
     -webkit-box-shadow: none;

@@ -1009,4 +1009,7 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 	
 	display:none;
 }
+.mobile-nav{
+	display:none;
+}
 }

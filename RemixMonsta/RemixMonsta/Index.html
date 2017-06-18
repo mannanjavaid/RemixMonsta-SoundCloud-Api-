@@ -32,12 +32,6 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand logo" onclick="backToMain()" href="#">
                     <img alt="Remixmonsta" src="Images/remixmonsta_logo.svg">
                 </a>
@@ -49,6 +43,9 @@
 
                     </div>
                 </form>
+				<div class="mobile-nav">
+					<img class="nav-img" alt="Remixmonsta" src="Images/playlis-mobile.svg" width="28">
+				</div>
                 <div class="back_to_main hide">
                     Back to main Page
                 </div>
@@ -71,7 +68,7 @@
                     <div class="headline-area">
                         <h1 class="headline">Choose your favorite genres, and start hunting for best remixes</h1>
                     </div>
-                    <div class="genreList">
+                    <div class="genreList general">
                         <span class="genre ">Latest 25</span>
                         <span class="genre ">Ambient</span>
                         <span class="genre ">Dance &amp; EDM</span>
@@ -300,10 +297,29 @@
         function updateTrackList() {
             $('.trackList').text("");
             trackList = [];
-            <!-- $(".genreList .selected-genre").each(function () { -->
-                <!-- getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE); -->
+			
+			$(".general .selected-genre").each(function () { 
+                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
 
-            <!-- }); -->
+			});
+			
+			if($(window).width()<1199){
+
+			$(".tab .selected-genre").each(function () { 
+                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
+
+			});
+			
+			}else{
+			
+			
+				$(".desktop .selected-genre").each(function () { 
+                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
+
+			});
+			
+			}
+
         }
 
 
@@ -478,6 +494,7 @@
 		}else{
 			isAbout=true;
 			isPrivacy=false;
+			isPlayListDisplay=false;
 			if($(window).width()<1199){
 				$(".side-bar").css("display", "block");
 			}
@@ -505,6 +522,7 @@
 		}else{
 			isPrivacy=true;
 			isAbout=false;
+			isPlayListDisplay=false;
 			if($(window).width()<1199){
 				$(".side-bar").css("display", "block");
 			}
@@ -516,6 +534,28 @@
 
 			}
 		}
+		
+		var isPlayListDisplay=false;
+		$(document).on('click', '.mobile-nav', function () {
+		if(isPlayListDisplay){
+			isPlayListDisplay=false;
+			$(".side-bar").css("display", "none");
+			$(".playlist").hide();
+			$(".nav-img").attr("src","Images/playlis-mobile.svg");	
+			}else{	
+			isPlayListDisplay=true;
+			isAbout=false;
+			isPrivacy=false;
+			$(".nav-img").attr("src","Images/playlis-mobile-close.svg");
+			$(".side-bar").css("display", "block");
+			$(".about").hide();
+			$(".privacy").hide();
+			$(".about-button").removeClass("about-button-selected");
+			$(".privacy-button").removeClass("privacy-button-selected");
+			$(".playlist").show("slide",{ direction: "right" } , 400);
+			}
+		
+		});
 		
 		$( document ).ready(function() {
 			var availableHeight=$( window ).height() -170 -300;
