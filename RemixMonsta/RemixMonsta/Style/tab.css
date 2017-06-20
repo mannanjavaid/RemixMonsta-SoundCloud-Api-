@@ -405,6 +405,10 @@ display:none;
 .genreList {
     margin: 21px 0px;
 }
+.genreList .genre {
+	line-height:3;
+	
+}
 
 .genre-image {
     margin-left: 6px;
@@ -544,47 +548,48 @@ display:none;
     }
 
 .subscribe {
-    margin-top: 10px;
-    height: 168px;
-    background-image: linear-gradient(129deg, #5300a4, #d025e2);
-    width: 360px;
+    height: 70px;
 }
 
-    .subscribe .title {
-        padding-top: 10px;
-        padding-left: 15px;
-        width: 285px;
-        height: 48px;
-        font-family: Open Sans;
-        font-size: 16px;
-        line-height: 1.5;
-        color: #ffffff;
-    }
+ .contact-us-tab .title { 
+     padding-left: 15px; 
+     width: 35%; 
+     font-family: Open Sans; 
+     font-size: 16px; 
+     line-height: 1.5; 
+     color: #ffffff; 
+     float: left; 
+     margin-top: 10px; 
+     } 
 
-.email {
-    margin-top: 18px;
-    height: 36px;
-    border-radius: 100px;
-    background-image: linear-gradient(99deg, #5300a4, #d025e2);
-    font-family: Open Sans;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 15px;
-    color: #ffffff;
-    margin-bottom: 15px;
-    width: 325px;
-}
+ .contact-us-tab .email { 
+     height: 36px; 
+     border-radius: 100px; 
+     background-image: linear-gradient(99deg, #5300a4, #d025e2); 
+     font-family: Open Sans; 
+     font-size: 16px; 
+     font-weight: bold; 
+     margin-left: 15px; 
+     color: #ffffff; 
+     width: 37%; 
+	 border: 2px solid white; 
+     float: left; 
+     margin-top: 15px; 
+     margin-right: 10px; 
+} 
 
-.submit {
-    margin-left: 15px;
-    height: 36px;
-    border-radius: 100px;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5);
-    border: solid 2px #ffffff;
-    background-image: linear-gradient(109deg, #5300a4, #d025e2);
-    width: 325px;
-	color: rgba(255, 255, 255, 0.6);
-}
+.contact-us-tab .submit { 
+     height: 36px; 
+     border-radius: 100px; 
+     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5); 
+     border: solid 2px #ffffff; 
+     background-image: linear-gradient(109deg, #5300a4, #d025e2); 
+     width: 20%; 
+     color: rgba(255, 255, 255, 0.6); 
+     margin-top: 15px; 
+} 
+
+
 
 .genre-image {
     display: none;
@@ -885,10 +890,14 @@ a.privacy-link-button{
 .navbar.navbar-default.navbar-fixed-bottom.footer {
     border: 0px;
 }
-.navbar-text {
+.controlls{
 	
+}
+.navbar-text {
 	margin-right: 0px; 
     margin-left: 0px; 
+	float:none;
+	width:100%;
 }
 .navbar-text .album-cover{
 }
@@ -966,8 +975,9 @@ font-size: 16px;
 }
 
 .bottom-nav{
-	    margin-bottom: 75px;
+	    margin-bottom: -138px;
 		background:white;
+		clear:both;
 }
 .end-of-trackList{
     height: 95px;
@@ -983,8 +993,24 @@ font-size: 16px;
     height: 69px;
     background-image: linear-gradient(97deg, #5300a4, #d025e2);
     margin-bottom: 138px;
-    text-align: center;
-    padding-top: 22px;
+}
+.contact-us-tab .subscribe{
+	margin-top:0px;
+	background-image: none;
+}
+.contact-us-tab .subscribe .title{
+	height:auto;
+	
+	
+}
+
+.contact-us-tab .subscribe {
+display:block;	
+	
+}
+.subscribe{
+	display:none;
+	
 }
 .contact-us{
     height: 36px;
@@ -1009,6 +1035,7 @@ font-size: 16px;
     background-color: #ffffff;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.23);
     padding-left: 16px;
+	padding-bottom:20px;
 }
 .submit:focus {
     -webkit-box-shadow: none;

@@ -390,8 +390,8 @@ function getTrack(genre, pageSize) {
         for (var i = 0; i < length; i++) {
             trackList.push(tracks[i]);
             var title = tracks[i].title;
-            if (tracks[i].title.length > 40) {
-                title = tracks[i].title.substring(0, 40) + '...';
+            if (tracks[i].title.length > 50) {
+                title = tracks[i].title.substring(0, 50) + '...';
             }
             var selectedClass = 'selected-genre';
 			var text = 'Added';
@@ -428,8 +428,8 @@ function getTrackForSearchResult(query) {
             searchList.push(tracks[i]);
             var index = i;
             var title = tracks[i].title;
-            if (tracks[i].title.length > 40) {
-                title = tracks[i].title.substring(0, 40) + '...';
+            if (tracks[i].title.length > 50) {
+                title = tracks[i].title.substring(0, 50) + '...';
             }
             var selectedClass = 'selected-genre';
             var result = getTrackFromPlayListByid(tracks[i].id);

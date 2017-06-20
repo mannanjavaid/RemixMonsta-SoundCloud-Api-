@@ -68,7 +68,7 @@
                     <div class="headline-area">
                         <h1 class="headline">Choose your favorite genres, and start hunting for best remixes</h1>
                     </div>
-                    <div class="genreList general">
+                    <div class="genreList desktop">
                         <span class="genre ">Latest 25</span>
                         <span class="genre ">Ambient</span>
                         <span class="genre ">Dance &amp; EDM</span>
@@ -87,15 +87,18 @@
                     </div>
 					
 					<div class="genreList tab">
+					   <span class="genre ">Latest 25</span>
+                        <span class="genre ">Ambient</span>
+                        <span class="genre ">Dance &amp; EDM</span>
+                        <span class="genre ">Deep House</span>
+                        <span class="genre ">Drum & Bass</span>
                         <span class="genre">Dubstep</span>
                         <span class="genre ">Electronic</span>
                         <span class="genre selected-genre">House</span>
                         <span class="genre ">Pop</span>
                         <span class="genre ">Reggae</span>
                         <span class="genre ">Reggaeton</span>
-                    </div>
-					<div class="genreList tab">
-                        <span class="genre ">Techno</span>
+						<span class="genre ">Techno</span>
                         <span class="genre ">Trap</span>
                     </div>
 
@@ -122,8 +125,25 @@
 					Sorry you have reached the end of the list 😿, try adding another genre for more remixes, or search.
 				</div>
 				<div class="contact-us-tab">
-					<span class="contact-us">CONTACT US 👏 <img src="Images/icon-arrow.svg" width="18"></img></span>
+											<div class="subscribe">
+                        <form>
+                            <div class="title">
+                                Don't miss out newest feature  and announcement from us!
+                            </div>
+                            <input class="email form-control" type="email" placeholder="Enter you email address " />
+                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"></input>
+                        </form>
+                    </div>
 				</div>
+				<div class="bottom-nav-wrapper">
+					<div class="bottom-nav">
+						<ul class="nav navbar-nav navbar-center ">
+							<li><a target="_blank" href="https://twitter.com/Remixmonsta_App"><img class="twitter" src="Images/twitter.svg" alt="tweeter" onmouseover="this.src='Images/twitter-hover.svg';" onmouseout="this.src='Images/twitter.svg';"></a></li>
+							<li><a class="about-button" onclick="toggleAboutDisplay()">ABOUT</a></li>
+							<li><a class="privacy-button" onclick="togglePrivacyDisplay()"> PRIVACY POLICY</a></li>
+					</ul>
+				</div>
+			</div>
                 <div class="back_to_main hide" style="margin-bottom: 135px;" >
                     Back to main Page
                 </div>
@@ -208,15 +228,7 @@
         </div>
 
     </div>
-	<div class="bottom-nav-wrapper">
-		<div class="bottom-nav navbar-fixed-bottom">
-                <ul class="nav navbar-nav navbar-center ">
-                    <li><a target="_blank" href="https://twitter.com/Remixmonsta_App"><img class="twitter" src="Images/twitter.svg" alt="tweeter" onmouseover="this.src='Images/twitter-hover.svg';" onmouseout="this.src='Images/twitter.svg';"></a></li>
-                    <li><a class="about-button" onclick="toggleAboutDisplay()">ABOUT</a></li>
-                    <li><a class="privacy-button" onclick="togglePrivacyDisplay()"> PRIVACY POLICY</a></li>
-                </ul>
-		</div>
-	  </div>
+
 
 
     <div class="navbar navbar-default navbar-fixed-bottom footer">
@@ -297,11 +309,7 @@
         function updateTrackList() {
             $('.trackList').text("");
             trackList = [];
-			
-			$(".general .selected-genre").each(function () { 
-                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
-
-			});
+		
 			
 			if($(window).width()<1199){
 
@@ -364,8 +372,18 @@
 
 
 
-        $(document).on('click', '.trackList .album-cover-overlay', function () {
-            var index = $(this).parent().parent().find('.song-number').text();
+        <!-- $(document).on('click', '.trackList .album-cover-overlay', function () { -->
+            <!-- var index = $(this).parent().parent().find('.song-number').text(); -->
+            <!-- $(this).find('.genre').toggleClass("selected-genre"); -->
+            <!-- var track = trackList[index - 1]; -->
+            <!-- isPlaylist = false; -->
+            <!-- isSearch = false; -->
+            <!-- playSong(track); -->
+			
+
+        <!-- }); -->
+		 $(document).on('click', '.trackList .song-info', function () {
+            var index = $(this).parent().find('.song-number').text();
             $(this).find('.genre').toggleClass("selected-genre");
             var track = trackList[index - 1];
             isPlaylist = false;
@@ -374,6 +392,18 @@
 			
 
         });
+		
+		$(document).on('click', '.trackList .play-count', function () {
+            var index = $(this).parent().find('.song-number').text();
+            $(this).find('.genre').toggleClass("selected-genre");
+            var track = trackList[index - 1];
+            isPlaylist = false;
+            isSearch = false;
+            playSong(track);
+			
+
+        });
+		
 
         $(document).on('click', '.search_result .album-cover-overlay', function () {
             var index = $(this).parent().parent().find('.song-number').text();
@@ -386,7 +416,14 @@
 
         $(document).on('click', '.playlist-songs .album-cover-overlay', function () {
             var classString = $(this).parent().attr('class');
-            var id = classString.substring(16);
+			var parts=classString.split(" ");
+			var id =0;
+			if(parts.length==3){
+			 id= parts[1].substring(6);
+			}else{
+			 id= classString.substring(16);
+			}
+           
             var track = getTrackFromPlayListByid(id);
             isPlaylist = true;
             isSearch = false;;
@@ -558,8 +595,12 @@
 		});
 		
 		$( document ).ready(function() {
+		if($(window).width()<1199){
+			$('.playlist-songs').height(400);
+		} else{
 			var availableHeight=$( window ).height() -170 -300;
 			$('.playlist-songs').height( availableHeight);
+		}
 		});
 		
     </script>
