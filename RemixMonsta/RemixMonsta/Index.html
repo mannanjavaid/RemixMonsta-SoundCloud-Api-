@@ -234,7 +234,7 @@
     <div class="navbar navbar-default navbar-fixed-bottom footer">
         <span class="song-timeline_big"><span class="timeline_big"></span></span>
         <div class="container">
-            <div class="navbar-text pull-left">
+            <div class="navbar-text">
 				<span class="album-cover-wrapper">
 					<img src="Images/favicon.png" class="album-cover default-album-cover" />
 				</span>
@@ -259,8 +259,13 @@
         $(".controlls .volume").click(function (e) {
             clearTimeout(id);
             $('.volume-line').toggle("volume_visible");
-			$('.soundcloud-logo').toggle();
+			
             id = setTimeout("$('.volume-line').hide();$('.soundcloud-logo').show();", 5000);
+			if($(window).width()<1199){
+				
+			}else{
+				$('.soundcloud-logo').toggle();
+			}
 
         });
 
@@ -441,6 +446,8 @@
 			if($(window).width()<1199){
 				$(".end-of-trackList").css("display", "none");
 				$(".contact-us-tab").css("display", "none");
+				$(".bottom-nav-wrapper").css("display", "none");
+				
 				
 				
 			}
@@ -508,6 +515,7 @@
 			if($(window).width()<1199){
 				$(".end-of-trackList").css("display", "block");
 				$(".contact-us-tab").css("display", "block");
+				$(".bottom-nav-wrapper").css("display", "block");
 				}
 			}
 

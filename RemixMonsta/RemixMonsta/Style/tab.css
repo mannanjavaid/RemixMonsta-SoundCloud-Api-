@@ -128,7 +128,7 @@ img.album-cover {
 
 
 .input-group {
-    width: 318px;
+    width: 280px;
 }
 
 .form-control:focus {
@@ -248,7 +248,7 @@ img.album-cover {
     text-align: center;
     color: white;
     font-weight: bold;
-	margin-right: 50px;
+	margin-right: 10px;
 }
 
 .song-timeline {
@@ -891,7 +891,7 @@ a.privacy-link-button{
     border: 0px;
 }
 .controlls{
-	
+	float:right;
 }
 .navbar-text {
 	margin-right: 0px; 
