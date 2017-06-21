@@ -618,6 +618,7 @@ float: right;
     display: none;
 }
 .navbar-header{
+	text-align:center;
 	width:100%;
 }
 .navbar-header .back_to_main {
