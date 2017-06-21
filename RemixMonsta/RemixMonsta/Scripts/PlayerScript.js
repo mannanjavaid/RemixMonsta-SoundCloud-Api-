@@ -121,8 +121,8 @@ function addToPlayList(track) {
 function getplayListTrackHtml(track) {
 
     var title = track.title;
-    if (track.title.length > 26) {
-        title = track.title.substring(0, 26) + '...';
+    if (track.title.length > 40) {
+        title = track.title.substring(0, 40) + '...';
 
     }
     var info = '<div class="song-info track-' + track.id + '"><img src="' + track.artwork_url + '" width="70" height="70" class="album-covers" align="left" />' +

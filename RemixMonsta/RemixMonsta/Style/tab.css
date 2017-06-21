@@ -207,20 +207,23 @@ img.album-cover {
 	
 }
 .playlist-songs .now-playing{
-	font-size: 14px;
+    font-size: 14px;
     text-align: left;
     color: #d325e5;
-    margin-top: 2px;
-    display: none;
     width: 106px;
     float: left;
+    margin-top: 25px;
 }
 
 .playlist-songs .hide-overlay{
 	display:none;
 }
+.navbar-text .song-title{
+	    width: 245px;
+	
+}
 .song-title {
-    width: 310px;
+    width: 430px;
     height: 22px;
     font-family: Open Sans;
     font-size: 16px;
@@ -230,6 +233,10 @@ img.album-cover {
     text-overflow: ellipsis;
     overflow: hidden;
 	color: #ffffff;
+}
+.song .song-title{
+	position: absolute;
+	white-space: nowrap;
 }
 
 .footer .album-cover {
@@ -248,7 +255,7 @@ img.album-cover {
     text-align: center;
     color: white;
     font-weight: bold;
-	margin-right: 10px;
+	margin-right: 4px;
 }
 
 .song-timeline {
@@ -504,7 +511,7 @@ display:none;
 
 
 .playlist-songs {
-    padding-top: 16px;
+       margin-top: 15px;
     height: 205px;
     overflow-y: scroll;
     width: 360px;
@@ -520,22 +527,25 @@ display:none;
 
         .playlist-songs .song-info .song-title {
             margin-left: 0px;
+    width: 194px;
+    float: left;
+	overflow: visible;
         }
 
 .playlist-songs .song-info .album-covers {
     margin-right: 10px;
-	cursor: pointer;
-	border-radius:8px;
+    cursor: pointer;
+    border-radius: 8px;
  }
 
 .info {
-        width: 247px;
+    float: left;
+    width: 75%;
 }
 
 .song-duration {
-     float: right;
-    margin-right: -75px;
-    margin-top: -25px
+float: right;
+    margin-right: 15px;
 }
 
 .stats {
@@ -543,8 +553,9 @@ display:none;
 }
 
     .stats .genre {
-        float: right;
-        margin-right: 10px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 25px;
     }
 
 .subscribe {
@@ -565,7 +576,7 @@ display:none;
  .contact-us-tab .email { 
      height: 36px; 
      border-radius: 100px; 
-     background-image: linear-gradient(99deg, #5300a4, #d025e2); 
+      background:transparent;
      font-family: Open Sans; 
      font-size: 16px; 
      font-weight: bold; 
@@ -583,7 +594,7 @@ display:none;
      border-radius: 100px; 
      box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5); 
      border: solid 2px #ffffff; 
-     background-image: linear-gradient(109deg, #5300a4, #d025e2); 
+     background:transparent;
      width: 20%; 
      color: rgba(255, 255, 255, 0.6); 
      margin-top: 15px; 
@@ -612,7 +623,7 @@ display:none;
 .navbar-header .back_to_main {
     margin-top: 9px;
     margin-bottom: 0px;
-    margin-left: 15px;
+    margin-left: 5px;
 }
 .back_to_main {
     display: inline-block;
@@ -981,7 +992,7 @@ font-size: 16px;
 }
 .end-of-trackList{
     height: 95px;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.64;
     padding-left: 24px;
     padding-right: 24px;
