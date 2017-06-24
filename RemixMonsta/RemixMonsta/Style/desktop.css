@@ -1022,4 +1022,11 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 .mobile-nav{
 	display:none;
 }
+.mobile{
+	
+	display:none;
+}
+.mid-list{
+	display:none;
+}
 }

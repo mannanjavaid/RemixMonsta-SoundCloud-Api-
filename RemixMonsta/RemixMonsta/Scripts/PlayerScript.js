@@ -386,7 +386,7 @@ function getTrack(genre, pageSize) {
             length = 25;
         }
 
-
+		$('.mid-list').hide();	
         for (var i = 0; i < length; i++) {
             trackList.push(tracks[i]);
             var title = tracks[i].title;
@@ -408,7 +408,15 @@ function getTrack(genre, pageSize) {
                 '<div class="col-lg-3 now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>'+
 				'<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' / ' + tracks[i].playback_count + '</span> </div></div>'
 
-            $('.trackList').append(songRow);
+			if($(window).width()<768  && i<=15){	
+				$('.trackList').eq(0).append(songRow);
+			}else if($(window).width()<768  && i>15){	
+				$('.mid-list').show();	
+				$('.trackList').eq(1).append(songRow);
+			}else{
+				$('.trackList').eq(0).append(songRow);
+				
+			}
         }
     });
 

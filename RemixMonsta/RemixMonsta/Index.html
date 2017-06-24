@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Remixmonsta</title>
 	<link rel="shortcut icon" href="Images/favicon.png" type="image/vnd.microsoft.icon">
-    <link href="Style/bootstrap.css" rel="stylesheet">
+    <link href="Style/horizon-theme.min.css" rel="stylesheet">
+	  <link href="Style/horizon-swiper.min.css" rel="stylesheet">
+	<link href="Style/bootstrap.css" rel="stylesheet">
 	<link href="Style/desktop.css" rel="stylesheet">
     <link href="Style/mobile.css" rel="stylesheet">
 	<link href="Style/tab.css" rel="stylesheet">
@@ -24,6 +26,7 @@
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="Scripts/moment.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+	 <script src="Scripts/horizon-swiper.min.js"></script>
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 	<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
@@ -43,6 +46,7 @@
 
                     </div>
                 </form>
+				<img class="close-btn hide" onclick="backToMain()" alt="Remixmonsta" style="cursor: pointer" src="Images/remove.svg" width="20" height="20">
 				<div class="mobile-nav">
 					<img class="nav-img" alt="Remixmonsta" src="Images/playlis-mobile.svg" width="28">
 				</div>
@@ -87,19 +91,34 @@
                     </div>
 					
 					<div class="genreList tab">
-					   <span class="genre ">Latest 25</span>
-                        <span class="genre ">Ambient</span>
-                        <span class="genre ">Dance &amp; EDM</span>
-                        <span class="genre ">Deep House</span>
-                        <span class="genre ">Drum & Bass</span>
-                        <span class="genre">Dubstep</span>
-                        <span class="genre ">Electronic</span>
-                        <span class="genre selected-genre">House</span>
-                        <span class="genre ">Pop</span>
-                        <span class="genre ">Reggae</span>
-                        <span class="genre ">Reggaeton</span>
-						<span class="genre ">Techno</span>
-                        <span class="genre ">Trap</span>
+					   <span class="genre horizon-item">Latest 25</span>
+                        <span class="genre horizon-item">Ambient</span>
+                        <span class="genre horizon-item">Dance &amp; EDM</span>
+                        <span class="genre horizon-item">Deep House</span>
+                        <span class="genre horizon-item">Drum & Bass</span>
+                        <span class="genre horizon-item">Dubstep</span>
+                        <span class="genre horizon-item">Electronic</span>
+                        <span class="genre horizon-item selected-genre">House</span>
+                        <span class="genre horizon-item">Pop</span>
+                        <span class="genre horizon-item">Reggae</span>
+                        <span class="genre horizon-item">Reggaeton</span>
+						<span class="genre horizon-item">Techno</span>
+                        <span class="genre horizon-item">Trap</span>
+                    </div>
+					<div class="genreList mobile">
+					   <span class="genre horizon-item">Latest 25</span>
+                        <span class="genre horizon-item">Ambient</span>
+                        <span class="genre horizon-item">Dance &amp; EDM</span>
+                        <span class="genre horizon-item">Deep House</span>
+                        <span class="genre horizon-item">Drum & Bass</span>
+                        <span class="genre horizon-item">Dubstep</span>
+                        <span class="genre horizon-item">Electronic</span>
+                        <span class="genre horizon-item selected-genre">House</span>
+                        <span class="genre horizon-item">Pop</span>
+                        <span class="genre horizon-item">Reggae</span>
+                        <span class="genre horizon-item">Reggaeton</span>
+						<span class="genre horizon-item">Techno</span>
+                        <span class="genre horizon-item">Trap</span>
                     </div>
 
                     <div class="row information">
@@ -115,10 +134,19 @@
 
                     </div>
                 </div>
-                <div class="trackList">
-
-
-                </div>
+                <div class="trackList"></div>
+				<div class="contact-us-tab mid-list">
+											<div class="subscribe">
+                        <form>
+                            <div class="title">
+                                Don't miss out newest feature  and announcement from us!
+                            </div>
+                            <input class="email form-control" type="email" placeholder="Enter you email address " />
+                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"></input>
+                        </form>
+                    </div>
+				</div>
+				<div class="trackList"></div>
                 <div class="search_result">
                 </div>
 				<div class="end-of-trackList">
@@ -147,7 +175,6 @@
                 <div class="back_to_main hide" style="margin-bottom: 135px;" >
                     Back to main Page
                 </div>
-
             </div>
 
             <div class="col-lg-3  side-bar">
@@ -446,15 +473,31 @@
 			if($(window).width()<1199){
 				$(".end-of-trackList").css("display", "none");
 				$(".contact-us-tab").css("display", "none");
-				$(".bottom-nav-wrapper").css("display", "none");
-				
-				
-				
+				$(".bottom-nav-wrapper").css("display", "none");				
 			}
-			
+				if($(window).width()<768){
+				$(".close-btn").removeClass("hide",1000,"linear");
+				}
 			
             $(".back_to_main").removeClass("hide",1000,"linear");
         });
+		
+		  $(document).on('mousedown', '.search-icon', function () {
+            
+			if($(window).width()<768){
+				$(".logo").hide();
+				$(".searchBox").addClass("mob-search");
+
+			}			
+        });
+		
+		<!-- $(document).on('focusout', '.searchBox', function () { -->
+            
+			<!-- if($(window).width()<768){	 -->
+				<!-- $(".logo").show(); -->
+				<!-- $(".searchBox").removeClass("mob-search");	 -->
+			<!-- }			 -->
+        <!-- }); -->
 		 
 		 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
 		$(document).on('keyup', '.email', function () {
@@ -512,12 +555,17 @@
             $(".main_container").css("display", "block");
             $(".trackList").css("display", "block");
             $('.searchBox').val("");
+			$(".close-btn").addClass("hide");
+			$(".logo").show();
+			$(".searchBox").removeClass("mob-search");
 			if($(window).width()<1199){
 				$(".end-of-trackList").css("display", "block");
 				$(".contact-us-tab").css("display", "block");
 				$(".bottom-nav-wrapper").css("display", "block");
 				}
 			}
+			
+
 
         $(document).ready(function () {
             loadPlayList();
@@ -602,7 +650,8 @@
 		
 		});
 		
-		$( document ).ready(function() {
+		$( document ).ready(function() {	
+			$('.mobile').horizonSwiper({'arrows':false});		
 		if($(window).width()<1199){
 			$('.playlist-songs').height(400);
 		} else{
