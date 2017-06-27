@@ -171,7 +171,12 @@
 							<li><a class="privacy-button" onclick="togglePrivacyDisplay()"> PRIVACY POLICY</a></li>
 					</ul>
 				</div>
+											<div class="powered-by">
+				<p>© 2017 Peter Javorkai</p>
+				<p style="font-size:12px">powered by <img style="margin-top:-20px"  alt="logo" src="Images/Soundcloud_logo_mob.svg"></p>
+				</div>
 			</div>
+
                 <div class="back_to_main hide" style="margin-bottom: 135px;" >
                     Back to main Page
                 </div>
@@ -339,18 +344,26 @@
         });
 
         function updateTrackList() {
-            $('.trackList').text("");
+			$('.trackList').eq(0).text("");
+			$('.trackList').eq(1).text("");
+			$('.mid-list').hide();
             trackList = [];
 		
 			
-			if($(window).width()<1199){
+			if($(window).width()<1199 &&  $(window).width()>=768){
 
 			$(".tab .selected-genre").each(function () { 
                 getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
 
 			});
 			
-			}else{
+			}else if($(window).width()<768){
+				$(".mobile .selected-genre").each(function () { 
+                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
+
+			});
+			}
+			else{
 			
 			
 				$(".desktop .selected-genre").each(function () { 
@@ -475,9 +488,6 @@
 				$(".contact-us-tab").css("display", "none");
 				$(".bottom-nav-wrapper").css("display", "none");				
 			}
-				if($(window).width()<768){
-				$(".close-btn").removeClass("hide",1000,"linear");
-				}
 			
             $(".back_to_main").removeClass("hide",1000,"linear");
         });
@@ -485,7 +495,9 @@
 		  $(document).on('mousedown', '.search-icon', function () {
             
 			if($(window).width()<768){
+				$(".close-btn").removeClass("hide",1000,"linear");
 				$(".logo").hide();
+				$('.navbar-form').css("left","0");
 				$(".searchBox").addClass("mob-search");
 
 			}			
@@ -563,6 +575,9 @@
 				$(".contact-us-tab").css("display", "block");
 				$(".bottom-nav-wrapper").css("display", "block");
 				}
+			if($(window).width()<768){
+				$('.navbar-form').css("left","");	
+			}	
 			}
 			
 

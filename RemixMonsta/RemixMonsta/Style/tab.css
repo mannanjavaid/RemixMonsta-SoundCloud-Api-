@@ -1108,7 +1108,9 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 	display:none;
 	    margin-bottom: 0px;
 }
-
+.powered-by{
+	display:none;
+}
 }
 
 

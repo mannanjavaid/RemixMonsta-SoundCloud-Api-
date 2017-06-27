@@ -1029,4 +1029,8 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 .mid-list{
 	display:none;
 }
+.powered-by{
+	
+	display:none;
+}
 }

@@ -4,8 +4,12 @@
 }
 
 .mobile-nav{
-	float: right;
-    margin-top: 13px;
+    float: right;
+    border-left: 1px solid #e0e0e0;
+    padding-left: 16px;
+    margin-top: 8px;
+    padding-bottom: 6px;
+    padding-top: 7px;
 }
 
 .row{
@@ -40,8 +44,8 @@ img.album-cover {
 }
 .container{
 	width:100%;
-	padding-right: 15px; 
-     padding-left: 15px; 
+	padding-right: 16px; 
+     padding-left: 16px; 
     margin-right: auto;
     margin-left: auto;
 }
@@ -105,9 +109,11 @@ input.form-control.searchBox {
 
 .navbar-form {
     padding: 0px;
-	border:0px;
-	margin-left:0px;
-	float: left !important;
+    border: 0px;
+    margin-left: 0px;
+    /* float: left !important; */
+    right: 82px;
+    position: absolute;
 }
 
 .bottom-nav .navbar-nav > li > a {
@@ -132,7 +138,9 @@ input.form-control.searchBox {
 .search-icon {
 }
 .close-btn{
-	margin-top: 14px;
+	    right: 76px;
+    margin-top: 14px;
+    position: absolute;
 }
 
 
@@ -335,7 +343,10 @@ display:none;
 	
 }
 .song-timer {
-	display:none;
+	    left: 83px;
+    position: absolute;
+    bottom: 17px;
+    color: white;
 }
 
 .song-timer .total-time {
@@ -351,8 +362,9 @@ display:none;
 
 .footer .song-title {
     display: inline-block;
-    margin-bottom: -4px;
     white-space: nowrap;
+    position: absolute;
+	    top: 12px;
 }
 .headline {
 width: 100%;
@@ -369,7 +381,10 @@ width: 100%;
 }
 
 .headline-area {
-    margin-bottom: 10px;
+
+	    margin-bottom: 10px;
+    margin-left: -16px;
+    margin-right: -16px;
 }
 
 .playlist-title {
@@ -501,29 +516,39 @@ display:none;
     }
 
 
-
+.soundcloud-logo{
+		
+		
+			display:none;
+	}
 .controlls img {
     margin-left: 15px;
 	cursor: pointer;
 
+
 }
 
 .song .play-count {
-    text-align: LEFT;
+text-align: left;
     padding: 0px;
     margin-top: -18px;
     margin-left: 64PX;
-	    width: 148px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    max-width: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .shuffle-big {
     margin-top: 20px;
     width: 343px;
-    height: 32px;
+    height: 38px;
     border-radius: 100px;
     background-image: linear-gradient(99deg, #5300a4, #d025e2);
     font-family: Open Sans;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: bold;
     color: #ffffff;
     text-align: center;
@@ -608,20 +633,17 @@ float: right;
     font-family: Open Sans;
     font-size: 16px;
     font-weight: bold;
-    margin-left: 15px;
     color: #ffffff;
     margin-bottom: 15px;
-    width: auto;
 } 
 
 .contact-us-tab .submit { 
-    margin-left: 15px;
     height: 36px;
     border-radius: 100px;
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5);
     border: solid 2px #ffffff;
     background: transparent;
-        width: 229px;
+    width: 100%;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -645,7 +667,8 @@ float: right;
 }
 .navbar-header{
 	text-align:center;
-	width:100%;
+	margin-left: -15px !important;
+    margin-right: 0px !important;
 }
 .navbar-header .back_to_main {
 display:none;
@@ -928,7 +951,8 @@ a.privacy-link-button{
     border: 0px;
 }
 .controlls{
-	float:right;
+	    float: right;
+    margin-top: 9px;
 }
 .navbar-text {
 	margin-right: 0px; 
@@ -942,6 +966,10 @@ a.privacy-link-button{
 	
 	box-shadow: none;
 }
+.shuffle-big img{
+	
+	display:inline-block;
+}
 .random_song{
 	display:none;
 }
@@ -951,10 +979,12 @@ a.privacy-link-button{
     font-size: 16px;
     text-align: right;
     color: #d325e5;
-    margin-top: -15px;
+    margin-top: -24px;
     display: none;
     float: right;
     width: 145px;
+    position: absolute;
+    right: 0px;
 }
 .rectangle-1 {
     border-radius: 2px;
@@ -1009,15 +1039,16 @@ a.privacy-link-button{
 }
 
 .bottom-nav{
-margin-bottom: -132px;
+margin-bottom: -210px;
     background: white;
     clear: both;
 }
 .end-of-trackList{
-display:none;
+display:none !important;
 }
+
 .contact-us-tab{
-    margin-bottom: 138px;
+    margin-bottom: 210px;
 }
 .contact-us-tab .subscribe{
 	margin-top:0px;
@@ -1033,6 +1064,7 @@ padding-left: 10px;
     line-height: 1.5;
     color: #ffffff;
 	    text-align: center;
+
 	
 	
 }
@@ -1043,6 +1075,10 @@ padding-left: 10px;
     height: 168px;
     background-image: linear-gradient(129deg, #5300a4, #d025e2);
     text-align: -webkit-center;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
 	
 }
 .subscribe{
@@ -1065,7 +1101,7 @@ padding-left: 10px;
 	
 }
 .playlist{
-	top: 40px;
+	top: 60px;
     right: 0px;
     position: fixed;
     background: white;
@@ -1095,7 +1131,7 @@ padding-left: 10px;
 	    width: 1350px
 }
 .mob-search{
-	width: 160px!important;
+	width: 85%!important;
     box-shadow: none;
 	-webkit-transition: width 0.3s;
 	-moz-transition: width 0.3s;
@@ -1145,14 +1181,28 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 	display:none;
 	    margin-bottom: 0px;
 }
+.powered-by{
+	
+    clear: both;
+    font-family: OpenSans;
+    font-size: 17px;
+    color: #bbbbbb;
+    text-align: center;
+    background-color: #e0e0e0;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 }
 
 @media (max-width: 412px){
 	
 .navbar-text .song-title{
-	width:16%;
+	width:38%;
 	
 }
+
 .bottom-nav .navbar-nav{
 	
 	margin-left: 0px;
@@ -1160,7 +1210,12 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 }
 
 
-
+@media (min-width: 412px) and (max-width: 768px){
+	.song .play-count {
+	max-width:180px;
+}
+	
+}
 
 
 
