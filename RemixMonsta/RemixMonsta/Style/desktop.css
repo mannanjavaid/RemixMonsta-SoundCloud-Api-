@@ -173,6 +173,7 @@ body{
     display: none;
     width: 106px;
     float: left;
+	 margin-top: 25px;
 }
 
 .playlist-songs .hide-overlay{

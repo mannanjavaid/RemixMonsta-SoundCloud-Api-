@@ -234,6 +234,8 @@ input.form-control.searchBox {
     width: 106px;
     float: left;
     margin-top: 25px;
+	position: relative;
+		
 }
 
 .playlist-songs .hide-overlay{
