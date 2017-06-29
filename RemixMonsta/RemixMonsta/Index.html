@@ -667,9 +667,13 @@
 		
 		$( document ).ready(function() {	
 			$('.mobile').horizonSwiper({'arrows':false});		
-		if($(window).width()<1199){
-			$('.playlist-songs').height(400);
-		} else{
+		if($(window).width()<768){
+			$('.playlist-songs').height($( window ).height()-225);
+		}
+		else if($(window).width()>768 && $(window).width()<1199){
+			$('.playlist-songs').height($( window ).height()-290);	
+		}
+		else{
 			var availableHeight=$( window ).height() -170 -300;
 			$('.playlist-songs').height( availableHeight);
 		}

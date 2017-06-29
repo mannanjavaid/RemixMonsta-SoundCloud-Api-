@@ -7,9 +7,10 @@
     float: right;
     border-left: 1px solid #e0e0e0;
     padding-left: 16px;
-    margin-top: 8px;
-    padding-bottom: 6px;
+    margin-top: 7px;
+    padding-bottom: 7px;
     padding-top: 7px;
+    margin-bottom: 7px;
 }
 
 .row{
@@ -76,6 +77,8 @@ img.album-cover {
     background-color: #fff;
     border: 0px;
     width: 20px;
+	padding:0px;
+	padding-left:16px;
 }
 
 input.form-control.searchBox {
@@ -97,7 +100,8 @@ input.form-control.searchBox {
 .navbar-brand {
     padding: 0px;
     padding-left: 16px;
-    margin-top: 9px;
+    margin-top: 10px;
+	margin-bottom:10px;
 }
 
 .navbar {
@@ -114,6 +118,7 @@ input.form-control.searchBox {
     /* float: left !important; */
     right: 82px;
     position: absolute;
+	margin:0px;
 }
 
 .bottom-nav .navbar-nav > li > a {
@@ -132,20 +137,23 @@ input.form-control.searchBox {
 
 .logo {
     width: 181px;
-    height: 40px;
+	height:36px;
 }
 
 .search-icon {
 }
 .close-btn{
-	    right: 76px;
-    margin-top: 14px;
+    right: 76px;
+    margin-top: 18px;
     position: absolute;
+    margin-bottom: 18px;
 }
 
 
 .input-group {
     width: 100%;
+	    margin-right: -6px;
+		padding:0px;
 }
 
 .form-control:focus {
@@ -357,7 +365,7 @@ display:none;
 
 .song-info .song-title {
     font-family: Open Sans;
-    font-size: 16px;
+    font-size: 14px;
     color: #212121;
     font-weight: normal;
 }
@@ -369,17 +377,14 @@ display:none;
 	    top: 12px;
 }
 .headline {
-width: 100%;
+    width: 100%;
     font-family: Open Sans;
     font-size: 24px;
     line-height: 1.5;
     color: white;
     margin: 0px;
     background-image: linear-gradient(95deg, #5300a4, #d025e2);
-    padding-left: 8px;
-    padding-right: 8px;
-	padding-bottom: 3px;
-    text-align: justify;
+    padding: 10px;
 }
 
 .headline-area {
@@ -395,6 +400,7 @@ width: 100%;
     font-size: 24px;
     line-height: 1.5;
     color: #616161;
+	padding-left:16px;
 }
 
 .genre {
@@ -404,7 +410,6 @@ width: 100%;
     font-family: Open Sans;
     font-size: 16px;
     padding: 5px 13px;
-    margin-right: 5px;
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -487,6 +492,8 @@ display:none;
     padding-top: 12px;
     padding-bottom: 12px;
 	border-bottom: 1px solid #e0e0e0;
+	    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .song-number {
@@ -496,6 +503,7 @@ display:none;
 .playlist-info {
     font-weight: normal;
     color: #9e9e9e;
+	padding-left:16px;
 }
 
 
@@ -545,7 +553,7 @@ text-align: left;
 
 .shuffle-big {
     margin-top: 20px;
-    width: 343px;
+    width: 327px;
     height: 38px;
     border-radius: 100px;
     background-image: linear-gradient(99deg, #5300a4, #d025e2);
@@ -561,6 +569,7 @@ text-align: left;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+	margin-left:16px;
 }
 
 
@@ -568,7 +577,7 @@ text-align: left;
        margin-top: 15px;
     height: 205px;
     overflow-y: scroll;
-    width: 360px;
+    width: 376px;
 }
 
 
@@ -577,6 +586,7 @@ text-align: left;
         height: 110px;
         padding-top: 16px;
 		width:100%;
+		padding-left:16px;
     }
 
         .playlist-songs .song-info .song-title {
@@ -658,6 +668,8 @@ float: right;
 
 .trackList {
 	border-top: 2px solid #e0e0e0;
+	    margin-left: -16px;
+    margin-right: -16px;
 }
 
 .affix {
@@ -1109,7 +1121,6 @@ padding-left: 10px;
     background: white;
     background-color: #ffffff;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.23);
-    padding-left: 16px;
 	padding-bottom:20px;
 	zoom: 85%;
 }
@@ -1124,9 +1135,11 @@ padding-left: 10px;
 	border:2px solid white;
 }
 .search-icon img{
-	cursor:pointer;
-	width:20px;
-	height:20px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-top: 16px;
+    margin-bottom: 15px;
 	
 }
 .horizon-inner{
@@ -1138,6 +1151,8 @@ padding-left: 10px;
 	-webkit-transition: width 0.3s;
 	-moz-transition: width 0.3s;
 	transition: width 0.3s;
+	    margin-top: 9px;
+    margin-left: 8px;
 }
 *::-webkit-input-placeholder {
     color:  #9E9E9E ;

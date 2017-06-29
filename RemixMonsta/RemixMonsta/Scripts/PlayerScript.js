@@ -390,8 +390,8 @@ function getTrack(genre, pageSize) {
         for (var i = 0; i < length; i++) {
             trackList.push(tracks[i]);
             var title = tracks[i].title;
-            if (tracks[i].title.length > 50) {
-                title = tracks[i].title.substring(0, 50) + '...';
+            if (tracks[i].title.length > 80) {
+                title = tracks[i].title.substring(0, 80) + '...';
             }
             var selectedClass = 'selected-genre';
 			var text = 'Added';
