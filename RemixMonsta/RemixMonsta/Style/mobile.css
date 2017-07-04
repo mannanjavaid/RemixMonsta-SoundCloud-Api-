@@ -35,6 +35,9 @@ img.album-cover {
     margin-top: 0px;
     margin-bottom: 0px;
 }
+.genreList.mobile .genre{
+	margin-right:8px;
+}
 .genreList.tab{
 	    display: none;
 
@@ -177,9 +180,6 @@ input.form-control.searchBox {
     position: relative;
 	
 }
-.bottom-nav .navbar-nav{
-	margin-left:25%;
-}
 
 .navbar-nav {
     float: left;
@@ -251,6 +251,7 @@ input.form-control.searchBox {
 }
 .navbar-text .song-title{
 	    width: 37%;
+		font-size:14px;
 	
 }
 .song-title {
@@ -353,10 +354,11 @@ display:none;
 	
 }
 .song-timer {
-	    left: 83px;
+    left: 80px;
     position: absolute;
     bottom: 17px;
     color: white;
+    font-size: 12px;
 }
 
 .song-timer .total-time {
@@ -385,6 +387,8 @@ display:none;
     margin: 0px;
     background-image: linear-gradient(95deg, #5300a4, #d025e2);
     padding: 10px;
+	padding-left: 16px;
+    padding-right: 16px;
 }
 
 .headline-area {
@@ -798,7 +802,7 @@ display:none;
 	padding-right:4px !important;
 	padding-top:4px !important;
 	padding-bottom:3px !important;
-	margin-bottom:14px;
+	margin-bottom:0px;
 	
 }
 
@@ -1061,9 +1065,7 @@ margin-bottom: -210px;
 display:none !important;
 }
 
-.contact-us-tab{
-    margin-bottom: 210px;
-}
+
 .contact-us-tab .subscribe{
 	margin-top:0px;
 	background-image: none;
@@ -1072,12 +1074,12 @@ display:none !important;
 padding-left: 10px;
     padding-right: 10px;
     width: 100%;
-    height: 48px;
     font-family: Open Sans;
     font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
-	    text-align: center;
+	text-align: center;
+	margin-bottom: 8px;
 
 	
 	
@@ -1143,7 +1145,7 @@ padding-left: 10px;
 	
 }
 .horizon-inner{
-	    width: 1350px
+	    width: 1550px
 }
 .mob-search{
 	width: 85%!important;
@@ -1210,6 +1212,14 @@ input:focus::-webkit-input-placeholder { color:  white ; }
     margin-right: -16px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 70px;
+}
+.bottom-nav .navbar-nav{
+	
+	width: 315px;
+    margin: 0 auto;
+	    float: none;
+
 }
 }
 
@@ -1222,7 +1232,9 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 
 .bottom-nav .navbar-nav{
 	
-	margin-left: 0px;
+	width: 300px;
+    margin: 0 auto;
+
 }
 }
 
