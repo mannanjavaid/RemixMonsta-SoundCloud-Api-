@@ -31,6 +31,7 @@
 	<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <script src="Scripts/PlayerScript.js"></script>
+	
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -137,11 +138,12 @@
                 <div class="trackList"></div>
 				<div class="contact-us-tab mid-list">
 											<div class="subscribe">
-                        <form>
+                            <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" >
+
                             <div class="title">
                                 Don't miss out newest feature  and announcement from us!
                             </div>
-                            <input class="email form-control" type="email" placeholder="Enter you email address " />
+                            <input name="EMAIL" class="email form-control" type="email" placeholder="Enter you email address " required />
                             <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"></input>
                         </form>
                     </div>
@@ -154,12 +156,12 @@
 				</div>
 				<div class="contact-us-tab">
 											<div class="subscribe">
-                        <form>
+                       <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" >
                             <div class="title">
                                 Don't miss out newest feature  and announcement from us!
                             </div>
-                            <input class="email form-control" type="email" placeholder="Enter you email address " />
-                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"></input>
+                            <input name="EMAIL" class="email form-control" type="email" placeholder="Enter you email address " required />
+                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"  name="subscribe" id="mc-embedded-subscribe" ></input>
                         </form>
                     </div>
 				</div>
@@ -196,11 +198,12 @@
                         <div class="playlist-songs">
                         </div>
 						<div class="subscribe">
-                        <form>
+                        <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" >
+
                             <div class="title">
                                 Don't miss out newest feature  and announcement from us!
                             </div>
-                            <input class="email form-control" type="email" placeholder="Enter you email address " />
+                            <input name="EMAIL" class="email form-control" type="email" placeholder="Enter you email address " required />
                             <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"></input>
                         </form>
                     </div>
@@ -522,6 +525,11 @@
 			}
         });
 		 
+
+		
+		 
+		 
+		 
 		$(document).on('mouseover', '.album-cover', function () {
 			var parent=$(this).parent();
 			parent.find(".album-cover-overlay").removeClass("hide-overlay");		
@@ -642,6 +650,8 @@
 
 			}
 		}
+		
+	
 		
 		var isPlayListDisplay=false;
 		$(document).on('click', '.mobile-nav', function () {
