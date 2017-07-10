@@ -74,48 +74,48 @@
                         <h1 class="headline">Choose your favorite genres, and start hunting for best remixes</h1>
                     </div>
                     <div class="genreList desktop">
-                        <span class="genre ">Latest 25</span>
-                        <span class="genre ">Ambient</span>
-                        <span class="genre ">Dance &amp; EDM</span>
-                        <span class="genre ">Deep House</span>
-                        <span class="genre ">Drum & Bass</span>
+					   <span class="genre horizon-item selected-genre">Latest 25</span>
+                        <span class="genre horizon-item">Ambient</span>
+                        <span class="genre horizon-item selected-genre">Dance &amp; EDM</span>
+                        <span class="genre horizon-item">Deep House</span>
+                        <span class="genre horizon-item">Drum & Bass</span>
                     </div>
                     <div class="genreList desktop">
-                        <span class="genre">Dubstep</span>
-                        <span class="genre ">Electronic</span>
-                        <span class="genre selected-genre">House</span>
-                        <span class="genre ">Pop</span>
-                        <span class="genre ">Reggae</span>
-                        <span class="genre ">Reggaeton</span>
-                        <span class="genre ">Techno</span>
-                        <span class="genre ">Trap</span>
+                        <span class="genre horizon-item">Dubstep</span>
+                        <span class="genre horizon-item">Electronic</span>
+                        <span class="genre horizon-item selected-genre">House</span>
+                        <span class="genre horizon-item selected-genre">Pop</span>
+                        <span class="genre horizon-item">Reggae</span>
+                        <span class="genre horizon-item">Reggaeton</span>
+						<span class="genre horizon-item">Techno</span>
+                        <span class="genre horizon-item">Trap</span>
                     </div>
 					
 					<div class="genreList tab">
-					   <span class="genre horizon-item">Latest 25</span>
+					   <span class="genre horizon-item selected-genre">Latest 25</span>
                         <span class="genre horizon-item">Ambient</span>
-                        <span class="genre horizon-item">Dance &amp; EDM</span>
+                        <span class="genre horizon-item selected-genre">Dance &amp; EDM</span>
                         <span class="genre horizon-item">Deep House</span>
                         <span class="genre horizon-item">Drum & Bass</span>
                         <span class="genre horizon-item">Dubstep</span>
                         <span class="genre horizon-item">Electronic</span>
                         <span class="genre horizon-item selected-genre">House</span>
-                        <span class="genre horizon-item">Pop</span>
+                        <span class="genre horizon-item selected-genre">Pop</span>
                         <span class="genre horizon-item">Reggae</span>
                         <span class="genre horizon-item">Reggaeton</span>
 						<span class="genre horizon-item">Techno</span>
                         <span class="genre horizon-item">Trap</span>
                     </div>
 					<div class="genreList mobile">
-					   <span class="genre horizon-item">Latest 25</span>
+					   <span class="genre horizon-item selected-genre">Latest 25</span>
                         <span class="genre horizon-item">Ambient</span>
-                        <span class="genre horizon-item">Dance &amp; EDM</span>
+                        <span class="genre horizon-item selected-genre">Dance &amp; EDM</span>
                         <span class="genre horizon-item">Deep House</span>
                         <span class="genre horizon-item">Drum & Bass</span>
                         <span class="genre horizon-item">Dubstep</span>
                         <span class="genre horizon-item">Electronic</span>
                         <span class="genre horizon-item selected-genre">House</span>
-                        <span class="genre horizon-item">Pop</span>
+                        <span class="genre horizon-item selected-genre">Pop</span>
                         <span class="genre horizon-item">Reggae</span>
                         <span class="genre horizon-item">Reggaeton</span>
 						<span class="genre horizon-item">Techno</span>
@@ -155,13 +155,13 @@
 					Sorry you have reached the end of the list 😿, try adding another genre for more remixes, or search.
 				</div>
 				<div class="contact-us-tab">
-											<div class="subscribe">
+					<div class="subscribe">
                        <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" >
                             <div class="title">
                                 Don't miss out newest feature  and announcement from us!
                             </div>
-                            <input name="EMAIL" class="email form-control" type="email" placeholder="Enter you email address " required />
-                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"  name="subscribe" id="mc-embedded-subscribe" ></input>
+                            <input name="EMAIL" class="email form-control email1" type="email" placeholder="Enter you email address " required />
+                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit submit1"  name="subscribe" id="mc-embedded-subscribe" ></input>
                         </form>
                     </div>
 				</div>
@@ -203,8 +203,8 @@
                             <div class="title">
                                 Don't miss out newest feature  and announcement from us!
                             </div>
-                            <input name="EMAIL" class="email form-control" type="email" placeholder="Enter you email address " required />
-                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"></input>
+                            <input name="EMAIL" class="email form-control email2" type="email" placeholder="Enter you email address " required />
+                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit submit2"></input>
                         </form>
                     </div>
                     </div>
@@ -311,11 +311,20 @@
         });
         $(".controlls .play_song").click(function (e) {
 
-            if (player != null) {
-
-                if (player.isPlaying()) {
-
-                    player.pause();
+            if (player != null) {	
+				if(isFirstPlayBack){
+				
+				$("#"+currentTrack.id+" .add-playlist").toggle();
+				$("#"+currentTrack.id+" .now-playing").toggle();				
+				$(".track-"+currentTrack.id+" .genre").toggle();
+				$(".track-"+currentTrack.id+" .now-playing").toggle();
+				  player.pause();
+				  player.play();
+				  isFirstPlayBack=false;
+				  return;
+				}
+                if (player.isPlaying()) {    				
+					 player.pause();
                 } else {
                     player.play();
                 }
@@ -515,18 +524,27 @@
         <!-- }); -->
 		 
 		 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
-		$(document).on('keyup', '.email', function () {
-			var value=$('.email').val() ;	
+		$(document).on('keyup', '.email1', function () {
+			var value=$('.email1').val() ;	
 			if(value.match(mailformat))
 			{
-				$(".submit").css("color", " rgba(255, 255, 255, 1);");
+				$(".submit1").css("color", " rgba(255, 255, 255, 1);");
 			}else{
-				$(".submit").css("color", " rgba(255, 255, 255, 0.6);");
+				$(".submit1").css("color", " rgba(255, 255, 255, 0.6);");
 			}
         });
 		 
 
 		
+				$(document).on('keyup', '.email2', function () {
+			var value=$('.email2').val() ;	
+			if(value.match(mailformat))
+			{
+				$(".submit2").css("color", " rgba(255, 255, 255, 1);");
+			}else{
+				$(".submit2").css("color", " rgba(255, 255, 255, 0.6);");
+			}
+        });
 		 
 		 
 		 
@@ -592,6 +610,9 @@
 
         $(document).ready(function () {
             loadPlayList();
+			if($(window).width()<1200){
+				isFirstPlayBack=true;
+			}
         });
 		
 		var isAbout=false;

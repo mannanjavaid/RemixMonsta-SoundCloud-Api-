@@ -12,6 +12,7 @@ var isSearch = false;
 var isRandomPlay = false;
 var isPlaylist = false;
 var isRandomPlayList = false;
+var isFirstPlayBack=false;
 
 SC.initialize({
     client_id: '4af6a761ec1726ad9b2e0e2397fe898a'
@@ -21,6 +22,9 @@ if (localStorage.getItem('playlist')) {
 }
 
 getTrack("House", DEFAULT_PAGE_SIZE);
+getTrack("Dance &amp; EDM", DEFAULT_PAGE_SIZE);
+getTrack("Pop", DEFAULT_PAGE_SIZE);
+getTrack("Latest 25", DEFAULT_PAGE_SIZE);
 console.log(trackList);
 var date = new Date().getTime();
 var current = new Date(date);
@@ -279,7 +283,13 @@ function playSong(track, repeat = true) {
         if (sound.options.protocols[0] === 'rtmp') {
             sound.options.protocols.splice(0, 1);
         }
-        sound.play();
+
+
+		sound.play();
+		
+		
+        
+
         $(".track_volume").css('width', ((sound.getVolume() / 1) * 100) + '%');
         sound.on("time", function () {
             $(".timeline").css('width', ((sound.currentTime() / sound.options.duration) * 100) + '%');
@@ -308,25 +318,36 @@ function playSong(track, repeat = true) {
 
 
         sound.on("play-start", function () {
+			        if (isFirstPlayBack) {
+			$(".controlls .play_song").attr("src", "Images/play.svg");
+        }else{
             $(".controlls .play_song").attr("src", "Images/pause.svg");	
+		}
 			if(currentTrack !=null){
 				$("#"+currentTrack.id).toggleClass("selected-song");
+				$(".track-"+currentTrack.id).toggleClass("selected-song");
+				if(!isFirstPlayBack){
+				
 				$("#"+currentTrack.id+" .add-playlist").toggle();
 				$("#"+currentTrack.id+" .now-playing").toggle();
-				$(".track-"+currentTrack.id).toggleClass("selected-song");
+				
 				$(".track-"+currentTrack.id+" .genre").toggle();
 				$(".track-"+currentTrack.id+" .now-playing").toggle();
-				
+				}
 				
 			}
             currentTrack = track;
 			if(currentTrack !=null){
 				$("#"+currentTrack.id).toggleClass("selected-song");
+				$(".track-"+currentTrack.id).toggleClass("selected-song");
+				
+				if(!isFirstPlayBack){
 				$("#"+currentTrack.id+" .add-playlist").toggle();
 				$("#"+currentTrack.id+" .now-playing").toggle();
-				$(".track-"+currentTrack.id).toggleClass("selected-song");
+				
 				$(".track-"+currentTrack.id+" .genre").toggle();
 				$(".track-"+currentTrack.id+" .now-playing").toggle();
+				}
 			}
             var title = track.title;
             if (track.title.length > 50) {

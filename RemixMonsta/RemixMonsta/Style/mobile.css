@@ -1,4 +1,7 @@
 @media (max-width: 767px){
+	input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
 	body{
 	font-family:Open Sans;
 }
@@ -1221,12 +1224,13 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 	    float: none;
 
 }
+
 }
 
 @media (max-width: 412px){
 	
 .navbar-text .song-title{
-	width:38%;
+	width:40%;
 	
 }
 
@@ -1243,7 +1247,10 @@ input:focus::-webkit-input-placeholder { color:  white ; }
 	.song .play-count {
 	max-width:180px;
 }
+	.navbar-text .song-title{
+	width:55%;
 	
+}
 }
 
 
