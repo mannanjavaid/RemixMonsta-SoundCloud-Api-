@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Remixmonsta</title>
-	<link rel="shortcut icon" href="Images/favicon.png" type="image/vnd.microsoft.icon">
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/vnd.microsoft.icon">
     <link href="Style/horizon-theme.min.css" rel="stylesheet">
-	  <link href="Style/horizon-swiper.min.css" rel="stylesheet">
-	<link href="Style/bootstrap.css" rel="stylesheet">
-	<link href="Style/desktop.css" rel="stylesheet">
+    <link href="Style/horizon-swiper.min.css" rel="stylesheet">
+    <link href="Style/bootstrap.css" rel="stylesheet">
+    <link href="Style/desktop.css" rel="stylesheet">
     <link href="Style/mobile.css" rel="stylesheet">
-	<link href="Style/tab.css" rel="stylesheet">
-	
+    <link href="Style/tab.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,15 +23,15 @@
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="Scripts/moment.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-	 <script src="Scripts/horizon-swiper.min.js"></script>
+    <script src="Scripts/horizon-swiper.min.js"></script>
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-	<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <script src="Scripts/PlayerScript.js"></script>
-	
+
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -39,7 +39,7 @@
                 <a class="navbar-brand logo" onclick="backToMain()" href="#">
                     <img alt="Remixmonsta" src="Images/remixmonsta_logo.svg">
                 </a>
-				<div class="navbar-left alpha">Alpha</div>
+                <div class="navbar-left alpha">Alpha</div>
                 <form class="navbar-form navbar-left ">
                     <div class="input-group ">
                         <span class="input-group-addon search-icon" style="width: 20px">  <img alt="Remixmonsta" src="Images/searchIcon.svg" width="17" height="17"></span>
@@ -47,10 +47,10 @@
 
                     </div>
                 </form>
-				<img class="close-btn hide" onclick="backToMain()" alt="Remixmonsta" style="cursor: pointer" src="Images/remove.svg" width="20" height="20">
-				<div class="mobile-nav">
-					<img class="nav-img" alt="Remixmonsta" src="Images/playlis-mobile.svg" width="28">
-				</div>
+                <img class="close-btn hide" onclick="backToMain()" alt="Remixmonsta" style="cursor: pointer" src="Images/remove.svg" width="20" height="20">
+                <div class="mobile-nav">
+                    <img class="nav-img" alt="Remixmonsta" src="Images/playlis-mobile.svg" width="28">
+                </div>
                 <div class="back_to_main hide">
                     Back to main Page
                 </div>
@@ -74,7 +74,7 @@
                         <h1 class="headline">Choose your favorite genres, and start hunting for best remixes</h1>
                     </div>
                     <div class="genreList desktop">
-					   <span class="genre horizon-item selected-genre">Latest 25</span>
+                        <span class="genre horizon-item selected-genre">Latest 25</span>
                         <span class="genre horizon-item">Ambient</span>
                         <span class="genre horizon-item selected-genre">Dance &amp; EDM</span>
                         <span class="genre horizon-item">Deep House</span>
@@ -87,12 +87,12 @@
                         <span class="genre horizon-item selected-genre">Pop</span>
                         <span class="genre horizon-item">Reggae</span>
                         <span class="genre horizon-item">Reggaeton</span>
-						<span class="genre horizon-item">Techno</span>
+                        <span class="genre horizon-item">Techno</span>
                         <span class="genre horizon-item">Trap</span>
                     </div>
-					
-					<div class="genreList tab">
-					   <span class="genre horizon-item selected-genre">Latest 25</span>
+
+                    <div class="genreList tab">
+                        <span class="genre horizon-item selected-genre">Latest 25</span>
                         <span class="genre horizon-item">Ambient</span>
                         <span class="genre horizon-item selected-genre">Dance &amp; EDM</span>
                         <span class="genre horizon-item">Deep House</span>
@@ -103,11 +103,11 @@
                         <span class="genre horizon-item selected-genre">Pop</span>
                         <span class="genre horizon-item">Reggae</span>
                         <span class="genre horizon-item">Reggaeton</span>
-						<span class="genre horizon-item">Techno</span>
+                        <span class="genre horizon-item">Techno</span>
                         <span class="genre horizon-item">Trap</span>
                     </div>
-					<div class="genreList mobile">
-					   <span class="genre horizon-item selected-genre">Latest 25</span>
+                    <div class="genreList mobile">
+                        <span class="genre horizon-item selected-genre">Latest 25</span>
                         <span class="genre horizon-item">Ambient</span>
                         <span class="genre horizon-item selected-genre">Dance &amp; EDM</span>
                         <span class="genre horizon-item">Deep House</span>
@@ -118,7 +118,7 @@
                         <span class="genre horizon-item selected-genre">Pop</span>
                         <span class="genre horizon-item">Reggae</span>
                         <span class="genre horizon-item">Reggaeton</span>
-						<span class="genre horizon-item">Techno</span>
+                        <span class="genre horizon-item">Techno</span>
                         <span class="genre horizon-item">Trap</span>
                     </div>
 
@@ -136,50 +136,50 @@
                     </div>
                 </div>
                 <div class="trackList"></div>
-				<div class="contact-us-tab mid-list">
-											<div class="subscribe">
-                            <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" >
+                <div class="contact-us-tab mid-list">
+                    <div class="subscribe">
+                        <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
 
                             <div class="title">
                                 Don't miss out newest feature  and announcement from us!
                             </div>
                             <input name="EMAIL" class="email form-control" type="email" placeholder="Enter you email address " required />
-                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit"></input>
+                            <input type="submit" value="SIGN UP , YAAAY! 🙌" class="submit"></input>
                         </form>
                     </div>
-				</div>
-				<div class="trackList"></div>
+                </div>
+                <div class="trackList"></div>
                 <div class="search_result">
                 </div>
-				<div class="end-of-trackList">
-					Sorry you have reached the end of the list 😿, try adding another genre for more remixes, or search.
-				</div>
-				<div class="contact-us-tab">
-					<div class="subscribe">
-                       <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" >
+                <div class="end-of-trackList">
+                    Sorry you have reached the end of the list 😿, try adding another genre for more remixes, or search.
+                </div>
+                <div class="contact-us-tab">
+                    <div class="subscribe">
+                        <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                             <div class="title">
                                 Don't miss out newest feature  and announcement from us!
                             </div>
                             <input name="EMAIL" class="email form-control email1" type="email" placeholder="Enter you email address " required />
-                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit submit1"  name="subscribe" id="mc-embedded-subscribe" ></input>
+                            <input type="submit" value="SIGN UP , YAAAY! 🙌" class="submit submit1" name="subscribe" id="mc-embedded-subscribe" />
                         </form>
                     </div>
-				</div>
-				<div class="bottom-nav-wrapper">
-					<div class="bottom-nav">
-						<ul class="nav navbar-nav navbar-center ">
-							<li><a target="_blank" href="https://twitter.com/Remixmonsta_App"><img class="twitter" src="Images/twitter.svg" alt="tweeter" onmouseover="this.src='Images/twitter-hover.svg';" onmouseout="this.src='Images/twitter.svg';"></a></li>
-							<li><a class="about-button" onclick="toggleAboutDisplay()">ABOUT</a></li>
-							<li><a class="privacy-button" onclick="togglePrivacyDisplay()"> PRIVACY POLICY</a></li>
-					</ul>
-				</div>
-											<div class="powered-by">
-				<p>© 2017 Peter Javorkai</p>
-				<p style="font-size:12px">powered by <img style="margin-top:-20px"  alt="logo" src="Images/Soundcloud_logo_mob.svg"></p>
-				</div>
-			</div>
+                </div>
+                <div class="bottom-nav-wrapper">
+                    <div class="bottom-nav">
+                        <ul class="nav navbar-nav navbar-center ">
+                            <li><a target="_blank" href="https://twitter.com/Remixmonsta_App"><img class="twitter" src="Images/twitter.svg" alt="tweeter" onmouseover="this.src='Images/twitter-hover.svg';" onmouseout="this.src='Images/twitter.svg';"></a></li>
+                            <li><a class="about-button" onclick="toggleAboutDisplay()">ABOUT</a></li>
+                            <li><a class="privacy-button" onclick="togglePrivacyDisplay()"> PRIVACY POLICY</a></li>
+                        </ul>
+                    </div>
+                    <div class="powered-by">
+                        <p>© 2017 Peter Javorkai</p>
+                        <p style="font-size:12px">powered by <img style="margin-top:-20px" alt="logo" src="Images/Soundcloud_logo_mob.svg"></p>
+                    </div>
+                </div>
 
-                <div class="back_to_main hide" style="margin-bottom: 135px;" >
+                <div class="back_to_main hide" style="margin-bottom: 135px;">
                     Back to main Page
                 </div>
             </div>
@@ -197,36 +197,41 @@
 
                         <div class="playlist-songs">
                         </div>
-						<div class="subscribe">
-                        <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" >
+                        <div class="subscribe">
+                            <form action="http://remixmonsta.us15.list-manage.com/subscribe/post?u=fba560dcbc1895defee35b6d5&amp;id=be52f5cf39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
 
-                            <div class="title">
-                                Don't miss out newest feature  and announcement from us!
-                            </div>
-                            <input name="EMAIL" class="email form-control email2" type="email" placeholder="Enter you email address " required />
-                            <input type="submit" value="SIGN UP , YAAAY! 🙌"  class="submit submit2"></input>
-                        </form>
+                                <div class="title">
+                                    Don't miss out newest feature  and announcement from us!
+                                </div>
+                                <input name="EMAIL" class="email form-control email2" type="email" placeholder="Enter you email address " required />
+                                <input type="submit" value="SIGN UP , YAAAY! 🙌" class="submit submit2"></input>
+                            </form>
+                        </div>
                     </div>
-                    </div>
-                    <div class="about" style="display: none">					
+                    <div class="about" style="display: none">
                         <div class="about_header">
                             <img alt="Remixmonsta" style="cursor: pointer" src="Images/remove.svg" width="24" height="24" onclick="toggleAboutDisplay()">
                             <span class="about_title">About</span>
-                            <img alt="Remixmonsta" src="Images/remixmonsta_logo.svg" width="181" height="40" >
+                            <img alt="Remixmonsta" src="Images/remixmonsta_logo.svg" width="181" height="40">
                         </div>
                         <div class="about_image">
                             <img style="border-radius: 100px; margin-left: 15px;margin-top: 15px;" src="Images/About_Peter_Remixmonsta.jpg" width="150" height="150" />
                         </div>
                         <div class="about_text">
-                            <p>Hi I’m Peter Javorkai the founder of remixmonsta.
-                            I’ve spent my university years relentlessly organizing underground electronic music parties, but after a time it was quite hard to find new and fresh talents 
-                            with the limited resources online.</p>
-                            <p>Sometimes I’ve spent days of searching on Soundcloud to get the latest hot remixes, so that’s how I came to the idea to have a dedictated site 
-                            for these great beats. I hope you like it!</p>
+                            <p>
+                                Hi I’m Peter Javorkai the founder of remixmonsta.
+                                I’ve spent my university years relentlessly organizing underground electronic music parties, but after a time it was quite hard to find new and fresh talents
+                                with the limited resources online.
+                            </p>
+                            <p>
+                                Sometimes I’ve spent days of searching on Soundcloud to get the latest hot remixes, so that’s how I came to the idea to have a dedictated site
+                                for these great beats. I hope you like it!
+                            </p>
                         </div>
                         <div class="about_footer">
                             <div class="left">
-                                <p>GOT AN IDEA? &nbsp;
+                                <p>
+                                    GOT AN IDEA? &nbsp;
                                     hello@peterjavorkai.com
                                 </p>
 
@@ -234,24 +239,27 @@
                         </div>
                     </div>
                     <div class="privacy" style="display: none">
-					
+
                         <div class="privacy_header">
                             <img alt="Remixmonsta" style="cursor: pointer" src="Images/remove.svg" width="24" height="24" onclick="togglePrivacyDisplay()">
-                            <span class="privacy_title">Privacy Policy</span>                          
+                            <span class="privacy_title">Privacy Policy</span>
                         </div>
-						<img class="privacy_image" alt="Remixmonsta" src="Images/remixmonsta_logo.svg" width="181" height="40" >
+                        <img class="privacy_image" alt="Remixmonsta" src="Images/remixmonsta_logo.svg" width="181" height="40">
                         <div class="privacy_text">
-						<p><b>The use of the collected data</b></p>
-                            <p>The data concerning the user is collected to allow the owner to provide its services, as well as for the following purposes: advertising, analytics, 
-							interaction with external social networks and platforms, displaying content from external platforms, managing contacts and sending messages and contacting the User.</p>
+                            <p><b>The use of the collected data</b></p>
+                            <p>
+                                The data concerning the user is collected to allow the owner to provide its services, as well as for the following purposes: advertising, analytics,
+                                interaction with external social networks and platforms, displaying content from external platforms, managing contacts and sending messages and contacting the User.
+                            </p>
                             <p>The Personal Data used for each purpose is outlined in the specific sections of the full document</p>
                         </div>
                         <div class="privacy_footer">
-						<div>
-						<a  href="https://www.iubenda.com/privacy-policy/8141157/full-legal" target="_black" class="privacy-link-button">Read Privacy Policy</a>
-						</div>
+                            <div>
+                                <a href="https://www.iubenda.com/privacy-policy/8141157/full-legal" target="_black" class="privacy-link-button">Read Privacy Policy</a>
+                            </div>
                             <div class="left">
-                                <p>GOT A QUESTION? &nbsp;
+                                <p>
+                                    GOT A QUESTION? &nbsp;
                                     hello@peterjavorkai.com
                                 </p>
 
@@ -270,9 +278,9 @@
         <span class="song-timeline_big"><span class="timeline_big"></span></span>
         <div class="container">
             <div class="navbar-text">
-				<span class="album-cover-wrapper">
-					<img src="Images/favicon.png" class="album-cover default-album-cover" />
-				</span>
+                <span class="album-cover-wrapper">
+                    <img src="Images/favicon.png" class="album-cover default-album-cover" />
+                </span>
                 <span class="song-title">Select a a track from playlist 🤘</span>
                 <span class="song-timeline"><span class="timeline">  <span class="outer-circle"><span class="circle"></span></span></span></span>
                 <span class="song-timer text"><span class="current-time">0:00 </span> / <span class="total-time">0:00</span></span>
@@ -284,7 +292,7 @@
                     <img class="play_song" alt="play" src="Images/play.svg">
                     <img class="next_song" alt="next" src="Images/next-song.svg">
                     <img class="random_song" alt="random" src="Images/random_play.svg">
-					<img class="soundcloud-logo" alt="logo" src="Images/Soundcloud_logo.svg">
+                    <img class="soundcloud-logo" alt="logo" src="Images/Soundcloud_logo.svg">
                 </span>
             </div>
         </div>
@@ -294,13 +302,13 @@
         $(".controlls .volume").click(function (e) {
             clearTimeout(id);
             $('.volume-line').toggle("volume_visible");
-			
+
             id = setTimeout("$('.volume-line').hide();$('.soundcloud-logo').show();", 5000);
-			if($(window).width()<1199){
-				
-			}else{
-				$('.soundcloud-logo').toggle();
-			}
+            if ($(window).width() < 1199) {
+
+            } else {
+                $('.soundcloud-logo').toggle();
+            }
 
         });
 
@@ -311,20 +319,20 @@
         });
         $(".controlls .play_song").click(function (e) {
 
-            if (player != null) {	
-				if(isFirstPlayBack){
-				
-				$("#"+currentTrack.id+" .add-playlist").toggle();
-				$("#"+currentTrack.id+" .now-playing").toggle();				
-				$(".track-"+currentTrack.id+" .genre").toggle();
-				$(".track-"+currentTrack.id+" .now-playing").toggle();
-				  player.pause();
-				  player.play();
-				  isFirstPlayBack=false;
-				  return;
-				}
-                if (player.isPlaying()) {    				
-					 player.pause();
+            if (player != null) {
+                if (isFirstPlayBack) {
+
+                    $("#" + currentTrack.id + " .add-playlist").toggle();
+                    $("#" + currentTrack.id + " .now-playing").toggle();
+                    $(".track-" + currentTrack.id + " .genre").toggle();
+                    $(".track-" + currentTrack.id + " .now-playing").toggle();
+                    player.pause();
+                    player.play();
+                    isFirstPlayBack = false;
+                    return;
+                }
+                if (player.isPlaying()) {
+                    player.pause();
                 } else {
                     player.play();
                 }
@@ -338,7 +346,7 @@
         $(".controlls .random_song").click(function (e) {
             if (isPlaylist) {
                 toggleRandomPlayList();
-				toggleRandomTracks();
+                toggleRandomTracks();
             } else {
                 toggleRandomTracks();
             }
@@ -356,34 +364,34 @@
         });
 
         function updateTrackList() {
-			$('.trackList').eq(0).text("");
-			$('.trackList').eq(1).text("");
-			$('.mid-list').hide();
+            $('.trackList').eq(0).text("");
+            $('.trackList').eq(1).text("");
+            $('.mid-list').hide();
             trackList = [];
-		
-			
-			if($(window).width()<1199 &&  $(window).width()>=768){
 
-			$(".tab .selected-genre").each(function () { 
-                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
 
-			});
-			
-			}else if($(window).width()<768){
-				$(".mobile .selected-genre").each(function () { 
-                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
+            if ($(window).width() < 1199 && $(window).width() >= 768) {
 
-			});
-			}
-			else{
-			
-			
-				$(".desktop .selected-genre").each(function () { 
-                getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
+                $(".tab .selected-genre").each(function () {
+                    getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
 
-			});
-			
-			}
+                });
+
+            } else if ($(window).width() < 768) {
+                $(".mobile .selected-genre").each(function () {
+                    getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
+
+                });
+            }
+            else {
+
+
+                $(".desktop .selected-genre").each(function () {
+                    getTrack($(this).text().trim(), DEFAULT_PAGE_SIZE);
+
+                });
+
+            }
 
         }
 
@@ -422,45 +430,47 @@
             var classString = $(this).parent().parent().attr('class');
             var id = classString.substring(16);
             var track = getTrackFromPlayListByid(id);
-            if (track != null) {getTrack
+            if (track != null) {
+                getTrack
                 removeFromPlayList(track);
             }
         });
 
 
 
-        <!-- $(document).on('click', '.trackList .album-cover-overlay', function () { -->
+        <!--$(document).on('click', '.trackList .album-cover-overlay', function () {
+        -->
             <!-- var index = $(this).parent().parent().find('.song-number').text(); -->
-            <!-- $(this).find('.genre').toggleClass("selected-genre"); -->
+            <!--$(this).find('.genre').toggleClass("selected-genre"); -->
             <!-- var track = trackList[index - 1]; -->
-            <!-- isPlaylist = false; -->
-            <!-- isSearch = false; -->
-            <!-- playSong(track); -->
-			
+            <!--isPlaylist = false; -->
+            <!--isSearch = false; -->
+            <!--playSong(track); -->
+
 
         <!-- }); -->
-		 $(document).on('click', '.trackList .song-info', function () {
+            $(document).on('click', '.trackList .song-info', function () {
+                var index = $(this).parent().find('.song-number').text();
+                $(this).find('.genre').toggleClass("selected-genre");
+                var track = trackList[index - 1];
+                isPlaylist = false;
+                isSearch = false;
+                playSong(track);
+
+
+            });
+
+        $(document).on('click', '.trackList .play-count', function () {
             var index = $(this).parent().find('.song-number').text();
             $(this).find('.genre').toggleClass("selected-genre");
             var track = trackList[index - 1];
             isPlaylist = false;
             isSearch = false;
             playSong(track);
-			
+
 
         });
-		
-		$(document).on('click', '.trackList .play-count', function () {
-            var index = $(this).parent().find('.song-number').text();
-            $(this).find('.genre').toggleClass("selected-genre");
-            var track = trackList[index - 1];
-            isPlaylist = false;
-            isSearch = false;
-            playSong(track);
-			
 
-        });
-		
 
         $(document).on('click', '.search_result .album-cover-overlay', function () {
             var index = $(this).parent().parent().find('.song-number').text();
@@ -473,14 +483,14 @@
 
         $(document).on('click', '.playlist-songs .album-cover-overlay', function () {
             var classString = $(this).parent().attr('class');
-			var parts=classString.split(" ");
-			var id =0;
-			if(parts.length==3){
-			 id= parts[1].substring(6);
-			}else{
-			 id= classString.substring(16);
-			}
-           
+            var parts = classString.split(" ");
+            var id = 0;
+            if (parts.length == 3) {
+                id = parts[1].substring(6);
+            } else {
+                id = classString.substring(16);
+            }
+
             var track = getTrackFromPlayListByid(id);
             isPlaylist = true;
             isSearch = false;;
@@ -495,221 +505,221 @@
             $(".main_container").css("display", "none");
             $(".trackList").css("display", "none");
             $(".search_result").css("display", "block");
-			if($(window).width()<1199){
-				$(".end-of-trackList").css("display", "none");
-				$(".contact-us-tab").css("display", "none");
-				$(".bottom-nav-wrapper").css("display", "none");				
-			}
-			
-            $(".back_to_main").removeClass("hide",1000,"linear");
-        });
-		
-		  $(document).on('mousedown', '.search-icon', function () {
-            
-			if($(window).width()<768){
-				$(".close-btn").removeClass("hide",1000,"linear");
-				$(".logo").hide();
-				$('.navbar-form').css("left","0");
-				$(".searchBox").addClass("mob-search");
+            if ($(window).width() < 1199) {
+                $(".end-of-trackList").css("display", "none");
+                $(".contact-us-tab").css("display", "none");
+                $(".bottom-nav-wrapper").css("display", "none");
+            }
 
-			}			
+            $(".back_to_main").removeClass("hide", 1000, "linear");
         });
-		
-		<!-- $(document).on('focusout', '.searchBox', function () { -->
-            
-			<!-- if($(window).width()<768){	 -->
-				<!-- $(".logo").show(); -->
-				<!-- $(".searchBox").removeClass("mob-search");	 -->
+
+        $(document).on('mousedown', '.search-icon', function () {
+
+            if ($(window).width() < 768) {
+                $(".close-btn").removeClass("hide", 1000, "linear");
+                $(".logo").hide();
+                $('.navbar-form').css("left", "0");
+                $(".searchBox").addClass("mob-search");
+
+            }
+        });
+
+		<!--$(document).on('focusout', '.searchBox', function () {
+        -->
+
+			<!-- if($(window).width() < 768) {
+            -->
+				<!--$(".logo").show(); -->
+				<!--$(".searchBox").removeClass("mob-search"); -->
 			<!-- }			 -->
         <!-- }); -->
-		 
-		 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
-		$(document).on('keyup', '.email1', function () {
-			var value=$('.email1').val() ;	
-			if(value.match(mailformat))
-			{
-				$(".submit1").css("color", " rgba(255, 255, 255, 1);");
-			}else{
-				$(".submit1").css("color", " rgba(255, 255, 255, 0.6);");
-			}
-        });
-		 
 
-		
-				$(document).on('keyup', '.email2', function () {
-			var value=$('.email2').val() ;	
-			if(value.match(mailformat))
-			{
-				$(".submit2").css("color", " rgba(255, 255, 255, 1);");
-			}else{
-				$(".submit2").css("color", " rgba(255, 255, 255, 0.6);");
-			}
+		 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        $(document).on('keyup', '.email1', function () {
+            var value = $('.email1').val();
+            if (value.match(mailformat)) {
+                $(".submit1").css("color", " rgba(255, 255, 255, 1);");
+            } else {
+                $(".submit1").css("color", " rgba(255, 255, 255, 0.6);");
+            }
         });
-		 
-		 
-		 
-		$(document).on('mouseover', '.album-cover', function () {
-			var parent=$(this).parent();
-			parent.find(".album-cover-overlay").removeClass("hide-overlay");		
-		});
-		$(document).on('mouseover', '.album-cover-overlay', function () {
-			$(this).removeClass("hide-overlay");		
-		});
-		
-		$(document).on('mouseleave', '.album-cover-overlay', function () {
-			$(this).addClass("hide-overlay");		
-		});
-		$(document).on('mouseleave', '.album-cover', function () {
-			var parent=$(this).parent();
-			parent.find(".album-cover-overlay").addClass("hide-overlay");		
-		});
-		
-		
-		
-		$(document).on('mouseover', '.playlist-songs .album-covers', function () {
-			var parent=$(this).parent();
-			parent.find(".album-cover-overlay").removeClass("hide-overlay");		
-		});
-		$(document).on('mouseover', '.playlist-songs .album-cover-overlay', function () {
-			$(this).removeClass("hide-overlay");		
-		});
-		
-		$(document).on('mouseleave', '.playlist-songs .album-cover-overlay', function () {
-			$(this).addClass("hide-overlay");		
-		});
-		$(document).on('mouseleave', '.playlist-songs .album-covers', function () {
-			var parent=$(this).parent();
-			parent.find(".album-cover-overlay").addClass("hide-overlay");		
-		});
-		
+
+
+
+        $(document).on('keyup', '.email2', function () {
+            var value = $('.email2').val();
+            if (value.match(mailformat)) {
+                $(".submit2").css("color", " rgba(255, 255, 255, 1);");
+            } else {
+                $(".submit2").css("color", " rgba(255, 255, 255, 0.6);");
+            }
+        });
+
+
+
+        $(document).on('mouseover', '.album-cover', function () {
+            var parent = $(this).parent();
+            parent.find(".album-cover-overlay").removeClass("hide-overlay");
+        });
+        $(document).on('mouseover', '.album-cover-overlay', function () {
+            $(this).removeClass("hide-overlay");
+        });
+
+        $(document).on('mouseleave', '.album-cover-overlay', function () {
+            $(this).addClass("hide-overlay");
+        });
+        $(document).on('mouseleave', '.album-cover', function () {
+            var parent = $(this).parent();
+            parent.find(".album-cover-overlay").addClass("hide-overlay");
+        });
+
+
+
+        $(document).on('mouseover', '.playlist-songs .album-covers', function () {
+            var parent = $(this).parent();
+            parent.find(".album-cover-overlay").removeClass("hide-overlay");
+        });
+        $(document).on('mouseover', '.playlist-songs .album-cover-overlay', function () {
+            $(this).removeClass("hide-overlay");
+        });
+
+        $(document).on('mouseleave', '.playlist-songs .album-cover-overlay', function () {
+            $(this).addClass("hide-overlay");
+        });
+        $(document).on('mouseleave', '.playlist-songs .album-covers', function () {
+            var parent = $(this).parent();
+            parent.find(".album-cover-overlay").addClass("hide-overlay");
+        });
+
         $(document).on('click', '.back_to_main', function () {
-    
-				backToMain();
+
+            backToMain();
         });
-		function backToMain(){
-			isSearch = false;
+        function backToMain() {
+            isSearch = false;
             $(".search_result").css("display", "none");
             $(".back_to_main").addClass("hide");
             $(".main_container").css("display", "block");
             $(".trackList").css("display", "block");
             $('.searchBox').val("");
-			$(".close-btn").addClass("hide");
-			$(".logo").show();
-			$(".searchBox").removeClass("mob-search");
-			if($(window).width()<1199){
-				$(".end-of-trackList").css("display", "block");
-				$(".contact-us-tab").css("display", "block");
-				$(".bottom-nav-wrapper").css("display", "block");
-				}
-			if($(window).width()<768){
-				$('.navbar-form').css("left","");	
-			}	
-			}
-			
+            $(".close-btn").addClass("hide");
+            $(".logo").show();
+            $(".searchBox").removeClass("mob-search");
+            if ($(window).width() < 1199) {
+                $(".end-of-trackList").css("display", "block");
+                $(".contact-us-tab").css("display", "block");
+                $(".bottom-nav-wrapper").css("display", "block");
+            }
+            if ($(window).width() < 768) {
+                $('.navbar-form').css("left", "");
+            }
+        }
+
 
 
         $(document).ready(function () {
             loadPlayList();
-			if($(window).width()<1200){
-				isFirstPlayBack=true;
-			}
+            if ($(window).width() < 1200) {
+                isFirstPlayBack = true;
+            }
         });
-		
-		var isAbout=false;
-		function toggleAboutDisplay(){
-		if(isAbout){
-			isAbout=false;
-			if($(window).width()<1199){
-				$(".side-bar").css("display", "none");
-			}
-			$(".playlist").show("slide",{ direction: "right" } , 400);
-			$(".privacy").hide();
-			$(".about").hide();
-			$(".about-button").removeClass("about-button-selected");
-			$(".privacy-button").removeClass("privacy-button-selected");
 
-		}else{
-			isAbout=true;
-			isPrivacy=false;
-			isPlayListDisplay=false;
-			if($(window).width()<1199){
-				$(".side-bar").css("display", "block");
-			}
-			$(".playlist").hide();
-			$(".about").show("slide",{ direction: "right" } , 400);
-			$(".privacy").hide();
-			$(".about-button").addClass("about-button-selected");
-			$(".privacy-button").removeClass("privacy-button-selected");
+        var isAbout = false;
+        function toggleAboutDisplay() {
+            if (isAbout) {
+                isAbout = false;
+                if ($(window).width() < 1199) {
+                    $(".side-bar").css("display", "none");
+                }
+                $(".playlist").show("slide", { direction: "right" }, 400);
+                $(".privacy").hide();
+                $(".about").hide();
+                $(".about-button").removeClass("about-button-selected");
+                $(".privacy-button").removeClass("privacy-button-selected");
 
-			}
-		}
-		
-		var isPrivacy=false;
-		function togglePrivacyDisplay(){
-		if(isPrivacy){
-			isPrivacy=false;
-			if($(window).width()<1199){
-				$(".side-bar").css("display", "none");
-			}
-			$(".playlist").show("slide",{ direction: "right" } , 400);
-			$(".privacy").hide();
-			$(".about-button").removeClass("about-button-selected");
-			$(".privacy-button").removeClass("privacy-button-selected");
+            } else {
+                isAbout = true;
+                isPrivacy = false;
+                isPlayListDisplay = false;
+                if ($(window).width() < 1199) {
+                    $(".side-bar").css("display", "block");
+                }
+                $(".playlist").hide();
+                $(".about").show("slide", { direction: "right" }, 400);
+                $(".privacy").hide();
+                $(".about-button").addClass("about-button-selected");
+                $(".privacy-button").removeClass("privacy-button-selected");
 
-		}else{
-			isPrivacy=true;
-			isAbout=false;
-			isPlayListDisplay=false;
-			if($(window).width()<1199){
-				$(".side-bar").css("display", "block");
-			}
-			$(".playlist").hide();
-			$(".about").hide();
-			$(".privacy").show("slide",{ direction: "right" } , 400);
-			$(".about-button").removeClass("about-button-selected");
-			$(".privacy-button").addClass("privacy-button-selected");
+            }
+        }
 
-			}
-		}
-		
-	
-		
-		var isPlayListDisplay=false;
-		$(document).on('click', '.mobile-nav', function () {
-		if(isPlayListDisplay){
-			isPlayListDisplay=false;
-			$(".side-bar").css("display", "none");
-			$(".playlist").hide();
-			$(".nav-img").attr("src","Images/playlis-mobile.svg");	
-			}else{	
-			isPlayListDisplay=true;
-			isAbout=false;
-			isPrivacy=false;
-			$(".nav-img").attr("src","Images/playlis-mobile-close.svg");
-			$(".side-bar").css("display", "block");
-			$(".about").hide();
-			$(".privacy").hide();
-			$(".about-button").removeClass("about-button-selected");
-			$(".privacy-button").removeClass("privacy-button-selected");
-			$(".playlist").show("slide",{ direction: "right" } , 400);
-			}
-		
-		});
-		
-		$( document ).ready(function() {	
-			$('.mobile').horizonSwiper({'arrows':false});		
-		if($(window).width()<768){
-			$('.playlist-songs').height($( window ).height()-225);
-		}
-		else if($(window).width()>768 && $(window).width()<1199){
-			$('.playlist-songs').height($( window ).height()-290);	
-		}
-		else{
-			var availableHeight=$( window ).height() -170 -300;
-			$('.playlist-songs').height( availableHeight);
-		}
-		});
-		
+        var isPrivacy = false;
+        function togglePrivacyDisplay() {
+            if (isPrivacy) {
+                isPrivacy = false;
+                if ($(window).width() < 1199) {
+                    $(".side-bar").css("display", "none");
+                }
+                $(".playlist").show("slide", { direction: "right" }, 400);
+                $(".privacy").hide();
+                $(".about-button").removeClass("about-button-selected");
+                $(".privacy-button").removeClass("privacy-button-selected");
+
+            } else {
+                isPrivacy = true;
+                isAbout = false;
+                isPlayListDisplay = false;
+                if ($(window).width() < 1199) {
+                    $(".side-bar").css("display", "block");
+                }
+                $(".playlist").hide();
+                $(".about").hide();
+                $(".privacy").show("slide", { direction: "right" }, 400);
+                $(".about-button").removeClass("about-button-selected");
+                $(".privacy-button").addClass("privacy-button-selected");
+
+            }
+        }
+
+
+
+        var isPlayListDisplay = false;
+        $(document).on('click', '.mobile-nav', function () {
+            if (isPlayListDisplay) {
+                isPlayListDisplay = false;
+                $(".side-bar").css("display", "none");
+                $(".playlist").hide();
+                $(".nav-img").attr("src", "Images/playlis-mobile.svg");
+            } else {
+                isPlayListDisplay = true;
+                isAbout = false;
+                isPrivacy = false;
+                $(".nav-img").attr("src", "Images/playlis-mobile-close.svg");
+                $(".side-bar").css("display", "block");
+                $(".about").hide();
+                $(".privacy").hide();
+                $(".about-button").removeClass("about-button-selected");
+                $(".privacy-button").removeClass("privacy-button-selected");
+                $(".playlist").show("slide", { direction: "right" }, 400);
+            }
+
+        });
+
+        $(document).ready(function () {
+            $('.mobile').horizonSwiper({ 'arrows': false });
+            if ($(window).width() < 768) {
+                $('.playlist-songs').height($(window).height() - 225);
+            }
+            else if ($(window).width() > 768 && $(window).width() < 1199) {
+                $('.playlist-songs').height($(window).height() - 290);
+            }
+            else {
+                var availableHeight = $(window).height() - 170 - 300;
+                $('.playlist-songs').height(availableHeight);
+            }
+        });
+
     </script>
 </body>
 </html>

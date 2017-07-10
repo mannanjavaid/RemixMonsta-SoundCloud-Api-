@@ -12,7 +12,7 @@ var isSearch = false;
 var isRandomPlay = false;
 var isPlaylist = false;
 var isRandomPlayList = false;
-var isFirstPlayBack=false;
+var isFirstPlayBack = false;
 
 SC.initialize({
     client_id: '4af6a761ec1726ad9b2e0e2397fe898a'
@@ -99,7 +99,7 @@ function removeFromPlayList(track) {
         localStorage.setItem("playlist", JSON.stringify(playList));
         $('.playlist-songs .track-' + track.id).remove();
         $('#' + track.id + ' .genre').toggleClass("selected-genre");
-		$('#' + track.id + ' .genre .text').text("Add to playlist");
+        $('#' + track.id + ' .genre .text').text("Add to playlist");
         updatePlayListCountAndTime();
     }
 }
@@ -114,7 +114,7 @@ function addToPlayList(track) {
     if (playList == null) { playList = []; }
     playList.push(track);
     localStorage.setItem("playlist", JSON.stringify(playList));
-	$('#' + track.id + ' .genre .text').text("Added");
+    $('#' + track.id + ' .genre .text').text("Added");
     $('#' + track.id + ' .genre').toggleClass("selected-genre");
     $('.playlist-songs').append(getplayListTrackHtml(track));
     updatePlayListCountAndTime();
@@ -130,8 +130,8 @@ function getplayListTrackHtml(track) {
 
     }
     var info = '<div class="song-info track-' + track.id + '"><img src="' + track.artwork_url + '" width="70" height="70" class="album-covers" align="left" />' +
-		'<div class="album-cover-overlay hide-overlay"><img width=22 alt="play" src="Images/play.svg" ></div>'+
-        '<div class="info"><span class="song-title">' + title + '</span><span class="song-duration">'+moment.utc(track.duration).format('mm:ss')+ '</span></div>' +
+        '<div class="album-cover-overlay hide-overlay"><img width=22 alt="play" src="Images/play.svg" ></div>' +
+        '<div class="info"><span class="song-title">' + title + '</span><span class="song-duration">' + moment.utc(track.duration).format('mm:ss') + '</span></div>' +
         '<div class="stats"><span class="now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></span><span class="genre">Remove</span></div></div >';
 
     return info;
@@ -144,8 +144,8 @@ function updatePlayListCountAndTime() {
     for (var i = 0; i < playList.length; i++) {
         duration += playList[i].duration;
     }
-    $('.playlist-count').text(playList.length +' tracks');
-    $('.playlist-time').text(moment.utc(duration).format('m')+ ' mins');
+    $('.playlist-count').text(playList.length + ' tracks');
+    $('.playlist-time').text(moment.utc(duration).format('m') + ' mins');
 
 }
 
@@ -237,18 +237,18 @@ function playNextSong() {
 function toggleRandomPlayList() {
     if (isRandomPlayList) {
         isRandomPlayList = false;
-		$('.shuffle-big img').attr('src','Images/random_play.svg');
+        $('.shuffle-big img').attr('src', 'Images/random_play.svg');
 
     } else {
-		$('.shuffle-big img').attr('src','Images/random_play_selected.svg');
+        $('.shuffle-big img').attr('src', 'Images/random_play_selected.svg');
         isRandomPlayList = true;
         randomPlayList = playList.slice();
         randomPlayList.sort(function (a, b) { return 0.5 - Math.random() });
-		if(randomPlayList.length>0){
-			isPlaylist = false;
+        if (randomPlayList.length > 0) {
+            isPlaylist = false;
             isSearch = false;
-			playSong(randomPlayList[0]);
-		}
+            playSong(randomPlayList[0]);
+        }
     }
 }
 
@@ -258,15 +258,15 @@ function toggleRandomPlayList() {
 function toggleRandomTracks() {
     if (isRandomPlay) {
         isRandomPlay = false;
-		$('.controlls .random_song').attr('src','Images/random_play.svg');
+        $('.controlls .random_song').attr('src', 'Images/random_play.svg');
 
     } else {
         isRandomPlay = true;
-		$('.controlls .random_song').attr('src','Images/random_play_selected.svg');
+        $('.controlls .random_song').attr('src', 'Images/random_play_selected.svg');
         randomTrackList = trackList.slice();
         randomTrackList.sort(function (a, b) { return 0.5 - Math.random() });
 
-		
+
     }
 }
 
@@ -285,10 +285,10 @@ function playSong(track, repeat = true) {
         }
 
 
-		sound.play();
-		
-		
-        
+        sound.play();
+
+
+
 
         $(".track_volume").css('width', ((sound.getVolume() / 1) * 100) + '%');
         sound.on("time", function () {
@@ -318,42 +318,42 @@ function playSong(track, repeat = true) {
 
 
         sound.on("play-start", function () {
-			        if (isFirstPlayBack) {
-			$(".controlls .play_song").attr("src", "Images/play.svg");
-        }else{
-            $(".controlls .play_song").attr("src", "Images/pause.svg");	
-		}
-			if(currentTrack !=null){
-				$("#"+currentTrack.id).toggleClass("selected-song");
-				$(".track-"+currentTrack.id).toggleClass("selected-song");
-				if(!isFirstPlayBack){
-				
-				$("#"+currentTrack.id+" .add-playlist").toggle();
-				$("#"+currentTrack.id+" .now-playing").toggle();
-				
-				$(".track-"+currentTrack.id+" .genre").toggle();
-				$(".track-"+currentTrack.id+" .now-playing").toggle();
-				}
-				
-			}
+            if (isFirstPlayBack) {
+                $(".controlls .play_song").attr("src", "Images/play.svg");
+            } else {
+                $(".controlls .play_song").attr("src", "Images/pause.svg");
+            }
+            if (currentTrack != null) {
+                $("#" + currentTrack.id).toggleClass("selected-song");
+                $(".track-" + currentTrack.id).toggleClass("selected-song");
+                if (!isFirstPlayBack) {
+
+                    $("#" + currentTrack.id + " .add-playlist").toggle();
+                    $("#" + currentTrack.id + " .now-playing").toggle();
+
+                    $(".track-" + currentTrack.id + " .genre").toggle();
+                    $(".track-" + currentTrack.id + " .now-playing").toggle();
+                }
+
+            }
             currentTrack = track;
-			if(currentTrack !=null){
-				$("#"+currentTrack.id).toggleClass("selected-song");
-				$(".track-"+currentTrack.id).toggleClass("selected-song");
-				
-				if(!isFirstPlayBack){
-				$("#"+currentTrack.id+" .add-playlist").toggle();
-				$("#"+currentTrack.id+" .now-playing").toggle();
-				
-				$(".track-"+currentTrack.id+" .genre").toggle();
-				$(".track-"+currentTrack.id+" .now-playing").toggle();
-				}
-			}
+            if (currentTrack != null) {
+                $("#" + currentTrack.id).toggleClass("selected-song");
+                $(".track-" + currentTrack.id).toggleClass("selected-song");
+
+                if (!isFirstPlayBack) {
+                    $("#" + currentTrack.id + " .add-playlist").toggle();
+                    $("#" + currentTrack.id + " .now-playing").toggle();
+
+                    $(".track-" + currentTrack.id + " .genre").toggle();
+                    $(".track-" + currentTrack.id + " .now-playing").toggle();
+                }
+            }
             var title = track.title;
             if (track.title.length > 50) {
                 title = track.title.substring(0, 50) + '...';
             }
-			$('.footer .album-cover').removeClass("default-album-cover");
+            $('.footer .album-cover').removeClass("default-album-cover");
             $('.footer .album-cover').attr("src", track.artwork_url);
             $('.footer .song-title').text(title);
             $('.footer .total-time').text(moment.utc(sound.options.duration).format('mm:ss'));
@@ -367,7 +367,7 @@ function playSong(track, repeat = true) {
             var maxVolume = 1;
             sound.setVolume((x / width) * maxVolume);
             $(".track_volume").css('width', ((sound.getVolume() / 1) * 100) + '%');
-            
+
 
         });
 
@@ -407,7 +407,7 @@ function getTrack(genre, pageSize) {
             length = 25;
         }
 
-		$('.mid-list').hide();	
+        $('.mid-list').hide();
         for (var i = 0; i < length; i++) {
             trackList.push(tracks[i]);
             var title = tracks[i].title;
@@ -415,29 +415,29 @@ function getTrack(genre, pageSize) {
                 title = tracks[i].title.substring(0, 80) + '...';
             }
             var selectedClass = 'selected-genre';
-			var text = 'Added';
+            var text = 'Added';
             var result = getTrackFromPlayListByid(tracks[i].id);
             if (result == null) {
                 selectedClass = '';
-				var text = 'Add to playlist';
+                var text = 'Add to playlist';
             }
             var songRow = ' <div id="' + tracks[i].id + '" class="row song"> <div class="col-lg-1 song-number">' + trackList.length + '</div>' +
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
-				'<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>'+
+                '<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>' +
                 '<span class="song-title">' + title + '</span> </div>' +
                 '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '"><span class="text">' + text + '</span><img class="genre-image" src="Images/tick.svg" width="17" height="13"> </div></div>' +
-                '<div class="col-lg-3 now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>'+
-				'<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' / ' + tracks[i].playback_count + '</span> </div></div>'
+                '<div class="col-lg-3 now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
+                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' / ' + tracks[i].playback_count + '</span> </div></div>'
 
-			if($(window).width()<768  && i<=15){	
-				$('.trackList').eq(0).append(songRow);
-			}else if($(window).width()<768  && i>15){	
-				$('.mid-list').show();	
-				$('.trackList').eq(1).append(songRow);
-			}else{
-				$('.trackList').eq(0).append(songRow);
-				
-			}
+            if ($(window).width() < 768 && i <= 15) {
+                $('.trackList').eq(0).append(songRow);
+            } else if ($(window).width() < 768 && i > 15) {
+                $('.mid-list').show();
+                $('.trackList').eq(1).append(songRow);
+            } else {
+                $('.trackList').eq(0).append(songRow);
+
+            }
         }
     });
 
@@ -467,11 +467,11 @@ function getTrackForSearchResult(query) {
             }
             var songRow = ' <div id="' + tracks[i].id + '" class="row song"> <div class="col-lg-1 song-number">' + ++index + '</div>' +
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
-				'<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>'+
+                '<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>' +
                 '<span class="song-title">' + title + '</span> </div>' +
                 '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '"><span class="text">Add to playlist</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
-                '<div class="col-lg-3 now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>'+               
-			   '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
+                '<div class="col-lg-3 now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
+                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
 
             $('.search_result').append(songRow);
         }
