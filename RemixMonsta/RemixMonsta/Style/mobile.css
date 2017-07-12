@@ -1301,3 +1301,37 @@
         width: 55%;
     }
 }
+
+@media (min-width: 340px) and (max-width: 600px) {
+.playlist-songs{
+	
+	width:100%;
+}	
+.shuffle-big{
+	    width: auto;
+	    margin-right: 16px;
+	
+}
+	.info {
+    width: auto;
+	    float: none;
+}
+.stats{
+	    padding-top: 5px;
+    clear: both;
+	
+}
+.stats .genre{
+	
+	    float: right;
+    margin-right: 10px;
+    margin-top: -37px;
+}
+.playlist-songs .now-playing{
+	
+	margin-top: 0px;
+    margin-left: 80px;
+	    margin-top: -25px;
+}
+
+}

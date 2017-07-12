@@ -459,6 +459,16 @@
 
 
             });
+			
+			$(document).on('click', '.search_result .song-info', function () {
+             var index = $(this).parent().find('.song-number').text();
+            var track = searchList[index - 1];
+            isPlaylist = false;
+            isSearch = true;;
+            playSong(track, false);
+
+
+            });
 
         $(document).on('click', '.trackList .play-count', function () {
             var index = $(this).parent().find('.song-number').text();
@@ -718,6 +728,16 @@
                 var availableHeight = $(window).height() - 170 - 300;
                 $('.playlist-songs').height(availableHeight);
             }
+			if($(window).width()<=600 && $(window).width()>=340){
+			$('.playlist-songs').width($(window).width()+ ($(window).width()*0.18));
+			}
+			$( window ).resize(function() {
+			var width=$(window).width();
+			if(width<=600 && width>=340){
+				$('.playlist-songs').width(width+ (width *0.18));
+				}
+			});
+			
         });
 
     </script>
