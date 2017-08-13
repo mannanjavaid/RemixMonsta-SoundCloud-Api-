@@ -1315,6 +1315,21 @@
         float: left;
         cursor: pointer;
     }
+
+    a.cookie-privacy-policy {
+        color: white;
+        text-decoration: none;
+    }
+
+        a.cookie-privacy-policy:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        a.cookie-privacy-policy:active {
+            text-decoration: none;
+            color: white;
+        }
 }
 
 @media (max-width: 412px) {

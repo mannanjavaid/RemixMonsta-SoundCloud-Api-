@@ -295,7 +295,7 @@
         <div class="container">
             <div class="cookie-text">
                 <p> We use cookies, just to track visits to our website, we store no personal details.</p>
-                <p> Click OK, so we can remove all this blabla. You can also read our <a target="_blank" href="https://www.iubenda.com/privacy-policy/8141157/full-legal"> privacy policy.</a></p>
+                <p> Click OK, so we can remove all this blabla. You can also read our <a class="cookie-privacy-policy" target="_blank" href="https://www.iubenda.com/privacy-policy/8141157/full-legal"> privacy policy.</a></p>
             </div>
             <div class="accept-cookie">
                 OK understood.
@@ -360,7 +360,7 @@
             playPrevSong();
 
         });
-        var vol = 0;
+
         $(".controlls .play_song").click(function (e) {
 
             if (player != null) {
@@ -377,18 +377,7 @@
                     return;
                 }
                 if (player.isPlaying()) {
-                    vol = player.getVolume();
-                    var tempVol = vol;
-                    tempVol = tempVol - 0.2;
-                    player.setVolume(tempVol);
-                    tempVol = tempVol - 0.1;
-                    setTimeout(function () { player.setVolume(tempVol); }, 300);
-                    tempVol = tempVol - 0.1;
-                    setTimeout(function () { player.setVolume(tempVol); }, 500);
-                    tempVol = tempVol - 0.1;
-                    setTimeout(function () { player.setVolume(tempVol); }, 700);
-                    tempVol = tempVol - 0.2;
-                    setTimeout(function () { player.setVolume(tempVol); player.pause(); }, 1000);
+                    player.pause();
                 } else {
 
                     player.play();
@@ -454,15 +443,15 @@
             updateTrackList();
             $('#refresh_time').text("0 minutes");
 
-        }, 1000 * 60* 60 *4);
+        }, 1000 * 60 * 60 * 4);
 
         setInterval(function () {
             var then = moment.utc(listRefreshTime);
             var now = moment.utc(new Date().getTime());
             if ((Math.floor(moment.duration(now.diff(then)).asHours())) >= 1) {
-                $('#refresh_time').text(Math.floor(moment.duration(now.diff(then)).asHours()) +" hours");
+                $('#refresh_time').text(Math.floor(moment.duration(now.diff(then)).asHours()) + " hours");
             } else {
-                $('#refresh_time').text(Math.floor(moment.duration(now.diff(then)).asMinutes())+" minutes");
+                $('#refresh_time').text(Math.floor(moment.duration(now.diff(then)).asMinutes()) + " minutes");
             }
 
         }, 1000);
