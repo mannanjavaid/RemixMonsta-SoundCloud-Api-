@@ -427,7 +427,7 @@ function playSong(track, repeat = true) {
         });
 
 
-        $('.track_volume').on('mousemove', function (e) {
+        $('.controlls .volume-line').on('mousemove', function (e) {
             if (isDrag) {
                 UpdateVloume(e, $(this));
             }
@@ -488,12 +488,20 @@ function getTrack(genre, pageSize) {
             if (tracks[i].artwork_url == null) {
                 tracks[i].artwork_url = 'Images/favicon.png';
             }
+
+            var nowPlayingStyle = "display: none;"
+            var addPlaylistStyle = "display: inline;"
+
+            if (currentTrack != null && currentTrack.id == tracks[i].id) {
+                nowPlayingStyle = "display: inline;";
+                addPlaylistStyle = "display: none;";
+            }
             var songRow = ' <div id="' + tracks[i].id + '" class="row song"> <div class="col-lg-1 song-number">' + trackList.length + '</div>' +
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>' +
                 '<span class="song-title">' + title + '</span> </div>' +
-                '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '"><span class="text">' + text + '</span><img class="genre-image" src="Images/tick.svg" width="17" height="13"> </div></div>' +
-                '<div class="col-lg-3 now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
+                '<div class="col-lg-3 add-playlist" style="' + addPlaylistStyle + '"> <div class="genre ' + selectedClass + '"><span class="text">' + text + '</span><img class="genre-image" src="Images/tick.svg" width="17" height="13"> </div></div>' +
+                '<div class="col-lg-3 now-playing"  style="' + nowPlayingStyle + '">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
                 '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' / ' + tracks[i].playback_count + '</span> </div></div>'
 
             if ($(window).width() < 768 && i <= 15) {
@@ -525,7 +533,11 @@ function UpdateVloume(e, thisObj) {
     var width = $('.controlls .volume-line').width();
     var maxVolume = 1;
     player.setVolume((x / width) * maxVolume);
-    $(".track_volume").css('width', ((player.getVolume() / 1) * 100) + '%');
+    var vol = player.getVolume();
+    if (vol > 1) {
+        vol = 1;
+    }
+    $(".track_volume").css('width', ((vol / 1) * 100) + '%');
 
 
 }
@@ -553,12 +565,20 @@ function getTrackForSearchResult(query) {
             if (tracks[i].artwork_url == null) {
                 tracks[i].artwork_url = 'Images/favicon.png';
             }
+
+            var nowPlayingStyle = "display: none;"
+            var addPlaylistStyle = "display: inline;"
+
+            if (currentTrack != null && currentTrack.id == tracks[i].id) {
+                nowPlayingStyle = "display: inline;";
+                addPlaylistStyle = "display: none;";
+            }
             var songRow = ' <div id="' + tracks[i].id + '" class="row song"> <div class="col-lg-1 song-number">' + ++index + '</div>' +
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>' +
                 '<span class="song-title">' + title + '</span> </div>' +
-                '<div class="col-lg-3 add-playlist"> <div class="genre ' + selectedClass + '"><span class="text">Add to playlist</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
-                '<div class="col-lg-3 now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
+                '<div class="col-lg-3 add-playlist" style="' + addPlaylistStyle + '" > <div class="genre ' + selectedClass + '"><span class="text">Add to playlist</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
+                '<div class="col-lg-3 now-playing"  style="' + nowPlayingStyle + '">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
                 '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
 
             $('.search_result').append(songRow);
