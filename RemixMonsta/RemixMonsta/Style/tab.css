@@ -318,8 +318,9 @@
 
     .song-info {
         padding-left: 0px;
-        width: 75%;
+        width: 78%;
         display: inline-block;
+        float: left;
     }
 
     .song-timer {
@@ -335,6 +336,7 @@
         font-size: 16px;
         color: #212121;
         font-weight: normal;
+        margin-top: 12px;
     }
 
     .footer .song-title {
@@ -364,7 +366,7 @@
         padding-left: 16px;
     }
 
-    .genre {
+    .genre, .shareText {
         height: 32px;
         border-radius: 100px;
         border: solid 1px #50009f;
@@ -475,7 +477,9 @@
         padding: 0px;
         max-width: 152px;
         margin-top: 9px;
-        float: right;
+        float: none;
+        position: absolute;
+        right: 85px;
     }
 
         .add-playlist .genre {
@@ -809,7 +813,7 @@
         padding-bottom: 3px !important;
     }
 
-    .genre:hover {
+    .genre:hover, .shareText:hover {
         border: solid 1px #D325E5;
         color: #D325E5;
     }
@@ -959,8 +963,10 @@
         color: #d325e5;
         margin-top: 11px;
         display: none;
-        float: right;
         width: 145px;
+        float: none;
+        position: absolute;
+        right: 85px;
     }
 
     .rectangle-1 {
@@ -1231,7 +1237,41 @@
             color: white;
         }
 
+    .shareButton {
+        margin-top: 9px;
+        width: 75px;
+        padding: 0px;
+        float: none;
+        margin-left: 10px;
+        position: absolute;
+        right: 0px;
+    }
+
+    .song .play-count {
+        display: none;
+    }
+
+    .duration {
+        display: none;
+    }
 }
+
+@media (min-width: 768px) and (max-width: 850px) {
+    .song-info {
+        width: 68%;
+    }
+}
+
+@media (min-width: 851px) and (max-width: 1070px) {
+    .song-info {
+        width: 72%;
+    }
+}
+/*@media (min-width: 951px) and (max-width: 1070px) {
+    .song-info {
+        width: 75%;
+    }
+}*/
 
 @media (min-width: 886px) and (max-width: 1199px) {
     .accept-cookie {

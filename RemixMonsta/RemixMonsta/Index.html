@@ -148,7 +148,7 @@
                             Track<span class="trackList-status">List refreshed <span id="refresh_time">0 minutes </span> ago</span>
                         </div>
                         <div class="col-lg-5  play-count">
-                            Plays this week / all time
+                            Plays this week
                         </div>
 
                     </div>
@@ -327,9 +327,19 @@
     </div>
     <script>
 
+        var clipboard = new Clipboard('.shareText', {
+            text: function (trigger) {
+                return trigger.children[1].getAttribute('href');
+            }
+        });
 
-
-
+        clipboard.on('success', function (e) {
+            alert("URL is coppied on clipboard");
+        });
+        //$(document).on('click', '.shareText ', function () {
+        //    var pramLink = $(this).find('a').attr("href");
+        //    alert(pramLink);
+        //});
 
         if (!getCookie("cookieNotice") == "") {
             $('.cookie-notice').css("display", "none");
@@ -381,7 +391,6 @@
                 } else {
 
                     player.play();
-                    player.setVolume(vol);
                 }
             }
 
@@ -399,6 +408,8 @@
             }
 
         });
+
+
 
         $(document).on('click', '.shuffle-big ', function () {
             toggleRandomPlayList();
@@ -534,7 +545,7 @@
             var index = $(this).parent().parent().find('.song-number').text();
             var track = searchList[index - 1];
             isPlaylist = false;
-            isSearch = true;;
+            isSearch = true;
             playSong(track, false);
 
         });

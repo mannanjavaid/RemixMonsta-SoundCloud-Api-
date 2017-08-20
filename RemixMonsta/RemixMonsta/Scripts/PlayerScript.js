@@ -355,13 +355,13 @@ function playSong(track, repeat = true) {
             if (currentTrack != null) {
                 $("#" + currentTrack.id).toggleClass("selected-song");
                 $(".track-" + currentTrack.id).toggleClass("selected-song");
-                if (!isFirstPlayBack) {
+                // if (!isFirstPlayBack) {
 
-                    $("#" + currentTrack.id + " .add-playlist").css("display", "inline");
-                    $("#" + currentTrack.id + " .now-playing").css("display", "none");
-                    $(".track-" + currentTrack.id + " .genre").css("display", "inline");
-                    $(".track-" + currentTrack.id + " .now-playing").css("display", "none");
-                }
+                $("#" + currentTrack.id + " .add-playlist").each(function (i, e) { $(this).css("display", "inline"); });
+                $("#" + currentTrack.id + " .now-playing").each(function (i, e) { $(this).css("display", "none"); });
+                $(".track-" + currentTrack.id + " .genre").each(function (i, e) { $(this).css("display", "inline"); });
+                $(".track-" + currentTrack.id + " .now-playing").each(function (i, e) { $(this).css("display", "none"); });
+                //  }
             }
 
             currentTrack = track;
@@ -369,12 +369,12 @@ function playSong(track, repeat = true) {
                 $("#" + currentTrack.id).toggleClass("selected-song");
                 $(".track-" + currentTrack.id).toggleClass("selected-song");
 
-                if (!isFirstPlayBack) {
-                    $("#" + currentTrack.id + " .add-playlist").css("display", "none");
-                    $("#" + currentTrack.id + " .now-playing").css("display", "inline");
-                    $(".track-" + currentTrack.id + " .genre").css("display", "none");
-                    $(".track-" + currentTrack.id + " .now-playing").css("display", "inline");
-                }
+                // if (isFirstPlayBack) {
+                $("#" + currentTrack.id + " .add-playlist").each(function (i, e) { $(this).css("display", "none"); });
+                $("#" + currentTrack.id + " .now-playing").each(function (i, e) { $(this).css("display", "inline"); });
+                $(".track-" + currentTrack.id + " .genre").each(function (i, e) { $(this).css("display", "none"); });
+                $(".track-" + currentTrack.id + " .now-playing").each(function (i, e) { $(this).css("display", "inline"); });
+                // }
             }
 
             var title = track.title;
@@ -496,13 +496,21 @@ function getTrack(genre, pageSize) {
                 nowPlayingStyle = "display: inline;";
                 addPlaylistStyle = "display: none;";
             }
+            var count = tracks[i].playback_count;
+            var formatedCount = count;
+            if (count >= 10000) {
+                formatedCount = Math.trunc(count / 1000) + 'K';
+            }
+
             var songRow = ' <div id="' + tracks[i].id + '" class="row song"> <div class="col-lg-1 song-number">' + trackList.length + '</div>' +
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>' +
                 '<span class="song-title">' + title + '</span> </div>' +
+                '<span class="duration">' + moment.utc(tracks[i].duration).format('mm:ss') + '</span>' +
                 '<div class="col-lg-3 add-playlist" style="' + addPlaylistStyle + '"> <div class="genre ' + selectedClass + '"><span class="text">' + text + '</span><img class="genre-image" src="Images/tick.svg" width="17" height="13"> </div></div>' +
                 '<div class="col-lg-3 now-playing"  style="' + nowPlayingStyle + '">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
-                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' / ' + tracks[i].playback_count + '</span> </div></div>'
+                '<div class="col-lg-1 shareButton"> <div class="shareText"><span>Share</span><a style="display:none" href=' + tracks[i].permalink_url + '> </a> </div></div>' +
+                '<div class="col-lg-1 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + formatedCount + '</span> </div></div>'
 
             if ($(window).width() < 768 && i <= 15) {
                 $('.trackList').eq(0).append(songRow);

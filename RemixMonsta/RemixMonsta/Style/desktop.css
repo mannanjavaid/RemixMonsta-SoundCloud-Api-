@@ -187,7 +187,7 @@
     }
 
     .song-title {
-        width: 300px;
+        width: 80%;
         height: 22px;
         font-family: Open Sans;
         font-size: 16px;
@@ -295,6 +295,7 @@
     }
 
     .footer .song-title {
+        width: 300px;
         display: inline-block;
         margin-bottom: -4px;
         white-space: nowrap;
@@ -322,7 +323,7 @@
         color: #616161;
     }
 
-    .genre {
+    .genre, .shareText {
         height: 32px;
         border-radius: 100px;
         border: solid 1px #50009f;
@@ -759,7 +760,7 @@
         padding-bottom: 3px !important;
     }
 
-    .genre:hover {
+    .genre:hover, .shareText:hover {
         border: solid 1px #D325E5;
         color: #D325E5;
     }
@@ -1125,16 +1126,29 @@
         float: left;
         cursor: pointer;
     }
+
     a.cookie-privacy-policy {
         color: white;
         text-decoration: none;
     }
-    a.cookie-privacy-policy:hover{
-        text-decoration: none;
-        color:white;
-    }
+
+        a.cookie-privacy-policy:hover {
+            text-decoration: none;
+            color: white;
+        }
+
         a.cookie-privacy-policy:active {
             text-decoration: none;
             color: white;
         }
+
+    .shareButton {
+        margin-top: 9px;
+        width: 75px;
+        padding: 0px;
+    }
+
+    .duration {
+        display: none;
+    }
 }

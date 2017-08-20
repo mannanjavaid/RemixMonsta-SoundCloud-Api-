@@ -264,7 +264,6 @@
     }
 
     .song-title {
-        width: 100%;
         height: 22px;
         font-family: Open Sans;
         font-size: 16px;
@@ -362,6 +361,7 @@
         padding-left: 0px;
         width: 75%;
         display: inline-block;
+        float: left;
     }
 
     .song-timer {
@@ -418,7 +418,7 @@
         padding-left: 16px;
     }
 
-    .genre {
+    .genre, .shareText {
         height: 32px;
         border-radius: 100px;
         border: solid 1px #50009f;
@@ -509,6 +509,7 @@
         border-bottom: 1px solid #e0e0e0;
         padding-left: 16px;
         padding-right: 16px;
+        height: 81px;
     }
 
     .song-number {
@@ -527,9 +528,9 @@
         text-align: right;
         padding: 0px;
         max-width: 152px;
-        margin-top: -24px;
-        right: 0px;
+        margin-top: 25px;
         position: absolute;
+        left: 148px;
     }
 
         .add-playlist .genre {
@@ -866,7 +867,7 @@
         padding-bottom: 3px !important;
     }
 
-    .genre:hover {
+    .genre:hover, .shareText:hover {
         border: solid 1px #D325E5;
         color: #D325E5;
     }
@@ -1018,12 +1019,11 @@
         font-size: 16px;
         text-align: right;
         color: #d325e5;
-        margin-top: -24px;
         display: none;
-        float: right;
         width: 145px;
+        margin-top: 30px;
         position: absolute;
-        right: 0px;
+        left: 148px;
     }
 
     .rectangle-1 {
@@ -1330,10 +1330,88 @@
             text-decoration: none;
             color: white;
         }
+
+    .shareButton {
+        width: 75px;
+        padding: 0px;
+        margin-top: 25px;
+        position: absolute;
+        left: 62px;
+    }
+
+    .play-count {
+        display: none;
+    }
+
+    .duration {
+        float: right;
+    }
+}
+
+@media (max-width: 400px) {
+    .song-info .album-cover {
+        width: 64px;
+        height: 64px;
+    }
+
+    /*.navbar-text .album-cover {
+        width: 48px;
+        height: 48px;
+    }*/
+    .navbar-text .song-title {
+        height: auto;
+        white-space: nowrap !important;
+    }
+
+    .album-cover-overlay {
+        margin-left: -64px;
+        padding-left: 26px;
+        padding-right: 22px;
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    .song {
+        height: 117px;
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+
+    .bottom-nav .navbar-nav {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .song-info .song-title {
+        width: 80%;
+        height: 40px;
+        white-space: normal !important;
+    }
+
+    .shareButton {
+        width: 75px;
+        padding: 0px;
+        margin-top: 43px;
+        position: absolute;
+        left: 79px;
+    }
+
+    .add-playlist {
+        text-align: right;
+        padding: 0px;
+        max-width: 152px;
+        position: absolute;
+        left: 165px;
+        margin-top: 43px;
+    }
+
+    .now-playing {
+        left: 165px;
+        margin-top: 48px;
+    }
 }
 
 @media (max-width: 412px) {
-
     .navbar-text .song-title {
         width: 40%;
     }
@@ -1354,6 +1432,110 @@
         width: 55%;
     }
 }
+
+@media (min-width: 400px) and (max-width: 768px) {
+
+    .song-info {
+        padding-left: 0px;
+        width: 68%;
+        display: inline-block;
+        float: left;
+    }
+
+    .add-playlist {
+        text-align: right;
+        padding: 0px;
+        max-width: 152px;
+        margin-top: 9px;
+        float: none;
+        position: absolute;
+        right: 85px;
+        left: unset;
+    }
+
+    .shareButton {
+        margin-top: 9px;
+        width: 75px;
+        padding: 0px;
+        float: none;
+        margin-left: 10px;
+        position: absolute;
+        right: 0px;
+        left: unset;
+    }
+
+    .now-playing {
+        font-size: 16px;
+        text-align: right;
+        color: #d325e5;
+        margin-top: 11px;
+        display: none;
+        width: 145px;
+        float: none;
+        position: absolute;
+        right: 85px;
+        left: unset;
+    }
+
+    .song {
+        height: auto;
+    }
+
+    .song-title {
+        max-width: 80%;
+        margin-top: 0px;
+        white-space: normal !important;
+        height: 40px;
+    }
+
+    .navbar-text .song-title {
+        height: auto !important;
+        white-space: nowrap !important;
+    }
+
+
+    .duration {
+        display: none;
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 650px) {
+
+    .song-title {
+        max-width: 65%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 585px) {
+
+    .song-title {
+        max-width: 55%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 480px) {
+
+    .song-title {
+        max-width: 45%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 450px) {
+
+    .song-title {
+        max-width: 35%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 420px) {
+
+    .song-title {
+        max-width: 30%;
+    }
+}
+
+
 
 @media (min-width: 340px) and (max-width: 600px) {
     .playlist-songs {
