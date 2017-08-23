@@ -1,4 +1,27 @@
 @media (max-width: 767px) {
+    .stats .genre {
+        left: 80px;
+        position: relative;
+        top: -18px;
+    }
+
+    .stats .shareButton {
+        margin: 0px;
+        left: 176px;
+        position: relative;
+        top: 0px;
+        margin-top: -46px;
+        margin-left: 20px;
+    }
+
+    .stats .now-playing {
+        margin: 0px;
+        left: 80px;
+        position: relative;
+        top: -18px;
+    }
+
+
     input:-webkit-autofill {
         -webkit-box-shadow: 0 0 0 1000px white inset !important;
     }
@@ -244,15 +267,7 @@
         float: left;
     }
 
-    .playlist-songs .now-playing {
-        font-size: 14px;
-        text-align: left;
-        color: #d325e5;
-        width: 106px;
-        float: left;
-        margin-top: 25px;
-        position: relative;
-    }
+
 
     .playlist-songs .hide-overlay {
         display: none;
@@ -381,6 +396,7 @@
         font-size: 14px;
         color: #212121;
         font-weight: normal;
+        color: #616161;
     }
 
     .footer .song-title {
@@ -419,12 +435,11 @@
     }
 
     .genre, .shareText {
-        height: 32px;
         border-radius: 100px;
         border: solid 1px #50009f;
         font-family: Open Sans;
         font-size: 16px;
-        padding: 5px 13px;
+        padding: 4px 13px;
         cursor: pointer;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -607,6 +622,7 @@
                 width: 194px;
                 float: left;
                 overflow: visible;
+                color: #616161;
             }
 
             .playlist-songs .song-info .album-covers {
@@ -618,22 +634,21 @@
     .info {
         float: left;
         width: 75%;
+        height: 75px;
+        cursor: pointer;
     }
 
     .song-duration {
         float: right;
         margin-right: 15px;
+        color: #9E9E9E;
     }
 
     .stats {
         padding-top: 5px;
+        clear: both;
     }
 
-        .stats .genre {
-            float: right;
-            margin-right: 10px;
-            margin-top: 25px;
-        }
 
     .subscribe {
         height: 70px;
@@ -1346,6 +1361,72 @@
     .duration {
         float: right;
     }
+
+
+    .modal-img {
+        width: 50px;
+        height: 50px;
+        float: left;
+    }
+
+    p.model-title {
+        float: left;
+        max-width: 173px;
+        margin-left: 11px;
+        height: 60px;
+        overflow: hidden;
+        margin-top: -3px;
+    }
+
+    .modal-content {
+        width: 295px;
+        height: 190px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        border-style: solid;
+        border-width: 10px;
+        border-image-source: linear-gradient(123deg, #5300a4, #d025e2);
+        border-image-slice: 1;
+    }
+
+    .modal-title {
+        display: none;
+    }
+    .close {
+        opacity: 1;
+    }
+
+    .modal-header {
+        padding: 0px;
+        margin: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 16px;
+    }
+
+    .modal-content {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 15px;
+        padding-top: 5px;
+    }
+
+    .modal-title-mobile {
+        display: block;
+        margin: 0;
+        width: 260px;
+        height: 30px;
+        font-family: Open Sans;
+        font-size: 21px;
+        line-height: 1.33;
+        text-align: left;
+    }
+    .info {
+        margin-top: -5px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -1386,6 +1467,7 @@
         width: 80%;
         height: 40px;
         white-space: normal !important;
+        color: #616161;
     }
 
     .shareButton {
@@ -1555,17 +1637,5 @@
     .stats {
         padding-top: 5px;
         clear: both;
-    }
-
-        .stats .genre {
-            float: right;
-            margin-right: 10px;
-            margin-top: -37px;
-        }
-
-    .playlist-songs .now-playing {
-        margin-top: 0px;
-        margin-left: 80px;
-        margin-top: -25px;
     }
 }

@@ -179,7 +179,7 @@
         display: none;
         width: 106px;
         float: left;
-        margin-top: 25px;
+        margin-top: 17px;
     }
 
     .playlist-songs .hide-overlay {
@@ -290,7 +290,7 @@
     .song-info .song-title {
         font-family: Open Sans;
         font-size: 16px;
-        color: #212121;
+        color: #616161;
         font-weight: normal;
     }
 
@@ -452,6 +452,8 @@
 
         .add-playlist .selected-genre {
             width: 100px;
+            position: absolute;
+            right: 12px;
         }
 
 
@@ -519,11 +521,14 @@
     .info {
         float: left;
         width: 75%;
+        height: 42px;
+        cursor:pointer;
     }
 
     .song-duration {
         float: right;
         margin-right: 15px;
+        color: #9E9E9E;
     }
 
     .stats {
@@ -531,9 +536,9 @@
     }
 
         .stats .genre {
-            float: right;
+            float: left;
             margin-right: 10px;
-            margin-top: 25px;
+            margin-top: 12px;
         }
 
     .subscribe {
@@ -1078,7 +1083,7 @@
     }
 
     .mid-list {
-        display: none;
+        display: none!important;
     }
 
     .powered-by {
@@ -1151,4 +1156,82 @@
     .duration {
         display: none;
     }
+
+
+    .song-info .shareButton {
+        width: 75px;
+        padding: 0px;
+        float: left;
+        margin-right: 16px;
+        margin-top: 12px;
+    }
+
+    .modal-img {
+        width: 50px;
+        height: 50px;
+        float: left;
+    }
+
+    p.model-title {
+        float: left;
+        max-width: 340px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-left: 16px;
+        margin-top: 17px;
+        text-overflow: ellipsis;
+    }
+
+    .modal-content {
+        width: 468px;
+        height: 215px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        border-style: solid;
+        border-width: 10px;
+        border-image-source: linear-gradient(123deg, #5300a4, #d025e2);
+        border-image-slice: 1;
+    }
+
+    .modal-title {
+        margin: 0;
+        width: 340px;
+        height: 64px;
+        font-family: Open Sans;
+        font-size: 24px;
+        line-height: 1.33;
+        text-align: left;
+        display: block;
+    }
+
+    .modal-header {
+        padding: 0px;
+        margin: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 16px;
+    }
+
+    .modal-content {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 15px;
+        padding-top: 5px;
+    }
+
+    .modal-title-mobile {
+        display: none;
+    }
+    .close{
+        opacity:1;
+    }
+
+    .info{
+        margin-top:-5px;
+
+    }
+
 }

@@ -51,6 +51,7 @@
     <script src="Scripts/PlayerScript.js"></script>
 
 
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -325,21 +326,66 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><img width="24" height="24" src="Images/remove.svg"/></button>
+                    <h4 class="modal-title">The link of the song below has been copied to your clipboard</h4>
+                    <h4 class="modal-title-mobile">Copied to clipboard!</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="modal-img" src="" />
+                    <p class="model-title"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <script>
+        var shareImage;
+        var shareTitle;
+        $(document).on('click', '.shareText ', function () {
+            var parent = $(this).parent().parent();
+            if (parent[0].className == "stats") {
+                parent = parent.parent();
+                shareImage = parent.find(".album-covers").attr("src");
+            } else {
+                shareImage = parent.find(".album-cover").attr("src");
+
+            }
+
+            shareTitle = parent.find(".song-title").text();
+
+            $('.modal-img').attr("src", shareImage);
+            $('.model-title').text(shareTitle);
+
+            setTimeout(function () {
+                $(".close").click();
+            },4000);
+        });
 
         var clipboard = new Clipboard('.shareText', {
             text: function (trigger) {
+
                 return trigger.children[1].getAttribute('href');
             }
         });
 
         clipboard.on('success', function (e) {
-            alert("URL is coppied on clipboard");
+
         });
-        //$(document).on('click', '.shareText ', function () {
-        //    var pramLink = $(this).find('a').attr("href");
-        //    alert(pramLink);
-        //});
+
 
         if (!getCookie("cookieNotice") == "") {
             $('.cookie-notice').css("display", "none");
@@ -551,6 +597,25 @@
         });
 
         $(document).on('click', '.playlist-songs .album-cover-overlay', function () {
+            var classString = $(this).parent().attr('class');
+            var parts = classString.split(" ");
+            var id = 0;
+            if (parts.length == 3) {
+                id = parts[1].substring(6);
+            } else {
+                id = classString.substring(16);
+            }
+
+            var track = getTrackFromPlayListByid(id);
+            isPlaylist = true;
+            isSearch = false;;
+            playSong(track);
+
+        });
+
+
+        $(document).on('click', '.playlist-songs .info', function () {
+
             var classString = $(this).parent().attr('class');
             var parts = classString.split(" ");
             var id = 0;

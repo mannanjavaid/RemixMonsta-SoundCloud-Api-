@@ -138,7 +138,8 @@ function getplayListTrackHtml(track) {
     var info = '<div class="song-info track-' + track.id + '"><img src="' + track.artwork_url + '" width="70" height="70" class="album-covers" align="left" />' +
         '<div class="album-cover-overlay hide-overlay"><img width=22 alt="play" src="Images/play.svg" ></div>' +
         '<div class="info"><span class="song-title">' + title + '</span><span class="song-duration">' + moment.utc(track.duration).format('mm:ss') + '</span></div>' +
-        '<div class="stats"><span class="now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></span><span class="genre">Remove</span></div></div >';
+        '<div class="stats"><span class="now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></span><span class="genre">Remove</span>' +
+        '<div class="shareButton" data-toggle="modal" data-target="#myModal"> <div class="shareText"><span>Share</span><a style="display:none" href="https://soundcloud.com/emile_ajar/3lau-ft-yeah-boy-on-my-mind-emile-ajar-remix"> </a> </div></div></div ></div>';
 
     return info;
 
@@ -337,11 +338,19 @@ function playSong(track, repeat = true) {
 
         sound.on("pause", function () {
             $(".controlls .play_song").attr("src", "Images/play.svg");
+            $("#" + currentTrack.id + " .add-playlist").each(function (i, e) { $(this).css("display", "inline"); });
+            $("#" + currentTrack.id + " .now-playing").each(function (i, e) { $(this).css("display", "none"); });
+            $(".track-" + currentTrack.id + " .genre").each(function (i, e) { $(this).css("display", "inline"); });
+            $(".track-" + currentTrack.id + " .now-playing").each(function (i, e) { $(this).css("display", "none"); });
         });
 
 
         sound.on("play-resume", function () {
             $(".controlls .play_song").attr("src", "Images/pause.svg");
+            $("#" + currentTrack.id + " .add-playlist").each(function (i, e) { $(this).css("display", "none"); });
+            $("#" + currentTrack.id + " .now-playing").each(function (i, e) { $(this).css("display", "inline"); });
+            $(".track-" + currentTrack.id + " .genre").each(function (i, e) { $(this).css("display", "none"); });
+            $(".track-" + currentTrack.id + " .now-playing").each(function (i, e) { $(this).css("display", "inline"); });
         });
 
 
@@ -509,7 +518,7 @@ function getTrack(genre, pageSize) {
                 '<span class="duration">' + moment.utc(tracks[i].duration).format('mm:ss') + '</span>' +
                 '<div class="col-lg-3 add-playlist" style="' + addPlaylistStyle + '"> <div class="genre ' + selectedClass + '"><span class="text">' + text + '</span><img class="genre-image" src="Images/tick.svg" width="17" height="13"> </div></div>' +
                 '<div class="col-lg-3 now-playing"  style="' + nowPlayingStyle + '">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
-                '<div class="col-lg-1 shareButton"> <div class="shareText"><span>Share</span><a style="display:none" href=' + tracks[i].permalink_url + '> </a> </div></div>' +
+                '<div class="col-lg-1 shareButton" data-toggle="modal" data-target="#myModal"> <div class="shareText"><span>Share</span><a style="display:none" href=' + tracks[i].permalink_url + '> </a> </div></div>' +
                 '<div class="col-lg-1 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + formatedCount + '</span> </div></div>'
 
             if ($(window).width() < 768 && i <= 15) {
@@ -554,7 +563,7 @@ function getTrackForSearchResult(query) {
     query = query + ' remix';
     var array = [];
     SC.get('/tracks', {
-        q: query
+        q: query, limit: 200
     }).then(function (tracks) {
         searchList = [];
         $('.search_result').text("");
@@ -566,9 +575,11 @@ function getTrackForSearchResult(query) {
                 title = tracks[i].title.substring(0, 50) + '...';
             }
             var selectedClass = 'selected-genre';
+            var selectedText = 'Added';
             var result = getTrackFromPlayListByid(tracks[i].id);
             if (result == null) {
                 selectedClass = '';
+                selectedText = 'Add to playlist';
             }
             if (tracks[i].artwork_url == null) {
                 tracks[i].artwork_url = 'Images/favicon.png';
@@ -581,14 +592,21 @@ function getTrackForSearchResult(query) {
                 nowPlayingStyle = "display: inline;";
                 addPlaylistStyle = "display: none;";
             }
+
+            var count = tracks[i].playback_count;
+            var formatedCount = count;
+            if (count >= 10000) {
+                formatedCount = Math.trunc(count / 1000) + 'K';
+            }
+
             var songRow = ' <div id="' + tracks[i].id + '" class="row song"> <div class="col-lg-1 song-number">' + ++index + '</div>' +
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>' +
                 '<span class="song-title">' + title + '</span> </div>' +
-                '<div class="col-lg-3 add-playlist" style="' + addPlaylistStyle + '" > <div class="genre ' + selectedClass + '"><span class="text">Add to playlist</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
+                '<div class="col-lg-3 add-playlist" style="' + addPlaylistStyle + '" > <div class="genre ' + selectedClass + '"><span class="text">' + selectedText+'</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
                 '<div class="col-lg-3 now-playing"  style="' + nowPlayingStyle + '">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
-                '<div class="col-lg-2 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + tracks[i].likes_count + ' /' + tracks[i].playback_count + '</span> </div></div>'
-
+                '<div class="col-lg-1 shareButton" data-toggle="modal" data-target="#myModal"> <div class="shareText"><span>Share</span><a style="display:none" href=' + tracks[i].permalink_url + '> </a> </div></div>' +
+                '<div class="col-lg-1 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + formatedCount + '</span> </div></div>'
             $('.search_result').append(songRow);
         }
     });
