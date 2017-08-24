@@ -17,7 +17,7 @@ var isRandomPlayList = false;
 var isFirstPlayBack = false;
 
 SC.initialize({
-    client_id: '4af6a761ec1726ad9b2e0e2397fe898a'
+    client_id: '4af6a761ec1726ad9b2e0e2397fe898aa'
 });
 if (localStorage.getItem('playlist')) {
     playList = JSON.parse(localStorage.getItem("playlist"));
@@ -441,6 +441,11 @@ function playSong(track, repeat = true) {
                 UpdateVloume(e, $(this));
             }
         });
+        $(".error-message").hide();
+        $(".main-body").show();
+    }).catch(function (error) {
+        $(".error-message").show();
+        $(".main-body").hide();
     });
 }
 
@@ -531,6 +536,11 @@ function getTrack(genre, pageSize) {
 
             }
         }
+        $(".error-message").hide();
+        $(".main-body").show();
+    }).catch(function (error) {
+        $(".error-message").show();
+        $(".main-body").hide();
     });
 
 }
@@ -603,13 +613,19 @@ function getTrackForSearchResult(query) {
                 '<div class="col-lg-7 song-info" > <img src="' + tracks[i].artwork_url + '" width="48" height="48" class="album-cover">' +
                 '<div class="album-cover-overlay hide-overlay"><img width=16 alt="play" src="Images/play.svg" ></div>' +
                 '<span class="song-title">' + title + '</span> </div>' +
-                '<div class="col-lg-3 add-playlist" style="' + addPlaylistStyle + '" > <div class="genre ' + selectedClass + '"><span class="text">' + selectedText+'</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
+                '<div class="col-lg-3 add-playlist" style="' + addPlaylistStyle + '" > <div class="genre ' + selectedClass + '"><span class="text">' + selectedText + '</span><img class="genre-image" src="Images/ tick.svg" width="17" height="13"> </div></div>' +
                 '<div class="col-lg-3 now-playing"  style="' + nowPlayingStyle + '">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></div>' +
                 '<div class="col-lg-1 shareButton" data-toggle="modal" data-target="#myModal"> <div class="shareText"><span>Share</span><a style="display:none" href=' + tracks[i].permalink_url + '> </a> </div></div>' +
                 '<div class="col-lg-1 play-count"><span><img style="margin-right: 5px;margin-bottom: 2px;" width="8px" src="Images/small-play.svg"></span><span>' + formatedCount + '</span> </div></div>'
             $('.search_result').append(songRow);
+            $(".error-message").hide();
+            $(".main-body").show();
         }
+    }).catch(function (error) {
+        $(".error-message").show();
+        $(".main-body").hide();
     });
+
 }
 
 

@@ -203,6 +203,13 @@
                 </div>
             </div>
 
+            <div class="col-lg-9 error-message">
+                <img class="error-img" src="Images/Remixmonsta404.svg" />
+                <p>Sorry, the remix your are looking for can’t be found.<p>
+                <p style="font-weight: bold;" class="bold">Try some other coolness.</p>
+                <div onClick="window.location.reload();" class="refresh-button-container"><span class="refresh-button">Refresh</span></div>
+            </div>
+
             <div class="col-lg-3  side-bar">
                 <div class="affix">
                     <div class="playlist">
@@ -337,7 +344,7 @@
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><img width="24" height="24" src="Images/remove.svg"/></button>
+                    <button type="button" class="close" data-dismiss="modal"><img width="24" height="24" src="Images/remove.svg" /></button>
                     <h4 class="modal-title">The link of the song below has been copied to your clipboard</h4>
                     <h4 class="modal-title-mobile">Copied to clipboard!</h4>
                 </div>
@@ -372,7 +379,7 @@
 
             setTimeout(function () {
                 $(".close").click();
-            },4000);
+            }, 4000);
         });
 
         var clipboard = new Clipboard('.shareText', {

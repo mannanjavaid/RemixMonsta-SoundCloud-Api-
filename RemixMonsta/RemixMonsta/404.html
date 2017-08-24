@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>remixmonsta - find the latest remixes 🙌</title>
+    <meta name="description" content="The best place to find new music remixes. Choose your favorite music genre, and check out the latest remixes. 🦄" />
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/vnd.microsoft.icon">
+    <link href="Style/horizon-theme.min.css" rel="stylesheet">
+    <link href="Style/horizon-swiper.min.css" rel="stylesheet">
+    <link href="Style/bootstrap.css" rel="stylesheet">
+    <link href="Style/desktop.css" rel="stylesheet">
+    <link href="Style/mobile.css" rel="stylesheet">
+    <link href="Style/tab.css" rel="stylesheet">
+
+    <!-- Social Media Meta -->
+    <!-- Facebook -->
+
+    <meta property="og:url" content="http://remixmonsta.com/" />
+    <meta property="og:description" content="The best place to find new music remixes. Choose your favorite music genre, and start listening the latest remixes. 🦄" />
+    <meta property="og:title" content="remixmonsta - new music remixes daily" />
+    <meta property="og:image" content="http://remixmonsta.com/Images/Twitter-OG.jpg" />
+    <meta property="og:site_name" content="remixmonsta" />
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@remixmonsta_app">
+    <meta name="twitter:creator" content="@remixmonsta_app">
+    <meta name="twitter:title" content="Are you tired of Despacito? Find cool remixes instead!">
+    <meta name="twitter:description" content="The best place to find new music remixes. Choose your favorite music genre, and start listening the latest remixes. 🦄">
+    <meta name="twitter:image" content="http://remixmonsta.com/Images/Twitter-OG.jpg" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="Scripts/moment.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/horizon-swiper.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <script src="Scripts/PlayerScript.js"></script>
+    <style>
+        .error-404 {
+            margin-top: 25px;
+        }
+        .refresh-button-container {
+            width: 253px;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 main-body" style="border:none;margin-top: 0px;">
+                <div class="main_container">
+                    <div class="col-lg-12 error-message error-404" style="display:inline">
+                        <img class="error-img" src="Images/Remixmonsta404.svg" />
+                        <p>Sorry, the remix your are looking for can’t be found.<p>
+                        <p style="font-weight: bold;" class="bold">Try some other coolness.</p>
+                        <div onClick="window.location= 'index.html';" class="refresh-button-container"><span class="refresh-button">Back to main page</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1335,8 +1335,66 @@
     .close {
         opacity: 1;
     }
+
     .info {
         margin-top: -5px;
+    }
+
+    .error-message {
+        margin-top: 76px;
+        display:none;
+    }
+
+        .error-message p {
+            font-family: Open Sans;
+            font-size: 32px;
+            text-align: center;
+            color: #212121;
+        }
+
+    .error-img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .error-message {
+        margin-top: 76px;
+        text-align: center;
+        float: left;
+        width: 100%;
+    }
+
+
+        .error-message p {
+            font-family: Open Sans;
+            font-size: 32px;
+            text-align: center;
+            color: #212121;
+        }
+
+    .error-img {
+        width: auto;
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .refresh-button {
+        font-family: Open Sans;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: left;
+        color: #ffffff;
+    }
+
+    .refresh-button-container {
+        width: 253px;
+        height: 48px;
+        border-radius: 100px;
+        background-image: linear-gradient(105deg, #5300a4, #d025e2);
+        margin: auto;
+        padding-top: 5px;
+        cursor: pointer;
+        margin-top: 15px;
     }
 }
 
