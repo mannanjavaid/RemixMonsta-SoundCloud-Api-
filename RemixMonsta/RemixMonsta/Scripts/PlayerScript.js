@@ -17,7 +17,7 @@ var isRandomPlayList = false;
 var isFirstPlayBack = false;
 
 SC.initialize({
-    client_id: '4af6a761ec1726ad9b2e0e2397fe898aa'
+    client_id: '4af6a761ec1726ad9b2e0e2397fe898a'
 });
 if (localStorage.getItem('playlist')) {
     playList = JSON.parse(localStorage.getItem("playlist"));
