@@ -395,6 +395,20 @@ function playSong(track, repeat = true) {
             $('.footer .song-title').text(title);
             $('.footer .total-time').text(moment.utc(sound.options.duration).format('mm:ss'));
 
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: currentTrack.title,
+                    artwork: [{ src: currentTrack.artwork_url }]                 
+                });
+
+                navigator.mediaSession.setActionHandler('play', function () { player.play(); });
+                navigator.mediaSession.setActionHandler('pause', function () { player.pause(); });
+                navigator.mediaSession.setActionHandler('seekbackward', function () { player.seek(player.currentTime() - 10) });
+                navigator.mediaSession.setActionHandler('seekforward', function () { player.seek(player.currentTime() +10)  });
+                navigator.mediaSession.setActionHandler('previoustrack', function () { playPrevSong(); });
+                navigator.mediaSession.setActionHandler('nexttrack', function () { playNextSong(); });
+            }
+
         });
 
         $(".controlls .volume-line").click(function (e) {
@@ -624,7 +638,9 @@ function getTrackForSearchResult(query) {
     }).catch(function (error) {
         $(".error-message").show();
         $(".main-body").hide();
-    });
+        });
+
+
 
 }
 
