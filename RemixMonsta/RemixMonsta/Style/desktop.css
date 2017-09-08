@@ -8,6 +8,7 @@
 
     body {
         font-family: Open Sans;
+        color: #616161 !important;
     }
 
     .main-body {
@@ -258,7 +259,7 @@
         border-radius: 8px;
         background-color: rgba(255, 255, 255, 0.3);
         display: none;
-        margin-left: 10px;
+        margin-left: 20px;
         vertical-align: middle;
         cursor: pointer;
     }
@@ -292,6 +293,7 @@
         font-size: 16px;
         color: #616161;
         font-weight: normal;
+        cursor: pointer;
     }
 
     .footer .song-title {
@@ -344,7 +346,6 @@
         color: #ffffff;
         background-image: url(../Images/tick.svg), linear-gradient(110deg, #5300a4, #d025e2);
         background-repeat: no-repeat;
-        background-position: right;
         background-position: 92%;
         padding-right: 30px;
         border: 0px;
@@ -459,7 +460,7 @@
 
 
     .controlls img {
-        margin-left: 15px;
+        margin-left: 10px;
         cursor: pointer;
     }
 
@@ -529,6 +530,7 @@
         float: right;
         margin-right: 15px;
         color: #9E9E9E;
+        margin-top: 2px;
     }
 
     .stats {
@@ -1228,6 +1230,8 @@
 
     .close {
         opacity: 1;
+        margin-right: -6px;
+        margin-top: 0px !important;
     }
 
     .info {
@@ -1235,7 +1239,7 @@
     }
 
     .error-message {
-        display:none;
+        display: none;
         margin-top: 76px;
         text-align: center;
     }
@@ -1254,14 +1258,15 @@
         height: 325px;
         margin-bottom: 10px;
     }
+
     .refresh-button {
         font-family: Open Sans;
         font-size: 24px;
         font-weight: bold;
         text-align: left;
         color: #ffffff;
-       
     }
+
     .refresh-button-container {
         width: 253px;
         height: 48px;
@@ -1270,6 +1275,10 @@
         margin: auto;
         padding-top: 5px;
         cursor: pointer;
-        margin-top: 15px;
+        margin-top: 14px;
+    }
+
+    .reload_tracks {
+        margin-left: 5px;
     }
 }

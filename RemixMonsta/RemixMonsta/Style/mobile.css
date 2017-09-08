@@ -28,6 +28,7 @@
 
     body {
         font-family: Open Sans;
+        color: #616161 !important;
     }
 
     .mobile-nav {
@@ -274,7 +275,7 @@
     }
 
     .navbar-text .song-title {
-        width: 37%;
+        width: 52%;
         font-size: 14px;
     }
 
@@ -398,6 +399,7 @@
         font-weight: normal;
         margin-top: 12px;
         color: #616161;
+        cursor: pointer;
     }
 
     .footer .song-title {
@@ -454,7 +456,6 @@
         color: #ffffff;
         background-image: url(../Images/tick.svg), linear-gradient(110deg, #5300a4, #d025e2);
         background-repeat: no-repeat;
-        background-position: right;
         background-position: 92%;
         padding-right: 30px;
         border: 0px;
@@ -648,6 +649,7 @@
         float: right;
         margin-right: 15px;
         color: #9E9E9E;
+        margin-top: 2px;
     }
 
     .stats {
@@ -1088,8 +1090,11 @@
     }
 
     .refresh-info {
-        margin-left: 17px;
-        width: 47%;
+        margin-left: 0px;
+        width: 100%;
+        padding: 0px;
+        padding-bottom: 10px;
+        padding-top: 10px;
     }
 
     .album-cover-wrapper {
@@ -1401,8 +1406,24 @@
 
     .close {
         opacity: 1;
+        margin-right: -6px;
+        margin-top: 0px !important;
     }
 
+    .information {
+        display: inline;
+    }
+
+    .refresh-info-prefix {
+        display: none;
+    }
+
+    .song-numbe {
+        display: none;
+    }
+    .trackList-status {
+        padding-left: 0px;
+    }
     .modal-header {
         padding: 0px;
         margin: 15px;
@@ -1508,7 +1529,11 @@
         margin: auto;
         padding-top: 5px;
         cursor: pointer;
-        margin-top: 15px;
+        margin-top: 14px;
+    }
+
+    .reload_tracks {
+        margin-left: 5px;
     }
 }
 
@@ -1592,6 +1617,6 @@
     }
 
     .navbar-text .song-title {
-        width: 55%;
+        width: 42%;
     }
 }

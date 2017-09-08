@@ -274,7 +274,7 @@ function toggleRandomPlayList() {
         randomPlayList = playList.slice();
         randomPlayList.sort(function (a, b) { return 0.5 - Math.random() });
         if (randomPlayList.length > 0) {
-            isPlaylist = false;
+            isPlaylist = true;
             isSearch = false;
             playSong(randomPlayList[0]);
         }
@@ -387,8 +387,8 @@ function playSong(track, repeat = true) {
             }
 
             var title = track.title;
-            if (track.title.length > 50) {
-                title = track.title.substring(0, 50) + '...';
+            if (track.title.length > 80) {
+                title = track.title.substring(0, 80) + '...';
             }
             $('.footer .album-cover').removeClass("default-album-cover");
             $('.footer .album-cover').attr("src", track.artwork_url);

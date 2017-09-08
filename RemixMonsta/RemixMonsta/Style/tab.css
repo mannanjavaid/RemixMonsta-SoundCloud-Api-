@@ -5,6 +5,7 @@
 
     body {
         font-family: Open Sans;
+        color: #616161 !important;
     }
 
     .mobile-nav {
@@ -159,7 +160,14 @@
     }
 
     .bottom-nav .navbar-nav {
-        padding-left: 30%;
+        float: unset;
+        text-align: center;
+        width: 384px;
+        margin: auto;
+    }
+
+    .bottom-nav-wrapper {
+        margin-top: -138px;
     }
 
     .navbar-nav li:not(:last-child):after {
@@ -229,7 +237,7 @@
     }
 
     .navbar-text .song-title {
-        width: 245px;
+        width: 48%;
     }
 
     .song-title {
@@ -265,7 +273,7 @@
         text-align: center;
         color: white;
         font-weight: bold;
-        margin-right: 4px;
+        margin-right: 24px;
     }
 
     .song-timeline {
@@ -301,7 +309,7 @@
         border-radius: 8px;
         background-color: rgba(255, 255, 255, 0.3);
         display: none;
-        margin-left: 10px;
+        margin-left: 20px;
         vertical-align: middle;
         cursor: pointer;
     }
@@ -340,6 +348,7 @@
         font-weight: normal;
         margin-top: 12px;
         color: #616161;
+        cursor: pointer;
     }
 
     .footer .song-title {
@@ -390,7 +399,6 @@
         color: #ffffff;
         background-image: url(../Images/tick.svg), linear-gradient(110deg, #5300a4, #d025e2);
         background-repeat: no-repeat;
-        background-position: right;
         background-position: 92%;
         padding-right: 30px;
         border: 0px;
@@ -573,6 +581,7 @@
         float: right;
         margin-right: 15px;
         color: #9E9E9E;
+        margin-top: 2px;
     }
 
     .stats {
@@ -1334,6 +1343,8 @@
 
     .close {
         opacity: 1;
+        margin-right: -6px;
+        margin-top: 0px !important;
     }
 
     .info {
@@ -1342,7 +1353,7 @@
 
     .error-message {
         margin-top: 76px;
-        display:none;
+        display: none;
     }
 
         .error-message p {
@@ -1394,7 +1405,61 @@
         margin: auto;
         padding-top: 5px;
         cursor: pointer;
-        margin-top: 15px;
+        margin-top: 14px;
+    }
+
+    .outer-circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: white;
+        float: right;
+        margin-right: -1px;
+        margin-top: -5px;
+        position: relative;
+    }
+
+    .circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: white;
+        float: right;
+        margin-right: -6px;
+        margin-top: -6px;
+        opacity: 0.5;
+        position: relative;
+    }
+
+    .reload_tracks {
+        margin-left: 5px;
+    }
+
+    .information {
+        display: inline;
+    }
+
+    .song-numbe {
+        display: none;
+    }
+
+    .refresh-info-prefix {
+        display: none;
+    }
+
+    .play-count {
+        display: none;
+    }
+
+    .refresh-info {
+        margin-left: 0px;
+        width: 100%;
+        padding: 0px;
+        padding-bottom: 10px;
+    }
+
+    .trackList-status {
+        padding-left: 0px;
     }
 }
 
@@ -1402,11 +1467,17 @@
     .song-info {
         width: 68%;
     }
+    .navbar-text .song-title {
+        width: 34%;
+    }
 }
 
 @media (min-width: 851px) and (max-width: 1070px) {
     .song-info {
         width: 72%;
+    }
+    .navbar-text .song-title {
+        width: 38%;
     }
 }
 /*@media (min-width: 951px) and (max-width: 1070px) {
