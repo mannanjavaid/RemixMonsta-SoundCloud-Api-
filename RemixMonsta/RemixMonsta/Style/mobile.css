@@ -587,7 +587,8 @@
 
     .shuffle-big {
         margin-top: 20px;
-        width: 327px;
+        margin-right: 16px;
+        width: auto;
         height: 38px;
         border-radius: 100px;
         background-image: linear-gradient(99deg, #5300a4, #d025e2);
@@ -648,7 +649,7 @@
     .song-duration {
         float: right;
         margin-right: 15px;
-        color: #9E9E9E;
+        color: #616161;
         margin-top: 2px;
     }
 
@@ -758,7 +759,7 @@
         right: 0px;
         margin-top: 17px;
         margin-bottom: 16px;
-        height: 530px;
+        height: 514px;
         background-color: #ffffff;
         box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.23);
         padding-left: 16px;
@@ -914,7 +915,7 @@
         position: fixed;
         margin-top: 17px;
         margin-bottom: 16px;
-        height: 490px;
+        height: 474px;
         background-color: #ffffff;
         box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.23);
         padding-left: 16px;
@@ -1421,9 +1422,11 @@
     .song-numbe {
         display: none;
     }
+
     .trackList-status {
         padding-left: 0px;
     }
+
     .modal-header {
         padding: 0px;
         margin: 15px;
@@ -1535,6 +1538,10 @@
     .reload_tracks {
         margin-left: 5px;
     }
+
+    .playlist-info {
+        font-size: 16px;
+    }
 }
 
 
@@ -1546,10 +1553,8 @@
         height: 64px;
     }
 
-    /*.navbar-text .album-cover {
-        width: 48px;
-        height: 48px;
-    }*/
+
+
     .navbar-text .song-title {
         height: auto;
         white-space: nowrap !important;
@@ -1575,7 +1580,7 @@
     }
 
     .song-info .song-title {
-        width: 90%;
+        width: 100%;
         color: #616161;
         margin-top: -4px;
     }
@@ -1598,8 +1603,10 @@
     }
 
     .now-playing {
-        left: 165px;
+        left: 158px;
         margin-top: 37px;
+        padding: 0px;
+        width: 116px;
     }
 
     .duration {
@@ -1610,6 +1617,8 @@
 @media (min-width: 401px) and (max-width: 600px) {
     .duration {
         display: inline;
+        margin-top: -2px;
+        color: #616161;
     }
 
     .song .play-count {
@@ -1619,4 +1628,120 @@
     .navbar-text .song-title {
         width: 42%;
     }
+
+    .playlist-songs .song-info .song-title {
+        width: 100%;
+        color: #616161;
+        margin-top: -4px;
+        white-space: nowrap;
+        margin-right: 6px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-family: Open Sans;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .playlist-songs .info {
+        margin-top: 0px;
+        margin-left: 3px;
+    }
+
+    .playlist-songs .stats .genre {
+        top: -38px;
+        left: 85px;
+    }
+
+    .playlist-songs .stats .shareButton {
+        margin-top: -65px;
+        left: 173px;
+    }
+
+    .playlist-songs .stats .now-playing {
+        top: -39px;
+    }
+
+    .playlist-songs .song-duration {
+        margin-right: -51px;
+    }
+
+    .search_result .shareButton {
+        left: 96px;
+    }
+
+    .search_result .add-playlist {
+        left: 187px;
+    }
+
+    .search_result .now-playing {
+        left: 180px;
+    }
+}
+
+@media (max-width: 400px) {
+    .song-duration {
+        margin-top: 5px;
+    }
+
+    .playlist-info {
+        font-size: 14px;
+    }
+
+    .song-info .song-title {
+        font-size: 20px;
+    }
+
+    .trackList .genre {
+        font-size: 14px;
+    }
+
+    .trackList .add-playlist {
+        left: 150px;
+    }
+
+        .trackList .add-playlist .genre {
+            width: 111px;
+            text-align: center;
+            padding: 4px 8px;
+        }
+
+    .trackList .shareText {
+        text-align: center;
+        font-size: 14px;
+        width: 55px;
+        padding: 4px 8px;
+    }
+
+    .now-playing {
+        left: 143px;
+        margin-top: 35px;
+        padding: 0px;
+        width: 116px;
+    }
+
+    .search_result .shareButton {
+        left: 97px;
+    }
+
+    .search_result .shareText {
+        text-align: center;
+        font-size: 14px;
+        width: 55px;
+        padding: 4px 8px;
+    }
+    .search_result .add-playlist .genre {
+        width: 111px;
+        text-align: center;
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+
+    .search_result .now-playing {
+        left: 158px;
+        margin-top: 35px;
+        padding: 0px;
+        width: 116px;
+    }
+
+
 }
