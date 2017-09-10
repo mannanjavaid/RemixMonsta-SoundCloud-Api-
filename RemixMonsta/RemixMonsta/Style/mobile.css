@@ -26,6 +26,10 @@
         left: 80px;
         position: relative;
         top: -18px;
+        background: url(../images/now-playing.svg) no-repeat;
+        background-size: 15px;
+        background-position-x: 94px;
+        background-position-y: 3px;
     }
 
 
@@ -1054,12 +1058,15 @@
         width: 145px;
         margin-top: 11px;
         position: absolute;
-        right: 80px
+        right: 80px;
+        background: url(../images/now-playing.svg) no-repeat;
+        background-size: 15px;
+        background-position-x: 117px;
+        background-position-y: 2px;
     }
 
     .rectangle-1 {
         border-radius: 2px;
-        background-color: #d325e5;
         font-size: 0px;
         padding-top: 6px;
         padding-left: 3px;
@@ -1069,7 +1076,6 @@
 
     .rectangle-2 {
         border-radius: 2px;
-        background-color: #d325e5;
         font-size: 0px;
         padding-top: 12px;
         padding-left: 3px;
@@ -1078,7 +1084,6 @@
 
     .rectangle-3 {
         border-radius: 2px;
-        background-color: #d325e5;
         font-size: 0px;
         padding-top: 9px;
         padding-left: 3px;
@@ -1614,6 +1619,10 @@
         margin-top: 37px;
         padding: 0px;
         width: 116px;
+        background: url(../images/now-playing.svg) no-repeat;
+        background-size: 15px;
+        background-position-x: 104px;
+        background-position-y: 2px;
     }
 
     .duration {
@@ -1739,6 +1748,10 @@
         margin-top: 35px;
         padding: 0px;
         width: 116px;
+        background: url(../images/now-playing.svg) no-repeat;
+        background-size: 15px;
+        background-position-x: 104px;
+        background-position-y: 2px;
     }
 
     .search_result .shareButton {

@@ -234,6 +234,10 @@
         margin-top: 17px;
         left: 0px;
         position: relative;
+        background: url(../images/now-playing.svg) no-repeat;
+        background-size: 15px;
+        background-position-x: 87px;
+        background-position-y: 0px;
     }
 
     .playlist-songs .hide-overlay {
@@ -988,11 +992,14 @@
         float: none;
         position: absolute;
         right: 85px;
+        background: url(../images/now-playing.svg) no-repeat;
+        background-size: 15px;
+        background-position-x: 118px;
+        background-position-y: 2px;
     }
 
     .rectangle-1 {
         border-radius: 2px;
-        background-color: #d325e5;
         font-size: 0px;
         padding-top: 6px;
         padding-left: 3px;
@@ -1002,7 +1009,6 @@
 
     .rectangle-2 {
         border-radius: 2px;
-        background-color: #d325e5;
         font-size: 0px;
         padding-top: 12px;
         padding-left: 3px;
@@ -1011,7 +1017,6 @@
 
     .rectangle-3 {
         border-radius: 2px;
-        background-color: #d325e5;
         font-size: 0px;
         padding-top: 9px;
         padding-left: 3px;
