@@ -1595,6 +1595,7 @@
         width: 100%;
         color: #616161;
         margin-top: -4px;
+        height: 84px;
     }
 
     .shareButton {
@@ -1621,7 +1622,7 @@
         width: 116px;
         background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
-        background-position-x: 104px;
+        background-position-x: 101px;
         background-position-y: 2px;
     }
 
@@ -1750,7 +1751,7 @@
         width: 116px;
         background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
-        background-position-x: 104px;
+        background-position-x: 101px;
         background-position-y: 2px;
     }
 
