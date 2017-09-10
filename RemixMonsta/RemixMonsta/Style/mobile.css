@@ -5,6 +5,13 @@
         top: -18px;
     }
 
+    .margin {
+        border-top: 2px solid #e0e0e0;
+        margin-bottom: 0px;
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
     .stats .shareButton {
         margin: 0px;
         left: 176px;
@@ -611,7 +618,7 @@
     .playlist-songs {
         margin-top: 15px;
         height: 205px;
-        overflow-y: scroll;
+        overflow-y: auto;
         width: 376px;
     }
 
@@ -1687,8 +1694,23 @@
         font-size: 14px;
     }
 
-    .song-info .song-title {
-        font-size: 20px;
+    .trackList .song-info .song-title {
+        font-size: 14px;
+        width: 85%;
+        overflow: hidden;
+        padding-right: 20px;
+        margin-right: 0px;
+    }
+
+    .trackList .selected-genre {
+        width: 80px !important;
+        text-align: left !important;
+        padding: 4px 8px !important;
+    }
+
+    .trackList .song-info {
+        width: 100%;
+        padding: 0px;
     }
 
     .trackList .genre {
@@ -1729,6 +1751,7 @@
         width: 55px;
         padding: 4px 8px;
     }
+
     .search_result .add-playlist .genre {
         width: 111px;
         text-align: center;
@@ -1742,6 +1765,4 @@
         padding: 0px;
         width: 116px;
     }
-
-
 }

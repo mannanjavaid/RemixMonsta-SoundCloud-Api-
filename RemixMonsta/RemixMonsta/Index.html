@@ -144,7 +144,7 @@
                         <span class="genre horizon-item" style="background-position:91%">Techno</span>
                         <span class="genre horizon-item" style="background-position:89%">Trap</span>
                     </div>
-
+                    <div class="margin"></div>
                     <div class="row information">
                         <div class="col-lg-1 song-numbe">
                             #
@@ -475,7 +475,26 @@
         });
 
         $(".genreList .genre").click(function (e) {
-            $(this).toggleClass("selected-genre");
+            var text = $(this).text();
+
+            $('.genreList.mobile .horizon-item').each(function (index) {
+                if ($(this).text() == text) {
+                    $(this).toggleClass("selected-genre");
+                }
+            });
+
+            $('.genreList.tab .horizon-item').each(function (index) {
+                if ($(this).text() == text) {
+                    $(this).toggleClass("selected-genre");
+                }
+            });
+
+            $('.genreList.desktop .horizon-item').each(function (index) {
+                if ($(this).text() == text) {
+                    $(this).toggleClass("selected-genre");
+                }
+            });
+
             updateTrackList();
 
         });
@@ -681,17 +700,17 @@
             }
         });
 
-		<!--$(document).on('focusout', '.searchBox', function () {
-            -->
+        //$(document).on('focusout', '.searchBox', function () {
 
-			<!-- if($(window).width() < 768) {
-                -->
-				<!--$(".logo").show(); -->
-				<!--$(".searchBox").removeClass("mob-search"); -->
-			<!-- }			 -->
-        <!-- }); -->
 
-		 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        //	 if($(window).width() < 768) {
+
+        //		$(".logo").show();
+        //		-$(".searchBox").removeClass("mob-search"); -->
+        //	}
+        //       });
+
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         $(document).on('keyup', '.email1', function () {
             var value = $('.email1').val();
             if (value.match(mailformat)) {

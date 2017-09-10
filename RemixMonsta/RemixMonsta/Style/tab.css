@@ -2,15 +2,19 @@
     input:-webkit-autofill {
         -webkit-box-shadow: 0 0 0 1000px white inset !important;
     }
-
+    .mobile-nav {
+        float: right;
+        margin-top: 13px;
+    }
     body {
         font-family: Open Sans;
         color: #616161 !important;
     }
-
-    .mobile-nav {
-        float: right;
-        margin-top: 13px;
+    .margin {
+        border-top: 2px solid #e0e0e0;
+        margin-bottom: 10px;
+        margin-left: -25px;
+        margin-right: -25px;
     }
 
     .row {
@@ -542,7 +546,7 @@
     .playlist-songs {
         margin-top: 15px;
         height: 205px;
-        overflow-y: scroll;
+        overflow-y: auto;
         width: 376px;
     }
 

@@ -10,7 +10,9 @@
         font-family: Open Sans;
         color: #616161 !important;
     }
-
+    .margin {
+        display:none;
+    }
     .main-body {
         margin-top: 20px;
         border-right: solid 1px #e0e0e0;
@@ -495,7 +497,7 @@
     .playlist-songs {
         margin-top: 15px;
         height: 205px;
-        overflow-y: scroll;
+        overflow-y: auto;
         width: 360px;
     }
 

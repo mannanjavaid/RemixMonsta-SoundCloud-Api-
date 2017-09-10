@@ -139,7 +139,7 @@ function getplayListTrackHtml(track) {
         '<div class="album-cover-overlay hide-overlay"><img width=22 alt="play" src="Images/play.svg" ></div>' +
         '<div class="info"><span class="song-title">' + title + '</span><span class="song-duration">' + moment.utc(track.duration).format('mm:ss') + '</span></div>' +
         '<div class="stats"><span class="now-playing">Now playing <span class="rectangle-1"></span><span class="rectangle-2"></span><span class="rectangle-3"></span></span><span class="genre">Remove</span>' +
-        '<div class="shareButton" data-toggle="modal" data-target="#myModal"> <div class="shareText"><span>Share</span><a style="display:none" href="https://soundcloud.com/emile_ajar/3lau-ft-yeah-boy-on-my-mind-emile-ajar-remix"> </a> </div></div></div ></div>';
+        '<div class="shareButton" data-toggle="modal" data-target="#myModal"> <div class="shareText"><span>Share</span><a style="display:none" href=' + track.permalink_url + '> </a> </div></div></div ></div>';
 
     return info;
 
