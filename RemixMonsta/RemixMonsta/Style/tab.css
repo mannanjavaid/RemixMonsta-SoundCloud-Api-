@@ -234,7 +234,7 @@
         margin-top: 17px;
         left: 0px;
         position: relative;
-        background: url(../images/now-playing.svg) no-repeat;
+        background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
         background-position-x: 87px;
         background-position-y: 0px;
@@ -992,7 +992,7 @@
         float: none;
         position: absolute;
         right: 85px;
-        background: url(../images/now-playing.svg) no-repeat;
+        background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
         background-position-x: 118px;
         background-position-y: 2px;

@@ -26,7 +26,7 @@
         left: 80px;
         position: relative;
         top: -18px;
-        background: url(../images/now-playing.svg) no-repeat;
+        background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
         background-position-x: 94px;
         background-position-y: 3px;
@@ -1059,7 +1059,7 @@
         margin-top: 11px;
         position: absolute;
         right: 80px;
-        background: url(../images/now-playing.svg) no-repeat;
+        background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
         background-position-x: 117px;
         background-position-y: 2px;
@@ -1619,7 +1619,7 @@
         margin-top: 37px;
         padding: 0px;
         width: 116px;
-        background: url(../images/now-playing.svg) no-repeat;
+        background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
         background-position-x: 104px;
         background-position-y: 2px;
@@ -1748,7 +1748,7 @@
         margin-top: 35px;
         padding: 0px;
         width: 116px;
-        background: url(../images/now-playing.svg) no-repeat;
+        background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
         background-position-x: 104px;
         background-position-y: 2px;

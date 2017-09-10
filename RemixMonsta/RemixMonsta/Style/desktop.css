@@ -183,7 +183,7 @@
         width: 106px;
         float: left;
         margin-top: 17px;
-        background: url(../images/now-playing.svg) no-repeat;
+        background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
         background-position-x: 86px;
         background-position-y: 1px;
@@ -907,7 +907,7 @@
         max-width: 152px;
         margin-top: 11px;
         display: none;
-        background: url(../images/now-playing.svg) no-repeat;
+        background: url(../Images/now-playing.svg) no-repeat;
         background-size: 15px;
         background-position-x: 113px;
         background-position-y: 1px;
